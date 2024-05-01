@@ -1,0 +1,64 @@
+html,
+body{
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+input {
+    margin-bottom: 16px;
+}
+
+li {
+    margin-bottom: 16px;
+}
+
+#mainSite {
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    justify-content: flex-start;
+    row-gap: 32px;
+    column-gap: 64px;
+}
+
+#menu {
+    width: 384px;
+    background-color: #f0f0f0;
+    padding: 32px;
+}
+
+#content {
+    
+    margin-top: 128px;
+}
+
+/*
+#user-inputs {
+
+}
+*/
+#captcha {
+    width: 512px;
+    height: 640px;
+    background-color: #ccc;
+    /* Placeholder color */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#captcha-text {
+    width: 512px;
+    text-align: left;
+    margin-top: 128px;
+}
