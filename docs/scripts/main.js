@@ -1,4 +1,6 @@
 function openTab(tabName) {
+    eventTab = document.getElementById(tabName)
+
     // Hide all tab content
     var tabcontent = document.getElementsByClassName("tabcontent");
     for (var i = 0; i < tabcontent.length; i++) {
@@ -12,7 +14,7 @@ function openTab(tabName) {
     }
 
     // Show the selected tab content
-    document.getElementById(tabName).style.display = "block";
+    eventTab.style.display = "block";
 
     // Add 'active' class to the clicked tab link
     event.currentTarget.classList.add("active");
