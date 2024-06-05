@@ -1,32 +1,30 @@
-html,
-body,
-button,
-h1,
-h2 {
-    padding: 0;
-    border: 0;
-    margin: 0;
-    font: inherit;
-    font-size: 100%;
-    vertical-align: baseline;
+@font-face {
+    font-family: 'roboto-slab';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto_slab/roboto-slab.regular.ttf');
+    font-display: swap
 }
 
-html,
+@font-face {
+    font-family: 'pt-sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/pt_sans/pt-sans.regular.ttf');
+    font-display: swap
+}
+
 body {
-    height: 100%;
+    margin: 0;
     background-color: var(--mi-weiß);
-}
-
-h1,
-h2,
-p,
-a,
-button {
+    font-family: 'roboto-slab', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: clamp(1rem, 0.9vw + 0.4rem, 1.5rem);
     color: var(--mi-schwarz);
 }
 
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+p {
+    font-size: var(--small);
+    font-family: 'pt-sans', sans-serif;
 }
 
 input {
@@ -55,41 +53,59 @@ a {
 
 #mainSite {
     width: 100%;
-    min-height: 100%;
-    max-height: justify;
+    min-height: 100vh;
     display: flex;
     justify-content: flex-start;
-    row-gap: var(--medium);
     column-gap: var(--xl);
 }
 
 #menu {
-    width: var(--xx-huge);
+    min-width: var(--x-huge);
+    max-width: var(--xx-huge);
     background-color: var(--mi-hellgrau);
 }
 
 #menu-title {
-    padding-top: var(--medium);
-    padding-left: var(--medium);
-    padding-right: var(--medium);
+    padding: var(--medium);
+    padding-bottom: 0;
     background-color: var(--mi-schwarz);
+}
+
+#menu-title-text {
+    font-family: 'pt-sans', sans-serif;
+    margin-top: 0;
+    margin-bottom: var(--small);
+    user-select: none;
 }
 
 #menu-list {
     padding-left: var(--medium);
-    padding-right: var(--medium);
+    margin-right: var(--medium);
+}
+
+#menu-list-text {
+    font-family: 'roboto-slab', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: var(--mi-schwarz);
+    user-select: none;
 }
 
 #content {
+    min-width: var(--xxx-huge);
     display: flex;
     flex-direction: column;
+    padding-right: var(--medium);
+    margin-bottom: var(--xl);
 }
 
 #content-top {
+    min-width: var(--xxx-huge);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     column-gap: var(--xl);
     margin-top: var(--xl);
+    margin-bottom: var(--medium);
 }
 
 #captcha-name {
@@ -97,16 +113,20 @@ a {
     text-align: center;
 }
 
+#captcha-name-text {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .captcher-text-filler {
-    width: var(--xxx-huge);
+    height: 0;
 }
 
 #content-middle {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: stretch;
-    margin-top: var(--medium);
     row-gap: var(--medium);
     column-gap: var(--xl);
 }
@@ -121,6 +141,7 @@ a {
     width: var(--xxx-huge);
     height: 640px;
     background-color: var(--mi-grau);
+    margin-bottom: var(--small);
     /*
     display: flex;
     justify-content: center;
@@ -129,77 +150,79 @@ a {
 }
 
 #captcha-bottom {
-    width: var(--xxx-huge);
     display: flex;
     justify-content: space-between;
-    margin-top: var(--small);
+    padding: 0;
+    margin-top: 0;
 }
 
 .captcha-button {
     width: var(--xxl);
     height: var(--xxl);
-    background-color: var(--mi-weiß);
-    border-radius: 50%;
-    border: var(--xxs) solid var(--mi-weiß);
+    background-color: transparent;
     cursor: pointer;
+    fill: none;
+    stroke: var(--mi-lila);
+    stroke-width: var(--xs);
+    content: justify;
 }
 
-.arrow {
-    display: inline-block;
-    width: var(--medium);
-    height: var(--medium);
-    border-top: var(--xs) solid var(--mi-lila);
-    border-right: var(--xs) solid var(--mi-lila);
+#captcha-text,
+.captcher-text-filler {
+    width: clamp(var(--xxx-huge), 25vw, var(--4x-huge));
 }
 
-.arrow-right {
-    transform: rotate(45deg);
-    margin-right: var(--xs);
-}
+@media screen and (max-width: 144em) {
 
-.arrow-left {
-    transform: rotate(-135deg);
-    margin-left: var(--xs);
-}
-
-#captcha-text {
-    width: var(--xxx-huge);
-    text-align: left;
+    #captcha-text,
+    .captcher-text-filler {
+        width: clamp(var(--xxx-huge), 75%, var(--4x-huge));
+    }
 }
 
 #tab-container {
-    width: justify;
     display: flex;
-    justify-content: space-around;
-    background-color: none;
-    border-bottom: var(--xxs) solid var(--mi-blau);
 }
 
 .tablink {
-    font-family: sans-serif;
-    font-size: var(--medium);
+    flex: 1;
+    min-width: fit-content;
+    font-family: 'roboto-slab', sans-serif;
+    font-size: var(--small-medium);
+    text-align: center;
     color: var(--mi-schwarz);
     background-color: unset;
     cursor: pointer;
     padding-left: var(--xs);
     padding-right: var(--xs);
-    margin: 0px;
+    border-bottom: var(--xxs) solid var(--mi-blau);
+    margin-top: 0;
+    margin-bottom: var(--small);
+    user-select: none;
 }
 
 .tabcontent {
     display: none;
-    margin-top: var(--small);
-    font-family: sans-serif;
+    margin-bottom: var(--small);
     text-align: justify;
+}
+
+.tabcontent-ul {
+    margin-top: 0;
+}
+
+.tabcontent-li {
+    margin-top: 0;
+}
+
+.tabcontent-text {
+    margin-top: 0;
 }
 
 .active {
     color: var(--mi-pink);
-    /*
-    background-color: var(--mi-hellgrau);
-    outline: var(--xxs) solid var(--mi-schwarz);
-    border-start-end-radius: var(--xxs);
-    */
+    cursor: default;
+    border-bottom: var(--xxs) solid var(--mi-gruen);
 }
 
 :root {
@@ -212,9 +235,26 @@ a {
     --mi-blau: #2F59DA;
     --mi-lila: #9829C8;
 
+    --xxs: 0.25em;
+    --xs: 0.5em;
+    --small: 1em;
+    --small-medium: 1.5em;
+    --medium: 2em;
+    --large: 3em;
+    --xl: 4em;
+    --xxl: 6em;
+    --huge: 8em;
+    --x-huge: 16em;
+    --xx-huge: 24em;
+    --xxx-huge: 32em;
+    --4x-huge: 64em;
+    --5x-huge: 144em;
+
+    /*
     --xxs: 4px;
     --xs: 8px;
     --small: 16px;
+    --small-medium: 24px;
     --medium: 32px;
     --large: 48px;
     --xl: 64px;
@@ -223,4 +263,7 @@ a {
     --x-huge: 256px;
     --xx-huge: 384px;
     --xxx-huge: 512px;
+    --4x-huge: 1024px;
+    --5x-huge: 2304px;
+    */
 }

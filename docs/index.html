@@ -13,12 +13,12 @@
     <div id="mainSite">
         <div id="menu">
             <div id="menu-title">
-                <h2>CAPTCHAs</h2>
+                <h2 id="menu-title-text">CAPTCHAs</h2>
             </div>
             <div id="menu-list">
                 <ul>
-                    <li><a href="#captcha1">CAPTCHA Type 1</a></li>
-                    <li><a href="#captcha2">CAPTCHA Type 2</a></li>
+                    <li><a id="menu-list-text" href="#captcha1">CAPTCHA Type 1</a></li>
+                    <li><a id="menu-list-text" href="#captcha2">CAPTCHA Type 2</a></li>
                 </ul>
             </div>
 
@@ -26,7 +26,7 @@
         <div id="content">
             <div id="content-top">
                 <div id="captcha-name">
-                    <h1>CAPTCHA Type 1</h1>
+                    <h1 id="captcha-name-text">CAPTCHA Type 1</h1>
                 </div>
                 <div class="captcher-text-filler"></div>
             </div>
@@ -43,21 +43,30 @@
                     <div id="captcha">
                         <!-- CAPTCHA will be displayed here -->
                     </div>
-                        <div id="captcha-bottom">
+                    <div id="captcha-bottom">
+                        <svg class="captcha-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 64">
+                            <polyline points="24,8 0,32 24,56" />
+                        </svg>
+                        <svg class="captcha-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 64">
+                            <polyline points="0,8 24,32 0,56" />
+                        </svg>
+                        <!--
                         <button class="captcha-button"><span class="arrow arrow-left"></span></button>
                         <button class="captcha-button"><span class="arrow arrow-right"></button>
+                        -->
                     </div>
                 </div>
 
 
                 <div id="captcha-text">
                     <div id="tab-container">
-                        <button class="tablink active" onclick="openTab('tab1')">Beschreibung</button>
-                        <button class="tablink" onclick="openTab('tab2')">Vorteile</button>
-                        <button class="tablink" onclick="openTab('tab3')">Nachteile</button>
+                        <p class="tablink active" onclick="openTab('tab1')">Beschreibung</p>
+                        <p class="tablink" onclick="openTab('tab2')">Vorteile</p>
+                        <p class="tablink" onclick="openTab('tab3')">Nachteile</p>
                     </div>
                     <div id="tab1" class="tabcontent" style="display: block">
-                        <p>Description of CAPTCHA. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                        <p class="tabcontent-text">Description of CAPTCHA. Lorem ipsum dolor sit amet, consetetur
+                            sadipscing elitr, sed diam
                             nonumy
                             eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
                             eos et
@@ -79,29 +88,29 @@
                     </div>
 
                     <div id="tab2" class="tabcontent">
-                        <ul>
-                            <li>
-                                <p>Vorteil 1</p>
+                        <ul class="tabcontent-ul">
+                            <li class="tabcontent-li">
+                                <p class="tabcontent-text">Vorteil 1</p>
                             </li>
-                            <li>
-                                <p>Vorteil 2</p>
+                            <li class="tabcontent-li">
+                                <p class="tabcontent-text">Vorteil 2</p>
                             </li>
-                            <li>
-                                <p>Vorteil 3</p>
+                            <li class="tabcontent-li">
+                                <p class="tabcontent-text">Vorteil 3</p>
                             </li>
                         </ul>
                     </div>
 
                     <div id="tab3" class="tabcontent">
-                        <ul>
-                            <li>
-                                <p>Nachteil 1</p>
+                        <ul class="tabcontent-ul">
+                            <li class="tabcontent-li">
+                                <p class="tabcontent-text">Nachteil 1</p>
                             </li>
-                            <li>
-                                <p>Nachteil 2</p>
+                            <li class="tabcontent-li">
+                                <p class="tabcontent-text">Nachteil 2</p>
                             </li>
-                            <li>
-                                <p>Nachteil 3</p>
+                            <li class="tabcontent-li">
+                                <p class="tabcontent-text">Nachteil 3</p>
                             </li>
                         </ul>
                     </div>
