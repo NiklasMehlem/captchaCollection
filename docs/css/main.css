@@ -92,18 +92,22 @@ a {
 
 #content {
     min-width: var(--xxx-huge);
+    flex: 1;
     display: flex;
     flex-direction: column;
     padding-right: var(--medium);
     margin-bottom: var(--xl);
 }
 
-#content-top {
-    min-width: var(--xxx-huge);
+#content-top, #content-middle {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     column-gap: var(--xl);
+}
+
+#content-top {
+    min-width: var(--xxx-huge);
     margin-top: var(--xl);
     margin-bottom: var(--medium);
 }
@@ -123,12 +127,8 @@ a {
 }
 
 #content-middle {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
     align-items: stretch;
     row-gap: var(--medium);
-    column-gap: var(--xl);
 }
 
 #captcha-box {
