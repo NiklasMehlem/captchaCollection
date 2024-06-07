@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'roboto-slab';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto_slab/roboto-slab.regular.ttf');
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'pt-sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/pt_sans/pt-sans.regular.ttf');
+    font-display: swap
+}
+
+:root {
+    --mi-weiß: #FFFEFE;
+    --mi-hellgrau: #EFEFEF;
+    --mi-grau: #AAAAAA;
+    --mi-schwarz: #241F20;
+    --mi-pink: #ED1B65;
+    --mi-gruen: #00AB42;
+    --mi-blau: #2F59DA;
+    --mi-lila: #9829C8;
+
+    --xxs: 0.25em;
+    --xs: 0.5em;
+    --small: 1em;
+    --small-medium: 1.5em;
+    --medium: 2em;
+    --large: 3em;
+    --xl: 4em;
+    --xxl: 6em;
+    --huge: 8em;
+    --x-huge: 16em;
+    --xx-huge: 24em;
+    --xxx-huge: 32em;
+    --4x-huge: 64em;
+    --5x-huge: 144em;
+
+    /*
+    --xxs: 4px;
+    --xs: 8px;
+    --small: 16px;
+    --small-medium: 24px;
+    --medium: 32px;
+    --large: 48px;
+    --xl: 64px;
+    --xxl: 96px;
+    --huge: 128px;
+    --x-huge: 256px;
+    --xx-huge: 384px;
+    --xxx-huge: 512px;
+    --4x-huge: 1024px;
+    --5x-huge: 2304px;
+    */
+}
