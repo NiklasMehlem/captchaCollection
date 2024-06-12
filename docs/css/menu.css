@@ -16,6 +16,7 @@
     font-family: 'pt-sans', sans-serif;
     margin-top: 0;
     margin-bottom: var(--small);
+    color: var(--mi-weiß);
     user-select: none;
 }
 
