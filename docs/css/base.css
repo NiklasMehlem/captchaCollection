@@ -29,7 +29,6 @@ h1 {
 h2 {
     font-size: var(--medium);
     font-weight: bold;
-    color: var(--mi-weiß)
 }
 
 a {
@@ -43,4 +42,7 @@ a {
     display: flex;
     justify-content: flex-start;
     column-gap: var(--xl);
+    /*
+    border-bottom: var(--xs) solid var(--mi-schwarz);
+    */
 }
