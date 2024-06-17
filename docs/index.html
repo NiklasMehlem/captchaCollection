@@ -19,8 +19,12 @@
             </div>
             <div id="menu-list">
                 <ul>
-                    <li><a id="menu-list-text" href="#captcha1">Bilderkennungstests</a></li>
-                    <li><a id="menu-list-text" href="#captcha2">CAPTCHA Type 2</a></li>
+                    <li>
+                        <p id="menu-list-text" onclick="displayHTML(1)">Bilderkennungstests</p>
+                    </li>
+                    <li>
+                        <p id="menu-list-text" onclick="displayHTML(2)">Gimpy</p>
+                    </li>
                 </ul>
             </div>
 
@@ -28,7 +32,7 @@
         <div id="content">
             <div id="content-top">
                 <div id="captcha-name">
-                    <h1 id="captcha-name-text">Bilderkennungstests</h1>
+                    <h1 id="captcha-name-text">Hier könnte ihr CAPTCHA STEHEN</h1>
                 </div>
                 <div class="captcher-text-filler"></div>
             </div>
@@ -44,25 +48,14 @@
                 <div id="captcha-box">
                     <div id="captcha">
                         <div class="grid-container">
-                            <p id="captcha-container-header">Wählen Sie die alle Bilder mit Blumen aus!</p>
-                            <div class="grid-item" onclick="selectCaptcha()"><img src="./images/animal-3669244_640.webp" alt="Image 1"></div>
-                            <div class="grid-item" onclick="selectCaptcha()"><img src="./images/animals-2178758_640.webp" alt="Image 2"></div>
-                            <div class="grid-item" onclick="selectCaptcha()" id="imgTR"><img src="./images/bouquet-142876_640.webp" alt="Image 3"></div>
-                            <div class="grid-item" onclick="selectCaptcha()"><img src="./images/cat-1455468_640.webp" alt="Image 4"></div>
-                            <div class="grid-item" onclick="selectCaptcha()"><img src="./images/cat-1647775_640.webp" alt="Image 5"></div>
-                            <div class="grid-item" onclick="selectCaptcha()" id="imgMR"><img src="./images/orange-flowers-8087066_640.webp" alt="Image 6"></div>
-                            <div class="grid-item" onclick="selectCaptcha()" id="imgBL"><img src="./images/flowers-5820050_640.webp" alt="Image 7"></div>
-                            <div class="grid-item" onclick="selectCaptcha()"><img src="./images/dogs-7956516_640.webp" alt="Image 8"></div>
-                            <div class="grid-item" onclick="selectCaptcha()"><img src="./images/dogs-8613175_640.webp" alt="Image 9"></div>
-                            <button id="captcha-confirm-button"onclick="checkSelection()">Bestätigen</button>
+                            <p id="captcha-container-header">Hier könnte ihr CAPTCHA STEHEN</p>
                         </div>
-                        
                     </div>
                     <div id="captcha-bottom">
-                        <svg class="captcha-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 64">
+                        <svg class="captcha-button" onclick="displayPreviousHTML()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 64">
                             <polyline points="24,8 0,32 24,56" />
                         </svg>
-                        <svg class="captcha-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 64">
+                        <svg class="captcha-button" onclick="displayNextHTML()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 64">
                             <polyline points="0,8 24,32 0,56" />
                         </svg>
                         <!--
