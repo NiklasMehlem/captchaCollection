@@ -73,6 +73,7 @@
     background-color: var(--mi-blau);
     align-self: center;
     cursor: pointer;
+    user-select: none;
 }
 
 .grid-item {
@@ -82,6 +83,7 @@
     justify-self: center;
     align-self: center;
     cursor: pointer;
+    user-select: none;
     transition: transform 0.3s ease;
 }
 
@@ -104,6 +106,14 @@
     justify-self: center;
     align-self: center;
     object-fit: cover;
+    user-select: none;
+}
+
+#audioCaptchaAudio {
+    grid-column: span 3;
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
 }
 
 #answerInput {
@@ -111,6 +121,7 @@
     font-size: var(--small);
     padding: var(--xxs) var(--xs);
     margin: var(--small);
+    user-select: none;
 }
 
 #captcha-confirm-button {
@@ -124,6 +135,7 @@
     padding: var(--xxs) var(--xs);
     margin: var(--small);
     cursor: pointer;
+    user-select: none;
 }
 
 .captcha-correct {
