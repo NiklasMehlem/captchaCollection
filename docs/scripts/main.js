@@ -37,10 +37,16 @@ const captchaHTML = [
         `
     },
     { // captcha 3
-        name: 'Hier könnte ihr CAPTCHA DREI',
+        name: 'Gesprochene Zeichen / Wörter',
         html: `
             <div class="grid-container">
-                <p id="captcha-container-header">Hier könnte ihr drittes CAPTCHA</p>
+                <p id="captcha-container-header">Bitte geben sie das gesprochene Wort unten ein!</p>
+                <audio controls id="audioCaptchaAudio">
+                    <source src="./sounds/AudioCaptchaWord.webm" type="audio/webm">
+                    Your browser does not support the audio element.
+                </audio>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkAudioWord()">Bestätigen</button>
             </div>
         `
     }
@@ -112,7 +118,18 @@ function checkBilderkennungstests() {
 
 function checkGimpy() {
     const correctAnswer = "BtC-4";
-    const userAnswer = document.getElementById("answerInput").value///.trim().toLowerCase();
+    const userAnswer = document.getElementById("answerInput").value
+
+    if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
+function checkAudioWord() {
+    const correctAnswer = "language";
+    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
 
     if (userAnswer === correctAnswer) {
         displayCorrectHTML();
