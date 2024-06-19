@@ -49,6 +49,20 @@ const captchaHTML = [
                 <button id='captcha-confirm-button' onclick="checkAudioWord()">Bestätigen</button>
             </div>
         `
+    },
+    { // captcha 4
+        name: 'Geräuscherkennung',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte geben sie unten ein, welches Tier sie hören!</p>
+                <audio controls id="audioCaptchaAudio">
+                    <source src="./sounds/bird-voices-7716.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkSound()">Bestätigen</button>
+            </div>
+        `
     }
 ];
 
@@ -132,6 +146,18 @@ function checkAudioWord() {
     const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
 
     if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
+function checkSound() {
+    const correctAnswer = "vogel";
+    const correctAnswer2 = "vögel";
+    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
+
+    if (userAnswer === correctAnswer || userAnswer === correctAnswer2) {
         displayCorrectHTML();
     } else {
         displayFalse();
