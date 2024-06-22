@@ -63,6 +63,16 @@ const captchaHTML = [
                 <button id='captcha-confirm-button' onclick="checkSound()">Bestätigen</button>
             </div>
         `
+    },
+    { // captcha 5
+        name: 'Text',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Wenn Morgen Samstag ist, welcher Tag ist heute? Bitte geben sie die Antwort unten ein!</p>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkText()">Bestätigen</button>
+            </div>
+        `
     }
 ];
 
@@ -158,6 +168,17 @@ function checkSound() {
     const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
 
     if (userAnswer === correctAnswer || userAnswer === correctAnswer2) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
+function checkText() {
+    const correctAnswer = "freitag";
+    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
+
+    if (userAnswer === correctAnswer) {
         displayCorrectHTML();
     } else {
         displayFalse();
