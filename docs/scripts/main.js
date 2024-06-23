@@ -73,6 +73,16 @@ const captchaHTML = [
                 <button id='captcha-confirm-button' onclick="checkText()">Bestätigen</button>
             </div>
         `
+    },
+    { // captcha 6
+        name: 'Mathe',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Was ist neun + 11? Bitte geben sie die Antwort unten ein!</p>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkMathe()">Bestätigen</button>
+            </div>
+        `
     }
 ];
 
@@ -179,6 +189,17 @@ function checkText() {
     const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
 
     if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
+function checkMathe() {
+    const correctAnswer = "20";
+    const correctAnswer2 = "zwanzig";
+    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
+    if (userAnswer === correctAnswer || userAnswer === correctAnswer2) {
         displayCorrectHTML();
     } else {
         displayFalse();
