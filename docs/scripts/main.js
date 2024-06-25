@@ -37,7 +37,7 @@ const captchaHTML = [
         `
     },
     { // captcha 3
-        name: 'Gesprochene Zeichen / Wörter',
+        name: 'Gesprochene Zeichen/ Wörter',
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Bitte geben sie das gesprochene Wort unten ein!</p>
@@ -68,7 +68,7 @@ const captchaHTML = [
         name: 'Text',
         html: `
             <div class="grid-container">
-                <p id="captcha-container-header">Wenn Morgen Samstag ist, welcher Tag ist heute? Bitte geben sie die Antwort unten ein!</p>
+                <p id="captcha-container-header">Wenn Morgen Samstag ist, welcher Tag ist heute?<br>Bitte geben sie die Antwort unten ein!</p>
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkText()">Bestätigen</button>
             </div>
@@ -78,9 +78,46 @@ const captchaHTML = [
         name: 'Mathe',
         html: `
             <div class="grid-container">
-                <p id="captcha-container-header">Was ist neun + 11? Bitte geben sie die Antwort unten ein!</p>
+                <p id="captcha-container-header">Was ist neun + 11?<br>Bitte geben sie die Antwort unten ein!</p>
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkMathe()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha 7
+        name: 'Bongo',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Wählen Sie unten alle Bilder aus, die zur rechten Gruppe
+                    gehören!
+                </p>
+                <div class="inner-grid-container">
+                    <div class="inner-grid-item"><img src="./images/cat-1455468_640.webp" alt="Image 4">
+                    </div>
+                    <div class="inner-grid-item"><img src="./images/cat-1647775_640.webp" alt="Image 5">
+                    </div>
+                    <div class="inner-grid-item"><img src="./images/animal-3669244_640.webp" alt="Image 1">
+                    </div>
+                </div>
+                <div class="inner-grid-container grid-container-right">
+                    <div class="inner-grid-item"><img src="./images/animals-2178758_640.webp" alt="Image 2">
+                    </div>
+                    <div class="inner-grid-item"><img src="./images/dogs-7956516_640.webp" alt="Image 8">
+                    </div>
+                    <div class="inner-grid-item"><img src="./images/dogs-8613175_640.webp" alt="Image 9">
+                    </div>
+                </div>
+                <div class="inner-2-collum-grid-container">
+                    <div class="grid-item grid-container-end" onclick="selectCaptcha()"><img
+                            src="./images/raccoons-8282171_640.webp" alt="Image 3"></div>
+                    <div class="grid-item grid-container-start" onclick="selectCaptcha()" id="imgTR"><img
+                            src="./images/dog-5357794_640.webp" alt="Image 3"></div>
+                    <div class="grid-item grid-container-end" onclick="selectCaptcha()" id="imgBL"><img
+                            src="./images/dogs-2936442_640.webp" alt="Image 3"></div>
+                    <div class="grid-item grid-container-start" onclick="selectCaptcha()"><img
+                            src="./images/cat-5940147_640.webp" alt="Image 3"></div>
+                </div>
+                <button id='captcha-confirm-button' onclick="checkBongo()">Bestätigen</button>
             </div>
         `
     }
@@ -203,6 +240,19 @@ function checkMathe() {
         displayCorrectHTML();
     } else {
         displayFalse();
+    }
+}
+
+function checkBongo() {
+    const imgTR = document.getElementById('imgTR');
+    const imgBL = document.getElementById('imgBL');
+
+    if (imgTR.classList.contains('selected') &&
+        imgBL.classList.contains('selected') &&
+        selectedElements == 2) {
+        displayCorrectHTML();
+    } else {
+        displayFalse()
     }
 }
 

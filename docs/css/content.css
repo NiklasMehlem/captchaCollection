@@ -24,7 +24,6 @@
 }
 
 #captcha-name {
-    width: var(--xxx-huge);
     text-align: center;
 }
 
@@ -49,7 +48,6 @@
 }
 
 #captcha {
-    width: var(--xxx-huge);
     margin-bottom: var(--small);
     box-shadow: 0 var(--xxs) var(--xs) 0 var(--mi-hellgrau), 0 var(--xxs) var(--small) 0 var(--mi-grau);
     /*
@@ -59,9 +57,28 @@
     */
 }
 
+#captcha-name,
+#captcha {
+    width: var(--xxx-huge);
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+}
+
+.inner-grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0px;
+}
+
+.inner-2-collum-grid-container {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
     grid-gap: 0px;
 }
 
@@ -91,6 +108,33 @@
     width: var(--huge);
     height: var(--huge);
     object-fit: cover;
+}
+
+.inner-grid-item {
+    width: var(--huge);
+    height: var(--huge);
+    margin: var(--xxs);
+    justify-self: center;
+    align-self: center;
+    user-select: none;
+}
+
+.inner-grid-item img {
+    width: var(--huge);
+    height: var(--huge);
+    object-fit: cover;
+}
+
+.grid-container-right {
+    grid-column: 3;
+}
+
+.grid-container-start {
+    justify-self: start;
+}
+
+.grid-container-end {
+    justify-self: end;
 }
 
 .selected {
