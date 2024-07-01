@@ -7,7 +7,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 1
+    { // captcha 1 Bilderkennungstests
         name: 'Bilderkennungstests',
         html: `
             <div class="grid-container">
@@ -25,7 +25,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 2
+    { // captcha 2 Gimpy
         name: 'Gimpy',
         html: `
             <div class="grid-container">
@@ -36,7 +36,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 3
+    { // captcha 3 Gesprochene Zeichen/ Wörter
         name: 'Gesprochene Zeichen/ Wörter',
         html: `
             <div class="grid-container">
@@ -50,7 +50,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 4
+    { // captcha 4 Geräuscherkennung
         name: 'Geräuscherkennung',
         html: `
             <div class="grid-container">
@@ -64,7 +64,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 5
+    { // captcha 5 Text
         name: 'Text',
         html: `
             <div class="grid-container">
@@ -74,7 +74,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 6
+    { // captcha 6 Mathe
         name: 'Mathe',
         html: `
             <div class="grid-container">
@@ -84,7 +84,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 7
+    { // captcha 7 Bongo
         name: 'Bongo',
         html: `
             <div class="grid-container">
@@ -118,6 +118,20 @@ const captchaHTML = [
                             src="./images/cat-5940147_640.webp" alt="Image 3"></div>
                 </div>
                 <button id='captcha-confirm-button' onclick="checkBongo()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha 8 Video Gimpy
+        name: 'Video Gimpy',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte geben sie den ROTEN Text aus dem Video unten ein!</p>
+                <video autoplay muted loop id="videoCaptchaVideo">
+                    <source src="./videos/FullVideoCaptchaLight.webm" type="video/webm">
+                    Your browser does not support the audio element.
+                </video>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkVideoGimpy()">Bestätigen</button>
             </div>
         `
     }
@@ -256,6 +270,17 @@ function checkBongo() {
     }
 }
 
+function checkVideoGimpy() {
+    const correctAnswer = "bVC-9";
+    const userAnswer = document.getElementById("answerInput").value
+
+    if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
 function displayPreviousHTML() {
     currentHTML--
     displayHTML(currentHTML);
@@ -268,7 +293,7 @@ function displayNextHTML() {
 
 function displayHTML(tempCurrent) {
     currentHTML = tempCurrent
-    console.log("currentHTML: " + currentHTML)
+    //console.log("currentHTML: " + currentHTML)
     if (currentHTML < 1) currentHTML = captchaHTML.length - 1;
     else if (currentHTML >= captchaHTML.length) currentHTML = 1;
     selectedElements = 0;
