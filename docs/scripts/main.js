@@ -7,7 +7,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 1
+    { // captcha 1 Bilderkennungstests
         name: 'Bilderkennungstests',
         html: `
             <div class="grid-container">
@@ -25,7 +25,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 2
+    { // captcha 2 Gimpy
         name: 'Gimpy',
         html: `
             <div class="grid-container">
@@ -36,8 +36,8 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 3
-        name: 'Gesprochene Zeichen / Wörter',
+    { // captcha 3 Gesprochene Zeichen/ Wörter
+        name: 'Gesprochene Zeichen/ Wörter',
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Bitte geben sie das gesprochene Wort unten ein!</p>
@@ -47,6 +47,91 @@ const captchaHTML = [
                 </audio>
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkAudioWord()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha 4 Geräuscherkennung
+        name: 'Geräuscherkennung',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte geben sie unten ein, welches Tier sie hören!</p>
+                <audio controls id="audioCaptchaAudio">
+                    <source src="./sounds/bird-voices-7716.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkSound()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha 5 Text
+        name: 'Text',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Wenn Morgen Samstag ist, welcher Tag ist heute?<br>Bitte geben sie die Antwort unten ein!</p>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkText()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha 6 Mathe
+        name: 'Mathe',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Was ist neun + 11?<br>Bitte geben sie die Antwort unten ein!</p>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkMathe()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha 7 Bongo
+        name: 'Bongo',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Wählen Sie unten alle Bilder aus, die zur rechten Gruppe
+                    gehören!
+                </p>
+                <div class="inner-grid-container">
+                    <div class="inner-grid-item"><img src="./images/cat-1455468_640.webp" alt="Image 4">
+                    </div>
+                    <div class="inner-grid-item"><img src="./images/cat-1647775_640.webp" alt="Image 5">
+                    </div>
+                    <div class="inner-grid-item"><img src="./images/animal-3669244_640.webp" alt="Image 1">
+                    </div>
+                </div>
+                <div class="inner-grid-container grid-container-right">
+                    <div class="inner-grid-item"><img src="./images/animals-2178758_640.webp" alt="Image 2">
+                    </div>
+                    <div class="inner-grid-item"><img src="./images/dogs-7956516_640.webp" alt="Image 8">
+                    </div>
+                    <div class="inner-grid-item"><img src="./images/dogs-8613175_640.webp" alt="Image 9">
+                    </div>
+                </div>
+                <div class="inner-2-collum-grid-container">
+                    <div class="grid-item grid-container-end" onclick="selectCaptcha()"><img
+                            src="./images/raccoons-8282171_640.webp" alt="Image 3"></div>
+                    <div class="grid-item grid-container-start" onclick="selectCaptcha()" id="imgTR"><img
+                            src="./images/dog-5357794_640.webp" alt="Image 3"></div>
+                    <div class="grid-item grid-container-end" onclick="selectCaptcha()" id="imgBL"><img
+                            src="./images/dogs-2936442_640.webp" alt="Image 3"></div>
+                    <div class="grid-item grid-container-start" onclick="selectCaptcha()"><img
+                            src="./images/cat-5940147_640.webp" alt="Image 3"></div>
+                </div>
+                <button id='captcha-confirm-button' onclick="checkBongo()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha 8 Video Gimpy
+        name: 'Video Gimpy',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte geben sie den ROTEN Text aus dem Video unten ein!</p>
+                <video autoplay muted loop id="videoCaptchaVideo">
+                    <source src="./videos/FullVideoCaptchaLight.webm" type="video/webm">
+                    Your browser does not support the audio element.
+                </video>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkVideoGimpy()">Bestätigen</button>
             </div>
         `
     }
@@ -138,6 +223,64 @@ function checkAudioWord() {
     }
 }
 
+function checkSound() {
+    const correctAnswer = "vogel";
+    const correctAnswer2 = "vögel";
+    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
+
+    if (userAnswer === correctAnswer || userAnswer === correctAnswer2) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
+function checkText() {
+    const correctAnswer = "freitag";
+    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
+
+    if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
+function checkMathe() {
+    const correctAnswer = "20";
+    const correctAnswer2 = "zwanzig";
+    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
+    if (userAnswer === correctAnswer || userAnswer === correctAnswer2) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
+function checkBongo() {
+    const imgTR = document.getElementById('imgTR');
+    const imgBL = document.getElementById('imgBL');
+
+    if (imgTR.classList.contains('selected') &&
+        imgBL.classList.contains('selected') &&
+        selectedElements == 2) {
+        displayCorrectHTML();
+    } else {
+        displayFalse()
+    }
+}
+
+function checkVideoGimpy() {
+    const correctAnswer = "bVC-9";
+    const userAnswer = document.getElementById("answerInput").value
+
+    if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
 function displayPreviousHTML() {
     currentHTML--
     displayHTML(currentHTML);
@@ -150,7 +293,7 @@ function displayNextHTML() {
 
 function displayHTML(tempCurrent) {
     currentHTML = tempCurrent
-    console.log("currentHTML: " + currentHTML)
+    //console.log("currentHTML: " + currentHTML)
     if (currentHTML < 1) currentHTML = captchaHTML.length - 1;
     else if (currentHTML >= captchaHTML.length) currentHTML = 1;
     selectedElements = 0;
