@@ -162,6 +162,19 @@ const captchaHTML = [
                 <button id='captcha-confirm-button' onclick="checkOrientierung()">Bestätigen</button>
             </div>
         `
+    },
+    { // captcha 10 Karten
+        name: 'Karten',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Klicken sie auf das Ende des Pfades!</p>
+                <img id="kartenCaptchaImg" src="./images/kartenCaptchaImg.webp" alt="Karten Captcha Bild"
+                    usemap="#image-map">
+                <map name="image-map">
+                    <area shape="circle" coords="225,255,16" onclick="checkKarte()">
+                </map>
+            </div>
+        `
     }
 ];
 const orientierungPictures = [
@@ -324,6 +337,10 @@ function checkOrientierung() {
     } else {
         displayFalse();
     }
+}
+
+function checkKarte() {
+    displayCorrectHTML();
 }
 
 function displayPreviousOrientierung() {
