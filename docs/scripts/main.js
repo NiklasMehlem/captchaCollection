@@ -134,10 +134,101 @@ const captchaHTML = [
                 <button id='captcha-confirm-button' onclick="checkVideoGimpy()">Bestätigen</button>
             </div>
         `
+    },
+    { // captcha 9 Orientierung
+        name: 'Orientierung',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Wählen Sie das Bild auf der rechten Seite aus, dessen
+                    Objekt die gleiche Orientierung wie das Objekt im linken Bild hat!
+                </p>
+                <div class="grid-item-solid"><img src="./images/dog-5357794_640.webp" alt="refrenceImg">
+                </div>
+                <div class="grid-container grid-container-right">
+                    <svg class="inner-grid-button grid-container-center"
+                        onclick="displayPreviousOrientierung()" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 64">
+                        <polyline points="24,8 0,32 24,56" />
+                    </svg>
+                    <div class="grid-item-solid"><img id="orientierungImg"
+                            src="./images/automobile-2823855_640.webp" alt="orientierungImg">
+                    </div>
+                    <svg class="inner-grid-button grid-container-center"
+                        onclick="displayNextOrientierung()" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 64">
+                        <polyline points="0,8 24,32 0,56" />
+                    </svg>
+                </div>
+                <button id='captcha-confirm-button' onclick="checkOrientierung()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha 10 Karten
+        name: 'Karten',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Klicken sie auf das Ende des Pfades!</p>
+                <img id="kartenCaptchaImg" src="./images/kartenCaptchaImg.webp" alt="Karten Captcha Bild"
+                    usemap="#image-map">
+                <map name="image-map">
+                    <area shape="circle" coords="225,255,16" onclick="checkKarte()">
+                </map>
+            </div>
+        `
+    },
+    { // captcha 11 Puzzleteil
+        name: 'Puzzleteil',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Ziehen Sie, das Puzzleteil an die richtige Stelle!</p>
+                <div draggable="true" ondragstart="dragStart(event)"
+                    class="grid-container-center grid-container-middle"><img src="./images/puzzlePiece.webp"
+                        alt="Puzzle Piece" id="puzzle-piece">
+                </div>
+                <img id="kartenCaptchaImg" src="./images/puzzleImg.webp" alt="Karten Captcha Bild"
+                    usemap="#image-map">
+                <map name="image-map">
+                    <area shape="circle" coords="47,232,24" ondrop="checkPuzzle(event)"
+                        ondragover="allowDrop(event)">
+                </map>
+            </div>
+        `
+    },
+    { // captcha 12 Paar
+        name: 'Paar',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Ziehe das linke Bild, das zum rechten Bild passt, auf das
+                    rechte Bild!</p>
+                <div class="inner-grid-container">
+                    <div draggable="true" ondragstart="dragStart(event)" class="inner-grid-item"><img
+                            src="./images/cat-5940147_640.webp" alt="Katze" id="cat-option">
+                    </div>
+                    <div draggable="true" ondragstart="dragStart(event)" class="inner-grid-item"><img
+                            src="./images/dodge-charger-1901806_640.webp" alt="Auto" id="car-option">
+                    </div>
+                    <div draggable="true" ondragstart="dragStart(event)" class="inner-grid-item"><img
+                            src="./images/bee-1276148_640.webp" alt="Biene" id="bee-option">
+                    </div>
+                </div>
+                <img class="grid-item-solid grid-container-right"
+                    src="./images/orange-flowers-8087066_640.webp" alt="Blumen" ondrop="checkPaar(event)"
+                    ondragover="allowDrop(event)">
+            </div>
+        `
     }
+];
+const orientierungPictures = [
+    "./images/automobile-2823855_640.webp", // orientierung 0
+    "./images/car-4716031_640.webp", // orientierung 1
+    "./images/dodge-charger-1901806_640.webp", // orientierung 2
+    "./images/dodge-charger-1901808_640.webp", // orientierung 3
+    "./images/race-car-7663135_640.webp", // orientierung 4
+    "./images/race-car-8146878_640.webp" // orientierung 5
 ];
 
 var currentHTML = 0;
+var currentOrientierung = 0;
 let selectedElements = [];
 
 function openTab(tabName) {
@@ -281,6 +372,59 @@ function checkVideoGimpy() {
     }
 }
 
+function checkOrientierung() {
+    if (currentOrientierung == 5) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
+function checkKarte() {
+    displayCorrectHTML();
+}
+
+function checkPuzzle(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    var draggedElement = document.getElementById(data);
+    if (draggedElement.id === "puzzle-piece") displayCorrectHTML();
+}
+
+function checkPaar(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    var draggedElement = document.getElementById(data);
+    if (draggedElement.id === "bee-option") displayCorrectHTML();
+    else displayFalse();
+}
+
+function dragStart(event) {
+    event.dataTransfer.setData("text", event.target.id);
+}
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function displayPreviousOrientierung() {
+    currentOrientierung--
+    displayOrientierung(currentOrientierung);
+}
+
+function displayNextOrientierung() {
+    currentOrientierung++
+    displayOrientierung(currentOrientierung);
+}
+
+function displayOrientierung(tempCurrent) {
+    currentOrientierung = tempCurrent
+    if (currentOrientierung < 0) currentOrientierung = orientierungPictures.length - 1;
+    else if (currentOrientierung >= orientierungPictures.length) currentOrientierung = 0;
+    const imgDiv = document.getElementById('orientierungImg');
+    imgDiv.src = orientierungPictures[currentOrientierung];
+}
+
 function displayPreviousHTML() {
     currentHTML--
     displayHTML(currentHTML);
@@ -297,6 +441,7 @@ function displayHTML(tempCurrent) {
     if (currentHTML < 1) currentHTML = captchaHTML.length - 1;
     else if (currentHTML >= captchaHTML.length) currentHTML = 1;
     selectedElements = 0;
+    currentOrientierung = 0;
     const nameDiv = document.getElementById('captcha-name-text');
     const captchaDiv = document.getElementById('captcha');
     nameDiv.textContent = captchaHTML[currentHTML].name;

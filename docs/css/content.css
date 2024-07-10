@@ -66,12 +66,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0px;
+    max-width: var(--xxx-huge);
 }
 
 .inner-grid-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 0px;
+    margin: var(--small);
 }
 
 .inner-2-collum-grid-container {
@@ -104,7 +106,17 @@
     transition: transform 0.3s ease;
 }
 
-.grid-item img {
+.grid-item-solid {
+    width: var(--huge);
+    height: var(--huge);
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
+    user-select: none;
+}
+
+.grid-item img,
+.grid-item-solid img {
     width: var(--huge);
     height: var(--huge);
     object-fit: cover;
@@ -125,12 +137,32 @@
     object-fit: cover;
 }
 
+.inner-grid-button {
+    width: var(--xl);
+    height: var(--xl);
+    background-color: transparent;
+    cursor: pointer;
+    fill: none;
+    stroke: var(--mi-lila);
+    stroke-width: var(--xs);
+    content: justify;
+}
+
+.grid-container-middle {
+    grid-column: 2;
+}
+
 .grid-container-right {
     grid-column: 3;
 }
 
 .grid-container-start {
     justify-self: start;
+}
+
+.grid-container-center {
+    justify-self: center;
+    align-self: center;
 }
 
 .grid-container-end {
@@ -166,6 +198,17 @@
     margin: var(--small);
     justify-self: center;
     align-self: center;
+}
+
+#kartenCaptchaImg {
+    grid-column: span 3;
+    width: 384px;
+    height: 384px;
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
+    object-fit: cover;
+    user-select: none;
 }
 
 #answerInput {
@@ -242,12 +285,12 @@
     text-align: center;
     color: var(--mi-schwarz);
     background-color: unset;
-    cursor: pointer;
     padding-left: var(--xs);
     padding-right: var(--xs);
     border-bottom: var(--xxs) solid var(--mi-blau);
     margin-top: 0;
     margin-bottom: var(--small);
+    cursor: pointer;
     user-select: none;
 }
 
