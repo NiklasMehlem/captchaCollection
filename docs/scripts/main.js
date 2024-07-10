@@ -182,15 +182,38 @@ const captchaHTML = [
             <div class="grid-container">
                 <p id="captcha-container-header">Ziehen Sie, das Puzzleteil an die richtige Stelle!</p>
                 <div draggable="true" ondragstart="dragStart(event)"
-                    class="grid-container-center grid-container-middle"><img src="./images/PuzzlePiece.webp"
+                    class="grid-container-center grid-container-middle"><img src="./images/puzzlePiece.webp"
                         alt="Puzzle Piece" id="puzzle-piece">
                 </div>
-                <img id="kartenCaptchaImg" src="./images/PuzzleImg.webp" alt="Karten Captcha Bild"
+                <img id="kartenCaptchaImg" src="./images/puzzleImg.webp" alt="Karten Captcha Bild"
                     usemap="#image-map">
                 <map name="image-map">
                     <area shape="circle" coords="47,232,24" ondrop="checkPuzzle(event)"
                         ondragover="allowDrop(event)">
                 </map>
+            </div>
+        `
+    },
+    { // captcha 12 Paar
+        name: 'Paar',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Ziehe das linke Bild, das zum rechten Bild passt, auf das
+                    rechte Bild!</p>
+                <div class="inner-grid-container">
+                    <div draggable="true" ondragstart="dragStart(event)" class="inner-grid-item"><img
+                            src="./images/cat-5940147_640.webp" alt="Katze" id="cat-option">
+                    </div>
+                    <div draggable="true" ondragstart="dragStart(event)" class="inner-grid-item"><img
+                            src="./images/dodge-charger-1901806_640.webp" alt="Auto" id="car-option">
+                    </div>
+                    <div draggable="true" ondragstart="dragStart(event)" class="inner-grid-item"><img
+                            src="./images/bee-1276148_640.webp" alt="Biene" id="bee-option">
+                    </div>
+                </div>
+                <img class="grid-item-solid grid-container-right"
+                    src="./images/orange-flowers-8087066_640.webp" alt="Blumen" ondrop="checkPaar(event)"
+                    ondragover="allowDrop(event)">
             </div>
         `
     }
@@ -366,6 +389,14 @@ function checkPuzzle(event) {
     var data = event.dataTransfer.getData("text");
     var draggedElement = document.getElementById(data);
     if (draggedElement.id === "puzzle-piece") displayCorrectHTML();
+}
+
+function checkPaar(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    var draggedElement = document.getElementById(data);
+    if (draggedElement.id === "bee-option") displayCorrectHTML();
+    else displayFalse();
 }
 
 function dragStart(event) {
