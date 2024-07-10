@@ -147,6 +147,10 @@
     content: justify;
 }
 
+.grid-container-middle {
+    grid-column: 2;
+}
+
 .grid-container-right {
     grid-column: 3;
 }

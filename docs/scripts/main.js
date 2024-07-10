@@ -175,6 +175,24 @@ const captchaHTML = [
                 </map>
             </div>
         `
+    },
+    { // captcha 11 Puzzleteil
+        name: 'Puzzleteil',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Ziehen Sie, das Puzzleteil an die richtige Stelle!</p>
+                <div draggable="true" ondragstart="dragStart(event)"
+                    class="grid-container-center grid-container-middle"><img src="./images/PuzzlePiece.webp"
+                        alt="Puzzle Piece" id="puzzle-piece">
+                </div>
+                <img id="kartenCaptchaImg" src="./images/PuzzleImg.webp" alt="Karten Captcha Bild"
+                    usemap="#image-map">
+                <map name="image-map">
+                    <area shape="circle" coords="47,232,24" ondrop="checkPuzzle(event)"
+                        ondragover="allowDrop(event)">
+                </map>
+            </div>
+        `
     }
 ];
 const orientierungPictures = [
@@ -341,6 +359,21 @@ function checkOrientierung() {
 
 function checkKarte() {
     displayCorrectHTML();
+}
+
+function checkPuzzle(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    var draggedElement = document.getElementById(data);
+    if (draggedElement.id === "puzzle-piece") displayCorrectHTML();
+}
+
+function dragStart(event) {
+    event.dataTransfer.setData("text", event.target.id);
+}
+
+function allowDrop(event) {
+    event.preventDefault();
 }
 
 function displayPreviousOrientierung() {
