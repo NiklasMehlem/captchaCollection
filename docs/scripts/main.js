@@ -1,5 +1,5 @@
 const captchaHTML = [
-    { // captcha 0
+    { // captcha 0 Start Page
         name: 'Hier könnte ihr CAPTCHA STEHEN',
         html: `
             <div class="grid-container">
@@ -125,7 +125,8 @@ const captchaHTML = [
         name: 'Video Gimpy',
         html: `
             <div class="grid-container">
-                <p id="captcha-container-header">Bitte geben sie den ROTEN Text aus dem Video unten ein!</p>
+                <p id="captcha-container-header">Bitte geben Sie den ROTEN Text aus dem Video unten ein!<br>
+                    (Das Video kann einen Moment zum Laden benötigen.)</p>
                 <video autoplay muted loop id="videoCaptchaVideo">
                     <source src="./videos/FullVideoCaptchaLight.webm" type="video/webm">
                     Your browser does not support the audio element.
@@ -167,7 +168,7 @@ const captchaHTML = [
         name: 'Karten',
         html: `
             <div class="grid-container">
-                <p id="captcha-container-header">Klicken sie auf das Ende des Pfades!</p>
+                <p id="captcha-container-header">Klicken Sie auf das Ende des Pfades!</p>
                 <img id="kartenCaptchaImg" src="./images/kartenCaptchaImg.webp" alt="Karten Captcha Bild"
                     usemap="#image-map">
                 <map name="image-map">
@@ -198,7 +199,7 @@ const captchaHTML = [
         name: 'Paar',
         html: `
             <div class="grid-container">
-                <p id="captcha-container-header">Ziehe das linke Bild, das zum rechten Bild passt, auf das
+                <p id="captcha-container-header">Ziehen Sie das linke Bild, das zum rechten Bild passt, auf das
                     rechte Bild!</p>
                 <div class="inner-grid-container">
                     <div draggable="true" ondragstart="dragStart(event)" class="inner-grid-item"><img
@@ -214,6 +215,18 @@ const captchaHTML = [
                 <img class="grid-item-solid grid-container-right"
                     src="./images/orange-flowers-8087066_640.webp" alt="Blumen" ondrop="checkPaar(event)"
                     ondragover="allowDrop(event)">
+            </div>
+        `
+    },
+    { // captcha 13 Nutzerverhalten
+        name: 'Nutzerverhalten',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header"> <input id='nutzerverhaltenCheckbox'
+                    class="grid-container-center grid-container-middle" type='checkbox'
+                    onclick="displayCorrectHTML()" /> <label for="nutzerverhaltenCheckbox"> Bestätigen
+                    sie, dass sie kein Bot sind!</label>
+                </p>
             </div>
         `
     }

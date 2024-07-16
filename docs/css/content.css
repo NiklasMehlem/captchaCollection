@@ -91,7 +91,6 @@
     color: var(--mi-weiß);
     background-color: var(--mi-blau);
     align-self: center;
-    cursor: pointer;
     user-select: none;
 }
 
