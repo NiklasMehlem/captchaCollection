@@ -210,6 +210,29 @@
     user-select: none;
 }
 
+.progressbar {
+    grid-column: span 3;
+    position: relative;
+    max-width: var(--xx-huge);
+    width: 100%;
+    margin: var(--medium);
+    height: var(--medium);
+    background: var(--mi-grau);
+    overflow: hidden;
+    justify-self: center;
+    align-self: center;
+  }
+  
+  span.progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: var(--mi-gruen);
+    transition: all .3s;
+  }
+
 #answerInput {
     grid-column: span 2;
     font-size: var(--small);

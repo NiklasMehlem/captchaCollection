@@ -229,6 +229,17 @@ const captchaHTML = [
                 </p>
             </div>
         `
+    },
+    { // captcha 14 Kryptografie
+        name: 'Kryptografie',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Es wird überprüft ob sie ein Bot sind...</p>
+                <div class="progressbar">
+                    <span class="progress"></span>
+                </div>
+            </div>
+        `
     }
 ];
 const orientierungPictures = [
@@ -242,6 +253,7 @@ const orientierungPictures = [
 
 var currentHTML = 0;
 var currentOrientierung = 0;
+var counter_value = 0
 let selectedElements = [];
 
 function openTab(tabName) {
@@ -455,8 +467,25 @@ function displayHTML(tempCurrent) {
     else if (currentHTML >= captchaHTML.length) currentHTML = 1;
     selectedElements = 0;
     currentOrientierung = 0;
+    counter_value = 0;
     const nameDiv = document.getElementById('captcha-name-text');
     const captchaDiv = document.getElementById('captcha');
     nameDiv.textContent = captchaHTML[currentHTML].name;
     captchaDiv.innerHTML = captchaHTML[currentHTML].html;
+    console.log("CurrentHTML: " + currentHTML)
+    if (currentHTML == 14) {
+        var progress = document.querySelector('.progressbar .progress');
+
+        function counterInit(fValue, lValue) {
+            counter_value++;
+
+            if (counter_value >= fValue && counter_value <= lValue) {
+                progress.style.width = counter_value + '%';
+                setTimeout(function () { counterInit(fValue, lValue); }, 50);
+            } else {
+                displayCorrectHTML();
+            }
+        }
+        counterInit(0, 100);
+    }
 }
