@@ -1,5 +1,5 @@
 const captchaHTML = [
-    { // captcha 0
+    { // captcha 0 Start Page
         name: 'Hier könnte ihr CAPTCHA STEHEN',
         html: `
             <div class="grid-container">
@@ -125,7 +125,8 @@ const captchaHTML = [
         name: 'Video Gimpy',
         html: `
             <div class="grid-container">
-                <p id="captcha-container-header">Bitte geben sie den ROTEN Text aus dem Video unten ein!</p>
+                <p id="captcha-container-header">Bitte geben Sie den ROTEN Text aus dem Video unten ein!<br>
+                    (Das Video kann einen Moment zum Laden benötigen.)</p>
                 <video autoplay muted loop id="videoCaptchaVideo">
                     <source src="./videos/FullVideoCaptchaLight.webm" type="video/webm">
                     Your browser does not support the audio element.
@@ -167,7 +168,7 @@ const captchaHTML = [
         name: 'Karten',
         html: `
             <div class="grid-container">
-                <p id="captcha-container-header">Klicken sie auf das Ende des Pfades!</p>
+                <p id="captcha-container-header">Klicken Sie auf das Ende des Pfades!</p>
                 <img id="kartenCaptchaImg" src="./images/kartenCaptchaImg.webp" alt="Karten Captcha Bild"
                     usemap="#image-map">
                 <map name="image-map">
@@ -198,7 +199,7 @@ const captchaHTML = [
         name: 'Paar',
         html: `
             <div class="grid-container">
-                <p id="captcha-container-header">Ziehe das linke Bild, das zum rechten Bild passt, auf das
+                <p id="captcha-container-header">Ziehen Sie das linke Bild, das zum rechten Bild passt, auf das
                     rechte Bild!</p>
                 <div class="inner-grid-container">
                     <div draggable="true" ondragstart="dragStart(event)" class="inner-grid-item"><img
@@ -216,6 +217,29 @@ const captchaHTML = [
                     ondragover="allowDrop(event)">
             </div>
         `
+    },
+    { // captcha 13 Nutzerverhalten
+        name: 'Nutzerverhalten',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header"> <input id='nutzerverhaltenCheckbox'
+                    class="grid-container-center grid-container-middle" type='checkbox'
+                    onclick="displayCorrectHTML()" /> <label for="nutzerverhaltenCheckbox"> Bestätigen
+                    sie, dass sie kein Bot sind!</label>
+                </p>
+            </div>
+        `
+    },
+    { // captcha 14 Kryptografie
+        name: 'Kryptografie',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Es wird überprüft ob sie ein Bot sind...</p>
+                <div class="progressbar">
+                    <span class="progress"></span>
+                </div>
+            </div>
+        `
     }
 ];
 const orientierungPictures = [
@@ -229,6 +253,7 @@ const orientierungPictures = [
 
 var currentHTML = 0;
 var currentOrientierung = 0;
+var counter_value = 0
 let selectedElements = [];
 
 function openTab(tabName) {
@@ -442,8 +467,25 @@ function displayHTML(tempCurrent) {
     else if (currentHTML >= captchaHTML.length) currentHTML = 1;
     selectedElements = 0;
     currentOrientierung = 0;
+    counter_value = 0;
     const nameDiv = document.getElementById('captcha-name-text');
     const captchaDiv = document.getElementById('captcha');
     nameDiv.textContent = captchaHTML[currentHTML].name;
     captchaDiv.innerHTML = captchaHTML[currentHTML].html;
+    console.log("CurrentHTML: " + currentHTML)
+    if (currentHTML == 14) {
+        var progress = document.querySelector('.progressbar .progress');
+
+        function counterInit(fValue, lValue) {
+            counter_value++;
+
+            if (counter_value >= fValue && counter_value <= lValue) {
+                progress.style.width = counter_value + '%';
+                setTimeout(function () { counterInit(fValue, lValue); }, 50);
+            } else {
+                displayCorrectHTML();
+            }
+        }
+        counterInit(0, 100);
+    }
 }

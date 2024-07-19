@@ -36,6 +36,12 @@ a {
     text-decoration: none;
 }
 
+input[type="checkbox"] {
+    transform: scale(2.5);
+    margin: var(--small);
+    cursor: pointer;
+}
+
 #mainSite {
     width: 100%;
     min-height: 100vh;
