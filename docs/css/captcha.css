@@ -129,6 +129,13 @@
     align-self: center;
 }
 
+#pixAudioCaptchaAudio {
+    grid-column: span 2;
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
+}
+
 #videoCaptchaVideo {
     grid-column: span 3;
     width: 90%;

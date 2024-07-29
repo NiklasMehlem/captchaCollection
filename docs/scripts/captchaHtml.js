@@ -37,7 +37,7 @@ const captchaHTML = [
         `
     },
     { // captcha 3 Gesprochene Zeichen/ Wörter
-        name: 'Gesprochene Zeichen/ Wörter',
+        name: 'Gesprochene Zeichen / Wörter',
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Bitte geben sie das gesprochene Wort unten ein!</p>
@@ -56,6 +56,22 @@ const captchaHTML = [
             <div class="grid-container">
                 <p id="captcha-container-header">Bitte geben sie unten ein, welches Tier sie hören!</p>
                 <audio controls id="audioCaptchaAudio">
+                    <source src="./sounds/bird-voices-7716.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkSound()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha 5 Pix-Audio
+        name: 'Pix-Audio',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte geben sie unten ein, um welches Tier es sich hier handelt!</p>
+                <div class="grid-item-solid"><img src="./images/birds-6525352_640.webp" alt="refrenceImg">
+                </div>
+                <audio controls id="pixAudioCaptchaAudio">
                     <source src="./sounds/bird-voices-7716.mp3" type="audio/mp3">
                     Your browser does not support the audio element.
                 </audio>
@@ -246,8 +262,13 @@ const captchaHTML = [
 var currentHTML = 0;
 
 function displayHTML(tempCurrent) {
-    currentHTML = tempCurrent
-    //console.log("currentHTML: " + currentHTML)
+    if (tempCurrent != null) {
+        var currentName = tempCurrent;
+        for (currentHTML = 1; currentHTML < captchaHTML.length; currentHTML++) {
+            if (currentName === captchaHTML[currentHTML].name) break;
+        }
+    }
+
     if (currentHTML < 1) currentHTML = captchaHTML.length - 1;
     else if (currentHTML >= captchaHTML.length) currentHTML = 1;
     selectedElements = 0;
@@ -257,8 +278,7 @@ function displayHTML(tempCurrent) {
     const captchaDiv = document.getElementById('captcha');
     nameDiv.textContent = captchaHTML[currentHTML].name;
     captchaDiv.innerHTML = captchaHTML[currentHTML].html;
-    //console.log("CurrentHTML: " + currentHTML)
-    if (currentHTML == 14) {
+    if (captchaHTML[currentHTML].name == 'Kryptografie') {
         var progress = document.querySelector('.progressbar .progress');
 
         function counterInit(fValue, lValue) {
@@ -277,10 +297,10 @@ function displayHTML(tempCurrent) {
 
 function displayPreviousHTML() {
     currentHTML--
-    displayHTML(currentHTML);
+    displayHTML();
 }
 
 function displayNextHTML() {
     currentHTML++
-    displayHTML(currentHTML);
+    displayHTML();
 }
