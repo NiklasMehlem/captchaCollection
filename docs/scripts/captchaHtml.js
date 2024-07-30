@@ -64,7 +64,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 5 Pix-Audio
+    { // captcha - 5 - Pix-Audio
         name: 'Pix-Audio',
         html: `
             <div class="grid-container">
@@ -80,7 +80,22 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 5 Text
+    { // captcha 6 Akronym
+        name: 'Akronym',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte geben sie die Anfangsbuchstaben aller Wörter des Spruches unten ein!</p>
+                <img id="textCaptchaImg" src="./images/acronymCaptchaImg.webp" alt="TextCAPTCHAImage">
+                <audio controls id="audioCaptchaAudio">
+                    <source src="./sounds/merry-christmas-38071.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkAkronym()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha Text
         name: 'Text',
         html: `
             <div class="grid-container">
@@ -90,7 +105,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 6 Mathe
+    { // captcha Mathe
         name: 'Mathe',
         html: `
             <div class="grid-container">
@@ -100,7 +115,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 7 Bongo
+    { // captcha Bongo
         name: 'Bongo',
         html: `
             <div class="grid-container">
@@ -137,7 +152,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 8 Video Gimpy
+    { // captcha - 10 - Video Gimpy
         name: 'Video Gimpy',
         html: `
             <div class="grid-container">
@@ -152,7 +167,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 9 Orientierung
+    { // captcha Orientierung
         name: 'Orientierung',
         html: `
             <div class="grid-container">
@@ -180,7 +195,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 10 Karten
+    { // captcha Karten
         name: 'Karten',
         html: `
             <div class="grid-container">
@@ -193,7 +208,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 11 Puzzleteil
+    { // captcha Puzzleteil
         name: 'Puzzleteil',
         html: `
             <div class="grid-container">
@@ -211,7 +226,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 12 Paar
+    { // captcha Paar
         name: 'Paar',
         html: `
             <div class="grid-container">
@@ -234,7 +249,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 13 Nutzerverhalten
+    { // captcha - 15 - Nutzerverhalten
         name: 'Nutzerverhalten',
         html: `
             <div class="grid-container">
@@ -246,7 +261,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha 14 Kryptografie
+    { // captcha Kryptografie
         name: 'Kryptografie',
         html: `
             <div class="grid-container">

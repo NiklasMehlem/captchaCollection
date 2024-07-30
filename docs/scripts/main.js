@@ -179,6 +179,17 @@ function checkPaar(event) {
     else displayFalse();
 }
 
+function checkAkronym() {
+    const correctAnswer = "mc";
+    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
+
+    if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
 function dragStart(event) {
     event.dataTransfer.setData("text", event.target.id);
 }
