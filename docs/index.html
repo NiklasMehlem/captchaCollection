@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/menu.css" />
     <link rel="stylesheet" href="./css/content.css" />
+    <link rel="stylesheet" href="./css/captcha.css" />
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/captchaHtml.js"></script>
 </head>
 
 <body>
@@ -20,46 +22,53 @@
             <div id="menu-list">
                 <ul>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(1)">Bilderkennungstests</p>
+                        <p id="menu-list-text" onclick="displayHTML('Bilderkennungstests')">Bilderkennungstests</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(2)">Gimpy</p>
+                        <p id="menu-list-text" onclick="displayHTML('Gimpy')">Gimpy</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(3)">Gesprochene Zeichen / Wörter</p>
+                        <p id="menu-list-text" onclick="displayHTML('Gesprochene Zeichen / Wörter')">Gesprochene Zeichen
+                            / Wörter</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(4)">Geräuscherkennung</p>
+                        <p id="menu-list-text" onclick="displayHTML('Geräuscherkennung')">Geräuscherkennung</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(5)">Text</p>
+                        <p id="menu-list-text" onclick="displayHTML('Pix-Audio')">Pix-Audio</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(6)">Mathe</p>
+                        <p id="menu-list-text" onclick="displayHTML('Akronym')">Akronym</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(7)">Bongo</p>
+                        <p id="menu-list-text" onclick="displayHTML('Text')">Text</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(8)">Video Gimpy</p>
+                        <p id="menu-list-text" onclick="displayHTML('Mathe')">Mathe</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(9)">Orientierung</p>
+                        <p id="menu-list-text" onclick="displayHTML('Bongo')">Bongo</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(10)">Karten</p>
+                        <p id="menu-list-text" onclick="displayHTML('Video Gimpy')">Video Gimpy</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(11)">Puzzleteil</p>
+                        <p id="menu-list-text" onclick="displayHTML('Orientierung')">Orientierung</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(12)">Paar</p>
+                        <p id="menu-list-text" onclick="displayHTML('Karten')">Karten</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(13)">Nutzerverhalten</p>
+                        <p id="menu-list-text" onclick="displayHTML('Puzzleteil')">Puzzleteil</p>
                     </li>
                     <li>
-                        <p id="menu-list-text" onclick="displayHTML(14)">Kryptografie</p>
+                        <p id="menu-list-text" onclick="displayHTML('Paar')">Paar</p>
+                    </li>
+                    <li>
+                        <p id="menu-list-text" onclick="displayHTML('Nutzerverhalten')">Nutzerverhalten</p>
+                    </li>
+                    <li>
+                        <p id="menu-list-text" onclick="displayHTML('Kryptografie')">Kryptografie</p>
                     </li>
                 </ul>
             </div>

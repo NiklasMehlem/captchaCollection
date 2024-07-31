@@ -1,0 +1,210 @@
+@import url(./var.css);
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    max-width: var(--xxx-huge);
+}
+
+.inner-grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0px;
+    margin: var(--small);
+}
+
+.inner-2-collum-grid-container {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    grid-gap: 0px;
+}
+
+#captcha-container-header {
+    grid-column: span 3;
+    padding: var(--small);
+    margin: var(--small);
+    color: var(--mi-weiß);
+    background-color: var(--mi-blau);
+    align-self: center;
+    user-select: none;
+}
+
+.grid-item {
+    width: var(--huge);
+    height: var(--huge);
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.grid-item-solid {
+    width: var(--huge);
+    height: var(--huge);
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
+    user-select: none;
+}
+
+.grid-item img,
+.grid-item-solid img {
+    width: var(--huge);
+    height: var(--huge);
+    object-fit: cover;
+}
+
+.inner-grid-item {
+    width: var(--xxl);
+    height: var(--xxl);
+    margin: var(--xxs);
+    justify-self: center;
+    align-self: center;
+    user-select: none;
+}
+
+.inner-grid-item img {
+    width: var(--xxl);
+    height: var(--xxl);
+    object-fit: cover;
+}
+
+.inner-grid-button {
+    width: var(--xl);
+    height: var(--xl);
+    background-color: transparent;
+    cursor: pointer;
+    fill: none;
+    stroke: var(--mi-lila);
+    stroke-width: var(--xs);
+    content: justify;
+}
+
+.grid-container-middle {
+    grid-column: 2;
+}
+
+.grid-container-right {
+    grid-column: 3;
+}
+
+.grid-container-start {
+    justify-self: start;
+}
+
+.grid-container-center {
+    justify-self: center;
+    align-self: center;
+}
+
+.grid-container-end {
+    justify-self: end;
+}
+
+.selected {
+    transform: scale(0.75);
+
+}
+
+#textCaptchaImg {
+    grid-column: span 3;
+    width: var(--xx-huge);
+    height: var(--huge);
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
+    object-fit: cover;
+    user-select: none;
+}
+
+#audioCaptchaAudio {
+    grid-column: span 3;
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
+}
+
+#pixAudioCaptchaAudio {
+    grid-column: span 2;
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
+}
+
+#videoCaptchaVideo {
+    grid-column: span 3;
+    width: 90%;
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
+}
+
+#kartenCaptchaImg {
+    grid-column: span 3;
+    width: 384px;
+    height: 384px;
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
+    object-fit: cover;
+    user-select: none;
+}
+
+.progressbar {
+    grid-column: span 3;
+    position: relative;
+    max-width: var(--xx-huge);
+    width: 100%;
+    margin: var(--medium);
+    height: var(--medium);
+    background: var(--mi-grau);
+    overflow: hidden;
+    justify-self: center;
+    align-self: center;
+}
+
+span.progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: var(--mi-gruen);
+    transition: all .3s;
+}
+
+#answerInput {
+    grid-column: span 2;
+    font-size: var(--small);
+    padding: var(--xxs) var(--xs);
+    margin: var(--small);
+    user-select: none;
+}
+
+#captcha-confirm-button {
+    grid-column: 3;
+    justify-self: end;
+    font-family: 'pt-sans';
+    font-size: var(--small);
+    color: var(--mi-weiß);
+    background-color: var(--mi-pink);
+    border: none;
+    padding: var(--xxs) var(--xs);
+    margin: var(--small);
+    cursor: pointer;
+    user-select: none;
+}
+
+.captcha-correct {
+    padding: var(--small);
+    margin: var(--small);
+    font-size: var(--medium);
+    text-align: center;
+    color: var(--mi-weiß);
+    background-color: var(--mi-gruen);
+}
