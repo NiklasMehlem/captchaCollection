@@ -136,6 +136,17 @@
     align-self: center;
 }
 
+#qrCaptchaImg {
+    grid-column: span 3;
+    width: var(--xx-huge);
+    height: var(--xx-huge);
+    margin: var(--small);
+    justify-self: center;
+    align-self: center;
+    object-fit: cover;
+    user-select: none;
+}
+
 #videoCaptchaVideo {
     grid-column: span 3;
     width: 90%;

@@ -1,4 +1,4 @@
-const captchaHTML = [
+const captchaHTML = [ /// img Alts richtig beschriften!
     { // captcha 0 Start Page
         name: 'Hier könnte ihr CAPTCHA STEHEN',
         html: `
@@ -95,6 +95,18 @@ const captchaHTML = [
             </div>
         `
     },
+    { // captcha QR-Code
+        name: 'QR-Code',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte scannen sie den QR-Code, um ihre Aufgabe zu erfahren!
+                </p>
+                <img id="qrCaptchaImg" src="./images/qrCode.svg" alt="QR Code">
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkQr()">Bestätigen</button>
+            </div>
+        `
+    },
     { // captcha Text
         name: 'Text',
         html: `
@@ -115,7 +127,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha Bongo
+    { // captcha - 10 - Bongo
         name: 'Bongo',
         html: `
             <div class="grid-container">
@@ -152,7 +164,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha - 10 - Video Gimpy
+    { // captcha Video Gimpy
         name: 'Video Gimpy',
         html: `
             <div class="grid-container">
@@ -226,7 +238,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha Paar
+    { // captcha - 15 - Paar
         name: 'Paar',
         html: `
             <div class="grid-container">
@@ -249,7 +261,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha - 15 - Nutzerverhalten
+    { // captcha Nutzerverhalten
         name: 'Nutzerverhalten',
         html: `
             <div class="grid-container">
