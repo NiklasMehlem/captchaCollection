@@ -127,7 +127,21 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `
     },
-    { // captcha - 10 - Bongo
+    { // captcha - 10 - Audio-Mathe
+        name: 'Audio-Mathe',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte geben sie die Antwort unten ein!</p>
+                <audio controls id="audioCaptchaAudio" autoplay>
+                    <source src="./sounds/luvvoice.com-audioMathe.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkAudioMathe()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha Bongo
         name: 'Bongo',
         html: `
             <div class="grid-container">
@@ -220,7 +234,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `
     },
-    { // captcha Puzzleteil
+    { // captcha - 15 - Puzzleteil
         name: 'Puzzleteil',
         html: `
             <div class="grid-container">
@@ -238,7 +252,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `
     },
-    { // captcha - 15 - Paar
+    { // captcha Paar
         name: 'Paar',
         html: `
             <div class="grid-container">

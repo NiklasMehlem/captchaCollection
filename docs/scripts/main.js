@@ -150,6 +150,17 @@ function checkMathe() {
     }
 }
 
+function checkAudioMathe() {
+    const correctAnswer = "15";
+    const correctAnswer2 = "fünfzehn";
+    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
+    if (userAnswer === correctAnswer || userAnswer === correctAnswer2) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
 function checkBongo() {
     const imgTR = document.getElementById('imgTR');
     const imgBL = document.getElementById('imgBL');
