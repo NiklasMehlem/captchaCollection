@@ -1,4 +1,4 @@
-const captchaHTML = [
+const captchaHTML = [ /// img Alts richtig beschriften!
     { // captcha 0 Start Page
         name: 'Hier könnte ihr CAPTCHA STEHEN',
         html: `
@@ -95,6 +95,18 @@ const captchaHTML = [
             </div>
         `
     },
+    { // captcha QR-Code
+        name: 'QR-Code',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte scannen sie den QR-Code, um ihre Aufgabe zu erfahren!
+                </p>
+                <img id="qrCaptchaImg" src="./images/qrCode.svg" alt="QR Code">
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkQr()">Bestätigen</button>
+            </div>
+        `
+    },
     { // captcha Text
         name: 'Text',
         html: `
@@ -112,6 +124,20 @@ const captchaHTML = [
                 <p id="captcha-container-header">Was ist neun + 11?<br>Bitte geben sie die Antwort unten ein!</p>
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkMathe()">Bestätigen</button>
+            </div>
+        `
+    },
+    { // captcha - 10 - Audio-Mathe
+        name: 'Audio-Mathe',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte geben sie die Antwort unten ein!</p>
+                <audio controls id="audioCaptchaAudio" autoplay>
+                    <source src="./sounds/luvvoice.com-audioMathe.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
+                <button id='captcha-confirm-button' onclick="checkAudioMathe()">Bestätigen</button>
             </div>
         `
     },
@@ -152,7 +178,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha - 10 - Video Gimpy
+    { // captcha Video Gimpy
         name: 'Video Gimpy',
         html: `
             <div class="grid-container">
@@ -208,7 +234,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha Puzzleteil
+    { // captcha - 15 - Puzzleteil
         name: 'Puzzleteil',
         html: `
             <div class="grid-container">
@@ -249,7 +275,7 @@ const captchaHTML = [
             </div>
         `
     },
-    { // captcha - 15 - Nutzerverhalten
+    { // captcha Nutzerverhalten
         name: 'Nutzerverhalten',
         html: `
             <div class="grid-container">

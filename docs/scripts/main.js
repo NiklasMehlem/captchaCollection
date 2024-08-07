@@ -106,6 +106,28 @@ function checkSound() {
     }
 }
 
+function checkAkronym() {
+    const correctAnswer = "mc";
+    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
+
+    if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
+function checkQr() {
+    const correctAnswer = "q4C4F4";
+    const userAnswer = document.getElementById("answerInput").value
+
+    if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
 function checkText() {
     const correctAnswer = "freitag";
     const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
@@ -120,6 +142,17 @@ function checkText() {
 function checkMathe() {
     const correctAnswer = "20";
     const correctAnswer2 = "zwanzig";
+    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
+    if (userAnswer === correctAnswer || userAnswer === correctAnswer2) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
+function checkAudioMathe() {
+    const correctAnswer = "15";
+    const correctAnswer2 = "fünfzehn";
     const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
     if (userAnswer === correctAnswer || userAnswer === correctAnswer2) {
         displayCorrectHTML();
@@ -177,17 +210,6 @@ function checkPaar(event) {
     var draggedElement = document.getElementById(data);
     if (draggedElement.id === "bee-option") displayCorrectHTML();
     else displayFalse();
-}
-
-function checkAkronym() {
-    const correctAnswer = "mc";
-    const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
-
-    if (userAnswer === correctAnswer) {
-        displayCorrectHTML();
-    } else {
-        displayFalse();
-    }
 }
 
 function dragStart(event) {
