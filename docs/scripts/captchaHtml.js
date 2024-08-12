@@ -269,9 +269,11 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                             src="./images/bee-1276148_640.webp" alt="Biene" id="bee-option">
                     </div>
                 </div>
-                <img class="grid-item-solid grid-container-right"
-                    src="./images/orange-flowers-8087066_640.webp" alt="Blumen" ondrop="checkPaar(event)"
-                    ondragover="allowDrop(event)">
+                <div class="grid-item-solid grid-container-right">
+                    <img
+                        src="./images/orange-flowers-8087066_640.webp" alt="Blumen" ondrop="checkPaar(event)"
+                        ondragover="allowDrop(event)">
+                </div>
             </div>
         `
     },

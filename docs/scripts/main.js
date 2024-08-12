@@ -11,6 +11,11 @@ var currentOrientierung = 0;
 var counter_value = 0
 let selectedElements = [];
 
+function toggleMenu() {
+    var sideMenu = document.querySelector('#menu');
+    sideMenu.classList.toggle('hidden'); // Toggle the 'hidden' class on the side menu
+}
+
 function openTab(tabName) {
     const eventTab = document.getElementById(tabName)
 
