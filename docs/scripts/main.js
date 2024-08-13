@@ -179,6 +179,17 @@ function checkBongo() {
     }
 }
 
+function checkDokumentCaptcha(answer) {
+    const correctAnswer = "A";
+    const userAnswer = answer;
+
+    if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
 function checkVideoGimpy() {
     const correctAnswer = "bVC-9";
     const userAnswer = document.getElementById("answerInput").value

@@ -189,6 +189,18 @@ span.progress {
     transition: all .3s;
 }
 
+.captcha-answer-button {
+    font-family: 'pt-sans';
+    font-size: var(--small);
+    color: var(--mi-weiß);
+    background-color: var(--mi-pink);
+    border: none;
+    padding: var(--xxs) var(--xs);
+    margin: var(--small);
+    cursor: pointer;
+    user-select: none;
+}
+
 #answerInput {
     grid-column: span 2;
     font-size: var(--small);

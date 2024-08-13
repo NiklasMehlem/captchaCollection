@@ -177,6 +177,21 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <button id='captcha-confirm-button' onclick="checkBongo()">Bestätigen</button>
             </div>
         `
+    }, 
+    { // captcha Dokument
+        name: 'Dokument',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Welcher der folgenden Sätze ist komisch?</p>
+                <audio controls id="audioCaptchaAudio">
+                    <source src="./sounds/luvvoice.com-dokument.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <button class='captcha-answer-button' onclick="checkDokumentCaptcha('A')">A</button>
+                <button class='captcha-answer-button' onclick="checkDokumentCaptcha('B')">B</button>
+                <button class='captcha-answer-button' onclick="checkDokumentCaptcha('C')">C</button>
+            </div>
+        `
     },
     { // captcha Video Gimpy
         name: 'Video Gimpy',
@@ -221,7 +236,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `
     },
-    { // captcha Karten
+    { // captcha - 15 - Karten
         name: 'Karten',
         html: `
             <div class="grid-container">
@@ -234,7 +249,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `
     },
-    { // captcha - 15 - Puzzleteil
+    { // captcha Puzzleteil
         name: 'Puzzleteil',
         html: `
             <div class="grid-container">
