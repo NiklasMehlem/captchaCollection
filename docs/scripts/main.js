@@ -11,6 +11,11 @@ var currentOrientierung = 0;
 var counter_value = 0
 let selectedElements = [];
 
+function toggleMenu() {
+    var sideMenu = document.querySelector('#menu');
+    sideMenu.classList.toggle('hidden');
+}
+
 function openTab(tabName) {
     const eventTab = document.getElementById(tabName)
 
@@ -42,6 +47,11 @@ function selectCaptcha() {
         selectedElements--;
     }
     console.log(selectedElements)
+}
+
+function toggleHiddenInput() {
+    var sideMenu = document.querySelector('#hidden-answerInput');
+    sideMenu.classList.toggle('revealed');
 }
 
 function displayCorrectHTML() { //// Code in Html machen?
@@ -174,6 +184,17 @@ function checkBongo() {
     }
 }
 
+function checkDokumentCaptcha(answer) {
+    const correctAnswer = "A";
+    const userAnswer = answer;
+
+    if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
+}
+
 function checkVideoGimpy() {
     const correctAnswer = "bVC-9";
     const userAnswer = document.getElementById("answerInput").value
@@ -210,6 +231,16 @@ function checkPaar(event) {
     var draggedElement = document.getElementById(data);
     if (draggedElement.id === "bee-option") displayCorrectHTML();
     else displayFalse();
+}
+
+function checkHoneypot() {
+    const correctAnswer = ""
+    const userAnswer = document.getElementById("hidden-answerInput").value
+    if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
 }
 
 function dragStart(event) {

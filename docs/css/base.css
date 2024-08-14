@@ -31,6 +31,11 @@ h2 {
     font-weight: bold;
 }
 
+h3 {
+    font-size: var(--small);
+    font-weight: bold;
+}
+
 a {
     font-size: var(--small);
     text-decoration: none;
@@ -47,7 +52,7 @@ input[type="checkbox"] {
     min-height: 100vh;
     display: flex;
     justify-content: flex-start;
-    column-gap: var(--xl);
+    column-gap: var(--medium);
     /*
     border-bottom: var(--xs) solid var(--mi-schwarz);
     */

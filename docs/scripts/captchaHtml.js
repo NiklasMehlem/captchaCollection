@@ -178,6 +178,21 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `
     },
+    { // captcha Dokument
+        name: 'Dokument',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Welcher der folgenden Sätze ist komisch?</p>
+                <audio controls id="audioCaptchaAudio">
+                    <source src="./sounds/luvvoice.com-dokument.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <button class='captcha-answer-button' onclick="checkDokumentCaptcha('A')">A</button>
+                <button class='captcha-answer-button' onclick="checkDokumentCaptcha('B')">B</button>
+                <button class='captcha-answer-button' onclick="checkDokumentCaptcha('C')">C</button>
+            </div>
+        `
+    },
     { // captcha Video Gimpy
         name: 'Video Gimpy',
         html: `
@@ -221,7 +236,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `
     },
-    { // captcha Karten
+    { // captcha - 15 - Karten
         name: 'Karten',
         html: `
             <div class="grid-container">
@@ -234,7 +249,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `
     },
-    { // captcha - 15 - Puzzleteil
+    { // captcha Puzzleteil
         name: 'Puzzleteil',
         html: `
             <div class="grid-container">
@@ -269,9 +284,11 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                             src="./images/bee-1276148_640.webp" alt="Biene" id="bee-option">
                     </div>
                 </div>
-                <img class="grid-item-solid grid-container-right"
-                    src="./images/orange-flowers-8087066_640.webp" alt="Blumen" ondrop="checkPaar(event)"
-                    ondragover="allowDrop(event)">
+                <div class="grid-item-solid grid-container-right">
+                    <img
+                        src="./images/orange-flowers-8087066_640.webp" alt="Blumen" ondrop="checkPaar(event)"
+                        ondragover="allowDrop(event)">
+                </div>
             </div>
         `
     },
@@ -295,6 +312,21 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <div class="progressbar">
                     <span class="progress"></span>
                 </div>
+            </div>
+        `
+    },
+    { // captcha - 20 - Honeypot
+        name: 'Honeypot',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte füllen sie alle Felder aus!</p>
+                <label class="inputLabel" for="input1">Vorname:</label>
+                <input type="text" id="input1" class="captchaInput" name="input1">
+                <label class="inputLabel" for="input2">Nachname:</label>
+                <input type="text" id="input2" class="captchaInput" name="input2">
+                <input type="text" id="hidden-answerInput" placeholder="7+13">
+                <button id='bot-vision-button' onclick="toggleHiddenInput()">Zeig was der Bot sieht</button>
+                <button id='captcha-confirm-button' onclick="checkHoneypot()">Bestätigen</button>
             </div>
         `
     }
@@ -328,7 +360,7 @@ function displayHTML(tempCurrent) {
             if (counter_value >= fValue && counter_value <= lValue) {
                 progress.style.width = counter_value + '%';
                 setTimeout(function () { counterInit(fValue, lValue); }, 50);
-            } else {
+            } else if (document.getElementById('captcha-name-text').textContent == 'Kryptografie') {
                 displayCorrectHTML();
             }
         }
