@@ -201,6 +201,52 @@ span.progress {
     user-select: none;
 }
 
+.inputLabel {
+    font-size: var(--small);
+    padding: var(--xxs) var(--xs);
+    margin: var(--small);
+    justify-self: start;
+    user-select: none;
+}
+
+.captchaInput {
+    grid-column: span 2;
+    font-size: var(--small);
+    padding: var(--xxs) var(--xs);
+    margin: var(--small);
+    user-select: none;
+}
+
+#hidden-answerInput {
+    font-size: var(--small);
+    padding: var(--xxs) var(--xs);
+    margin: var(--small);
+    color: var(--mi-weiß);
+    border: var(--mi-weiß);
+    user-select: none;
+    cursor: default;
+}
+
+#hidden-answerInput::placeholder {
+    color: var(--mi-weiß);
+}
+
+.revealed {
+    background-color: var(--mi-grau);
+}
+
+#bot-vision-button {
+    font-family: 'pt-sans';
+    font-size: var(--small);
+    color: var(--mi-weiß);
+    background-color: var(--mi-lila);
+    border: none;
+    padding: var(--xxs) var(--xs);
+    margin: var(--small);
+    cursor: pointer;
+    user-select: none;
+}
+
 #answerInput {
     grid-column: span 2;
     font-size: var(--small);

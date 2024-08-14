@@ -13,7 +13,7 @@ let selectedElements = [];
 
 function toggleMenu() {
     var sideMenu = document.querySelector('#menu');
-    sideMenu.classList.toggle('hidden'); // Toggle the 'hidden' class on the side menu
+    sideMenu.classList.toggle('hidden');
 }
 
 function openTab(tabName) {
@@ -47,6 +47,11 @@ function selectCaptcha() {
         selectedElements--;
     }
     console.log(selectedElements)
+}
+
+function toggleHiddenInput() {
+    var sideMenu = document.querySelector('#hidden-answerInput');
+    sideMenu.classList.toggle('revealed');
 }
 
 function displayCorrectHTML() { //// Code in Html machen?
@@ -226,6 +231,16 @@ function checkPaar(event) {
     var draggedElement = document.getElementById(data);
     if (draggedElement.id === "bee-option") displayCorrectHTML();
     else displayFalse();
+}
+
+function checkHoneypot() {
+    const correctAnswer = ""
+    const userAnswer = document.getElementById("hidden-answerInput").value
+    if (userAnswer === correctAnswer) {
+        displayCorrectHTML();
+    } else {
+        displayFalse();
+    }
 }
 
 function dragStart(event) {

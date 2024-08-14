@@ -177,7 +177,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <button id='captcha-confirm-button' onclick="checkBongo()">Bestätigen</button>
             </div>
         `
-    }, 
+    },
     { // captcha Dokument
         name: 'Dokument',
         html: `
@@ -314,6 +314,21 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 </div>
             </div>
         `
+    },
+    { // captcha - 20 - Honeypot
+        name: 'Honeypot',
+        html: `
+            <div class="grid-container">
+                <p id="captcha-container-header">Bitte füllen sie alle Felder aus!</p>
+                <label class="inputLabel" for="input1">Vorname:</label>
+                <input type="text" id="input1" class="captchaInput" name="input1">
+                <label class="inputLabel" for="input2">Nachname:</label>
+                <input type="text" id="input2" class="captchaInput" name="input2">
+                <input type="text" id="hidden-answerInput" placeholder="7+13">
+                <button id='bot-vision-button' onclick="toggleHiddenInput()">Zeig was der Bot sieht</button>
+                <button id='captcha-confirm-button' onclick="checkHoneypot()">Bestätigen</button>
+            </div>
+        `
     }
 ];
 
@@ -345,7 +360,7 @@ function displayHTML(tempCurrent) {
             if (counter_value >= fValue && counter_value <= lValue) {
                 progress.style.width = counter_value + '%';
                 setTimeout(function () { counterInit(fValue, lValue); }, 50);
-            } else {
+            } else if (document.getElementById('captcha-name-text').textContent == 'Kryptografie') {
                 displayCorrectHTML();
             }
         }
