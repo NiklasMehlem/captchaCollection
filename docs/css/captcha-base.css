@@ -1,0 +1,37 @@
+@import url(./var.css);
+
+.selected {
+    transform: scale(0.75);
+}
+
+
+#answerInput {
+    grid-column: span 2;
+    font-size: var(--small);
+    padding: var(--xxs) var(--xs);
+    margin: var(--small);
+    user-select: none;
+}
+
+#captcha-confirm-button {
+    grid-column: 3;
+    justify-self: end;
+    font-family: 'pt-sans';
+    font-size: var(--small);
+    color: var(--mi-weiß);
+    background-color: var(--mi-pink);
+    border: none;
+    padding: var(--xxs) var(--xs);
+    margin: var(--small);
+    cursor: pointer;
+    user-select: none;
+}
+
+.captcha-correct {
+    padding: var(--small);
+    margin: var(--small);
+    font-size: var(--medium);
+    text-align: center;
+    color: var(--mi-weiß);
+    background-color: var(--mi-gruen);
+}
