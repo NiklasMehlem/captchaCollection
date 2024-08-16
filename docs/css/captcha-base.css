@@ -4,7 +4,6 @@
     transform: scale(0.75);
 }
 
-
 #answerInput {
     grid-column: span 2;
     font-size: var(--small);
