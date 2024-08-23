@@ -23,6 +23,18 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <div class="grid-item" onclick="selectCaptcha()"><img src="./images/dogs-8613175_640.webp" alt="Image 9"></div>
                 <button id="captcha-confirm-button"onclick="checkBilderkennungstests()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Bei dieser Methode bekommt ein*e Nutzer*in eine
+            Sammlung von Bildern vorgesetzt. Ziel ist es nun alle Bilder mit einem bestimmten Merkmal zu
+            markieren. Alternativ gibt es auch Ansätze bei denen ein Bild in mehrere Teile aufgeteilt
+            wird. In dem Fall besteht die Aufgabe darin, alle Teile die ein bestimmtes Merkmal teilen
+            auszuwählen. Der Ansatz des Bilderkennungstests ist die am weitesten verbreitete Methode mit
+            vielen Optionen an Anbietern. hCaptcha bietet bei seiner Version die Möglichkeit einen
+            Accessibility-Cookie zu setzen, um Barrierearme Versionen von Bilderkennungstests zu
+            erhalten oder das CAPTCHA komplett zu umgehen, je nach Implementierung. Google gibt zudem an, die
+            Lösungen von reCAPTCHAs Bilderkennungstests zu nutzen um seine eigenen Dienste wie Google
+            Maps zu verbessern oder Texte aus Büchern zu digitalisieren.
         `
     },
     { // captcha 2 Gimpy
@@ -349,9 +361,11 @@ function displayHTML(tempCurrent) {
     counter_value = 0;
     const nameDiv = document.getElementById('captcha-name-text');
     const captchaDiv = document.getElementById('captcha');
+    const descriptionP = document.getElementById('description');
     nameDiv.textContent = captchaHTML[currentHTML].name;
     captchaDiv.innerHTML = captchaHTML[currentHTML].html;
-    if (captchaHTML[currentHTML].name == 'Kryptografie') {
+    descriptionP.textContent = captchaHTML[currentHTML].description;
+    if (captchaHTML[currentHTML].name == 'Kryptografie') { //aktiviert Kryptographie CAPTCHA
         var progress = document.querySelector('.progressbar .progress');
 
         function counterInit(fValue, lValue) {
