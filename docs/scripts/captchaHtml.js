@@ -46,9 +46,20 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkGimpy()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Gimpy CAPTCHAs sind nach dem ersten ihrer Art
+            benannt worden und werden auch als Text-CAPTCHAs bezeichnet. Hierbei wird ein Bild mit
+            verzehrten Zeichen angezeigt, sei dies ein Wort oder eine zufällige Abfolge von Zeichen. Um
+            das CAPTCHA zu lösen müssen die Zeichen erkannt und korrekt angegeben werden. Solve Media
+            verwendet zudem einen leicht anderen Ansatz. Anstelle von
+            verzehrten Zeichen, wird Werbung angezeigt, dessen Aussage man eintippen muss. Solve Media
+            ist ein Online-Marketing Unternehmen, aber hat den Anreiz seine
+            CAPTCHAs/Type-INs sicher gegen Bots zu entwickeln, so dass Werbende nur für Engagement von
+            echten Nutzer*innen zahlen.
         `
     },
-    { // captcha 3 Gesprochene Zeichen/ Wörter
+    { // captcha 3 Gesprochene Zeichen / Wörter
         name: 'Gesprochene Zeichen / Wörter',
         html: `
             <div class="grid-container">
@@ -60,6 +71,15 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkAudioWord()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Die meisten gefundenen Audio CAPTCHAs nutzen diese
+            Methode. Hierbei spricht eine Stimme eine Reihe von Zeichen oder Wörtern aus. Das Audio ist
+            dabei mit verschiedensten Geräuschen und Effekten verzehrt um es Bots schwerer zu machen das
+            Gesprochene zu erkennen. Um das CAPTCHA zu lösen muss der gesprochene Text verstanden und in
+            ein Feld eingetippt werden. Studien haben bereits gezeigt, dass diese Methode nicht gut in
+            seiner bisherigen Form funktioniert. So lag die Erfolgsquote von Nutzer*innen mit
+            Sehbehinderung bei reCAPTCHAs Audio Methode bei 46%.
         `
     },
     { // captcha 4 Geräuscherkennung
@@ -74,6 +94,13 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkSound()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Ein weiterer Ansatz ist es für ein Audio CAPTCHA
+            Geräusche zu verwenden. Zum Beispiel wird Vogelzwitschern abgespielt und der Nutzer oder die
+            Nutzerin muss nun erkennen, zu welchem Tier dieses Geräusch gehört. Die Audio Version von
+            Arkose Labs nutzt diese Methode in dem sie Aufgaben stellen wie: 'Welche Option ist das
+            Geräusch einer Katze?' und dann drei Geräusche hintereinander abspielt.
         `
     },
     { // captcha - 5 - Pix-Audio
@@ -90,6 +117,15 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkSound()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Die Idee dieses Ansatzes ist es die Bild- und
+            Geräuscherkennungs Methode zu kombinieren. In diesem konkreten Ansatz werden Bilder von
+            alltäglichen Gegenständen gezeigt, zusammen mit einem dazu gehörigen Geräusch. Der Nutzer
+            oder die Nutzerin muss nun den Gegenstand wiedererkennen und die Antwort eingeben.
+            Kritisiert wird im zugehörigen Paper, dass die visuellen und auditiven Ansätze von CAPTCHAs
+            getrennt von einander entwickelt werden. Wodurch eine qualitative Diskrepanz zwischen den
+            beiden implementierten Ansätzen entsteht.
         `
     },
     { // captcha 6 Akronym
@@ -105,6 +141,16 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkAkronym()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Bei Audio CAPTCHAs mit gesprochenen Zeichen müssen
+            sich Nutzer*innen sowohl Zeichen als auch ihre Reihenfolge merken. Dadurch entsteht eine
+            hohe mentale Belastung für Nutzer*innen, weshalb die Akronym Methode konzipiert wurde. Bei
+            dieser Methode bekommt ein*e Nutzer*in visuell und oder auditiv ein gängiges Sprichwort wie
+            zum Beispiel: 'Piece of Cake' gezeigt. Die Aufgabe ist es nun die Anfangsbuchstaben aller
+            Wörter anzugeben um das CAPTCHA zu lösen, in diesem Fall also 'POC'. Wichtig ist hierbei,
+            dass es sich um gängige Sprichwörter handelt, sodass Nutzer*innen sich keine Zufälligen
+            Wörter merken müssen und es zur gleichen Mentalen Belastung wie zuvor kommt.
         `
     },
     { // captcha QR-Code
@@ -117,6 +163,16 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkQr()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Eine Methode die sich von allen anderen
+            unterscheidet, da sie ein zusätzliches Gerät benötigt. Um die Aufgabe des CAPTCHAs zu
+            erhalten muss der Nutzer oder die Nutzerin einen vom CAPTCHA generierten QR-Code einscannen.
+            Um das CAPTCHA zu lösen muss der Nutzer oder die Nutzerin den erhaltenen Text auf angegebene
+            Weise modifizieren und die Lösung auf der Webseite entsprechend angeben. Da die Aufgabe des
+            CAPTCHAs in einem QR-Code steckt, ist es für Bots schwerer an diese heranzukommen und zu
+            lösen. Auch können Personen mit Sehbehinderungen ihr QR Code Scanning-to-Speech Programm
+            ihrer Wahl nutzen um möglichst einfach die Aufgabe des CAPTCHAs zu erhalten.
         `
     },
     { // captcha Text
@@ -127,6 +183,15 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkText()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Nicht zu verwechseln mit der Gimpy Methode. Bei
+            dieser Methode bekommt ein*e Nutzer*in einen Frage im Text Format gestellt, zum Beispiel
+            'Wenn Morgen Samstag ist, welcher Tag ist heute?'. Diese Frage muss nun per Text Eingabe
+            beantwortet werden. Für Bots liegt das Problem darin die Logik der Frage zu erkennen,
+            wodurch die Frage für Nutzer*innen leicht erkennbar bleiben kann. Durch das Text Format ist
+            es auch möglich Hilfsmittel wie Screenreader zu verwenden um Nutzer*innen mit Sehbehinderung
+            beim Verstehen und Lösen des CAPTCHAs zu unterstützen.
         `
     },
     { // captcha Mathe
@@ -137,6 +202,12 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkMathe()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Die Aufgabe bei dieser Methode, ist es, eine
+            einfache Mathe Aufgabe zu lösen. Aufgaben können dabei so Simple sein wie '9 + 11 = ?'.
+            Auch können Mathe Methoden im Bild Format ähnlich wie bei der Gimpy Methode, als Audio oder
+            im Text Format umgesetzt werden.
         `
     },
     { // captcha - 10 - Audio-Mathe
@@ -151,6 +222,16 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkAudioMathe()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Ansatz dieses CAPTCHAs ist es die Audio und Mathe
+            Methode zu kombinieren. Weder Audio noch Mathe CAPTCHAs sind ein neuer Ansatz. Heutzutage
+            existieren kaum noch CAPTCHAs die die Mathe Methode und von denen die es noch gibt verwenden
+            die meisten das Textformat. Durch die Kombination beider Ansätze ist es möglich eine Audio
+            Datei für die Nutzer*innen abzuspielen, welche nicht mehr verzehrt werden muss. Da der
+            Inhalt der Audio Datei verstanden und verarbeitet werden muss, um das CAPTCHA zu lösen. Zu
+            dem ist die Mathe Aufgabe im Audio Format schwerer zu erkennen, für Bots, als im Text
+            Format.
         `
     },
     { // captcha Bongo
@@ -188,6 +269,13 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 </div>
                 <button id='captcha-confirm-button' onclick="checkBongo()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Bei der Bongo Methode bekommt ein*e Nutzer*in zwei
+            Bilder Gruppen gezeigt, die sich in einem Merkmal voneinander unterscheiden. Danach werden
+            weitere Bilder angezeigt. Nun muss entschieden werden, welche der Bilder zu einer bestimmten
+            Gruppe gehören. Leider konnten kein aktuelles CAPTCHA gefunden werden, welches diese Methode
+            noch nutzt. So berichten lediglich noch Archiv Einträge von der Existenz von Bongo CAPTCHAs.
         `
     },
     { // captcha Dokument
@@ -203,6 +291,19 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <button class='captcha-answer-button' onclick="checkDokumentCaptcha('B')">B</button>
                 <button class='captcha-answer-button' onclick="checkDokumentCaptcha('C')">C</button>
             </div>
+        `,
+        description: `
+            Diese Methode wurde in zwei Ansätzen umgesetzt. Bei
+            beiden Ansätzen werden Phrasen aus Dokumenten aus dem Internet gesammelt um mit ihnen die
+            Aufgaben des CAPTCHAs zu generieren. Die zu lösende Aufgabe ist entweder das Erkennen eines
+            halb Computer generierten Satzes oder das Erkennen einer Gemeinsamkeit von Verschiedenen
+            Sätzen. Damit Bots das Internet nicht nach Antworten durchsuchen können, werden die Sätze
+            unbrauchbar gemacht. Dies geschieht in dem die Konsonanten der Wörter mit einem
+            Ersatzkonsonanten ersetzt werden, einem Konsonanten der anstelle des angestrebten Ziellautes
+            genutzt wird. In dem konkreten Ansatz von Yamaguchi et al., wurde die Methode mit verbaler
+            Ausgabe implementiert um Menschen mit Sehbehinderung das lösen ebenfalls zu ermöglichen. Ein
+            ähnlicher Ansatz ohne Ersatzkonsonanten und dem erkennen von Sätzen mit auffälliger Semantik
+            wurde auch in anderen Papern konzipiert, welcher Benutzerfreundlicher sein kann.
         `
     },
     { // captcha Video Gimpy
@@ -218,6 +319,12 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkVideoGimpy()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Da die Aufgabe bei dieser Methode darin besteht,
+            einen (bewegten) Text innerhalb eines Videos zu erkennen wurde diese Methode innerhalb
+            dieser Arbeit nach der Gimpy Methode benannt. Wie bei der Gimpy Methode muss der Text
+            erkannt und eingegeben werden um das CAPTCHA zu lösen.
         `
     },
     { // captcha Orientierung
@@ -246,6 +353,13 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 </div>
                 <button id='captcha-confirm-button' onclick="checkOrientierung()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Aufgabe dieser Methode ist, das Ausrichten von einem
+            Gegenstand oder eines Blickwinkels um das geforderte Ergebnis zu erzielen. Die Ansätze für
+            diese Methode können sich dabei untereinander unterscheiden, aber das Grundprinzip bleibt
+            gleich: Ein*e Nutzer*in muss die Visuellen Informationen und die Aufgabe verstehen um das
+            CAPTCHA zu lösen.
         `
     },
     { // captcha - 15 - Karten
@@ -259,6 +373,11 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <area shape="circle" coords="225,255,16" onclick="checkKarte()">
                 </map>
             </div>
+        `,
+        description: `
+            Ein*e Nutzer*in bekommt eine fiktive 3-D Stadtkarte
+            angezeigt mit einem eingezeichneten Pfad. An einem Ende befindet sich ein Auto-Symbol und
+            Aufgabe ist es nun das andere Ende des Pfades zu Markieren.
         `
     },
     { // captcha Puzzleteil
@@ -277,6 +396,13 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                         ondragover="allowDrop(event)">
                 </map>
             </div>
+        `,
+        description: `
+            Bei dieser Methode wird ein Bild gezeigt dem ein
+            Teil fehlt. Aufgabe ist es das fehlende Teil per Drag & Drop zu ergänzen. Dabei gibt es nur
+            ein Teil zur Auswahl. Ein Bot wird bei dieser Methode über das Nutzerverhalten erkannt. Ein
+            Ansatz für diese Methode ist auch als anstatt frei bewegbar nur über einen Slider bewegt
+            werden kann.
         `
     },
     { // captcha Paar
@@ -302,6 +428,12 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                         ondragover="allowDrop(event)">
                 </div>
             </div>
+        `,
+        description: `
+            Diese Methode ähnelt dem Puzzle-Teil, da auch hier
+            Elemente per Drag & Drop bewegt werden. Ein*e Nutzer*in hat dabei mehrere Objekte zur
+            Auswahl und einen weiteren Festen. Die Aufgabe ist es, den passenden auswählbaren Gegenstand
+            auf den festen zu bewegen.
         `
     },
     { // captcha Nutzerverhalten
@@ -314,6 +446,26 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     sie, dass sie kein Bot sind!</label>
                 </p>
             </div>
+        `,
+        description: `
+            Bei dieser Methode wertet das CAPTCHA das verhalten
+            der Nutzer*innen aus. Ein Ansatz ist es das Verhalten des Nutzers oder der Nutzerin direkt
+            auf der Seite zu beobachten. Die andere Möglichkeit wäre mit Cookies zu arbeiten und den
+            Verlauf des Nutzers oder der Nutzerin zu untersuchen. Es ist auch Möglich beide Ansätze
+            miteinander zu kombinieren für eine bessere Genauigkeit. Gerade letzterer Ansatz könnte je
+            nach Implementation nicht mit der DSGVO vereinbar sein. Auch wenn der Ansatz korrekt
+            implementiert wird, durchsucht man weiter die Privatsphäre seiner Nutzer*innen und sollte
+            entsprechend abgewogen werden. reCAPTCHA v2 verwendet dabei beide Ansätze. Es analysiert das
+            Nutzerverhalten auf der Seite, Cookies und überprüft den Verlauf des Nutzers oder der
+            Nutzerin. Die gesammelten Daten kommen dabei von anderen Seiten, die ebenfalls Google
+            Dienste verwenden. Sollte weiterhin nicht sicher sein, ob der Nutzer oder die Nutzerin
+            legitim ist, so gibt reCAPTCHA weitere CAPTCHAs zum lösen. CCM19 (Cookie Consent Manager)
+            ist ein Dienst, welcher ergänzend zu reCAPTCHA v2 implementiert wird. So soll der Nutzer
+            oder die Nutzerin die Möglichkeit bekommen dem verwenden von Cookies zuzustimmen bevor
+            reCAPTCHA geladen wird. So kann reCAPTCHA DSGVO konform genutzt werden. reCAPTCHA v3
+            funktioniert ähnlich, nur das es für den Nutzer komplett unsichtbar ist. Es wertet auf einer
+            Skala von 0 bis 1 aus ob der Nutzer oder die Nutzerin ein Bot ist, und überlässt dem
+            Anbieter oder der Anbieterin der Webseite was er oder sie mit der Information macht.
         `
     },
     { // captcha Kryptografie
@@ -325,6 +477,13 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <span class="progress"></span>
                 </div>
             </div>
+        `,
+        description: `
+            Gemeint ist bei dieser Methode, dass die Maschine
+            des Nutzers oder der Nutzerin ein kryptografisches Rätsel lösen muss um das CAPTCHA zu
+            lösen. Die Aufgabe kann dann bei Verdacht auf einen Bot erschwert werden. Das Konzept dieser
+            Methode ist es Angriffe aufgrund der benötigten Rechenleistung zu teuer zu machen, als dass
+            sie sich lohnen würden.
         `
     },
     { // captcha - 20 - Honeypot
@@ -340,6 +499,14 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <button id='bot-vision-button' onclick="toggleHiddenInput()">Zeig was der Bot sieht</button>
                 <button id='captcha-confirm-button' onclick="checkHoneypot()">Bestätigen</button>
             </div>
+        `,
+        description: `
+            Diese Methode wurde zwar nicht im laufe einer Arbeit
+            gefunden, das Konzept ist aber interessant genug, dass es ebenfalls in dieser Sammlung
+            aufgeführt wird. Bei der Honeypot Methode wird ein unsichtbares CAPTCHA auf der Seite
+            generiert. Wird nun dieses Unsichtbare CAPTCHA dennoch ausgefüllt, so kann man davon
+            ausgehen, dass es sich um einen Bot auf der Seite handelt. Das Unsichtbare CAPTCHA kann
+            dabei auch zusammen mit einem sichtbaren CAPTCHA implementiert werden.
         `
     }
 ];
