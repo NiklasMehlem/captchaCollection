@@ -35,6 +35,19 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             erhalten oder das CAPTCHA komplett zu umgehen, je nach Implementierung. Google gibt zudem an, die
             Lösungen von reCAPTCHAs Bilderkennungstests zu nutzen um seine eigenen Dienste wie Google
             Maps zu verbessern oder Texte aus Büchern zu digitalisieren.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Test 1</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Test 2</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Hier könnte ihre Vorteile stehen</p>
+                </li>
+            </ul>
         `
     },
     { // captcha 2 Gimpy
@@ -529,9 +542,11 @@ function displayHTML(tempCurrent) {
     const nameDiv = document.getElementById('captcha-name-text');
     const captchaDiv = document.getElementById('captcha');
     const descriptionP = document.getElementById('description');
+    const proDiv = document.getElementById('proTab');
     nameDiv.textContent = captchaHTML[currentHTML].name;
     captchaDiv.innerHTML = captchaHTML[currentHTML].html;
     descriptionP.textContent = captchaHTML[currentHTML].description;
+    proDiv.innerHTML = captchaHTML[currentHTML].pro;
     if (captchaHTML[currentHTML].name == 'Kryptografie') { //aktiviert Kryptographie CAPTCHA
         var progress = document.querySelector('.progressbar .progress');
 
