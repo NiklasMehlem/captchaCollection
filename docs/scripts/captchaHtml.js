@@ -39,13 +39,28 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Test 1</p>
+                    <p class="tabcontent-text">Die Methode wird von vielen Anbietern angeboten.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Test 2</p>
+                    <p class="tabcontent-text">Manche Anbieter bieten extra Optionen in ihren Ansätzen um
+                        diese visuelle Methode für Personen mit Sehbehinderung lösbar zumachen, oder
+                        alternativ auch zu überspringen.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Hier könnte ihre Vorteile stehen</p>
+                    <p class="tabcontent-text">Ansätze, bei denen Merkmale auf Teilen eines großen Bildes
+                        erkannt werden müssen, sind nicht nutzerfreundlich. Leicht kommt es dazu, dass nur
+                        wenige Pixel des Merkmals sich auf einem Teil befinden und zur Verwirrung des
+                        Nutzers oder der Nutzerin führen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Bilder und damit verbunden notwendigen Speicherplatz.</p>
                 </li>
             </ul>
         `
@@ -70,6 +85,26 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             ist ein Online-Marketing Unternehmen, aber hat den Anreiz seine
             CAPTCHAs/Type-INs sicher gegen Bots zu entwickeln, so dass Werbende nur für Engagement von
             echten Nutzer*innen zahlen.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Die Methode kann relativ einfach selbst implementiert werden.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Die Methode ist veraltet, und kann von vielen Bots gelöst werden.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Bilder und damit verbunden notwendigen Speicherplatz.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha 3 Gesprochene Zeichen / Wörter
@@ -93,6 +128,38 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             ein Feld eingetippt werden. Studien haben bereits gezeigt, dass diese Methode nicht gut in
             seiner bisherigen Form funktioniert. So lag die Erfolgsquote von Nutzer*innen mit
             Sehbehinderung bei reCAPTCHAs Audio Methode bei 46%.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Die Methode wird von vielen Anbietern angeboten.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Hörbehinderung lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Oft sind die Ansätze so implementiert, dass die Gesprochenen 
+                        Wörter in Englisch sind. Was es für nicht Englisch Sprecher besonders schwer macht die 
+                        Wörter zu erkennen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Meist schwer zu verstehen. Beim Ansatz der Gesprochenen Zeichen 
+                        muss sich zudem die Reihenfolge gemerkt werden. So haben selbst Sehbehinderte lediglich 
+                        eine Erfolgsquote von 46%.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende 
+                        Audio-Dateien und damit verbunden notwendigen Speicherplatz. Mehr Speicherplatz wird 
+                        benötigt, falls Audio-Dateien für mehrere Sprachen verwendet werden.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha 4 Geräuscherkennung
@@ -114,6 +181,33 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             Nutzerin muss nun erkennen, zu welchem Tier dieses Geräusch gehört. Die Audio Version von
             Arkose Labs nutzt diese Methode in dem sie Aufgaben stellen wie: 'Welche Option ist das
             Geräusch einer Katze?' und dann drei Geräusche hintereinander abspielt.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Geräusche sind unabhängig von Sprache und können so von 
+                        Nutzer*innen unabhängig ihrer Sprachkenntnisse verstanden werden.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Leicht selbst implementierbar. Zudem gibt es im Internetseiten 
+                        die Geräusche kostenlos und frei verfügbar anbieten. Es ist weiterhin leichter frei 
+                        verfügbare Audio Dateien mit Geräuschen zu finden, als welche mit Sprache.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Hörbehinderung lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Audio-Dateien und damit 
+                        verbunden notwendigen Speicherplatz.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha - 5 - Pix-Audio
@@ -139,6 +233,36 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             Kritisiert wird im zugehörigen Paper, dass die visuellen und auditiven Ansätze von CAPTCHAs
             getrennt von einander entwickelt werden. Wodurch eine qualitative Diskrepanz zwischen den
             beiden implementierten Ansätzen entsteht.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Geräusche sind unabhängig von Sprache und können so von 
+                        Nutzer*innen unabhängig ihrer Sprachkenntnisse verstanden werden.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Leicht selbst implementierbar. Zudem gibt es im Internetseiten 
+                        die Geräusche kostenlos und frei verfügbar anbieten. Es ist weiterhin leichter frei 
+                        verfügbare Audio Dateien mit Geräuschen zu finden, als welche mit Sprache.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende 
+                        Bilder und Audio-Dateien und damit verbunden notwendigen Speicherplatz.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Die Methode wird von keinem Anbietern angeboten und muss daher selbst implementiert werden.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Da lediglich der Inhalt eines Bilds erkannt werden muss, ist diese Methode leichter von Bots lösbar.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha 6 Akronym
@@ -164,6 +288,37 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             Wörter anzugeben um das CAPTCHA zu lösen, in diesem Fall also 'POC'. Wichtig ist hierbei,
             dass es sich um gängige Sprichwörter handelt, sodass Nutzer*innen sich keine Zufälligen
             Wörter merken müssen und es zur gleichen Mentalen Belastung wie zuvor kommt.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Es muss sich deutlich weniger gemerkt werden im Vergleich zur 
+                        Gesprochene Zeichen / Wörter Methode.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Leicht selbst implementierbar. Zudem gibt es im Internetseiten 
+                        die Geräusche kostenlos und frei verfügbar anbieten. Es ist weiterhin leichter frei 
+                        verfügbare Audio Dateien mit Geräuschen zu finden, als welche mit Sprache.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung und nicht genügend Sprachkenntnissen 
+                        könnten Probleme beim erkennen der Sprüche haben.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Bilder 
+                        und Audio-Dateien und damit verbunden notwendigen Speicherplatz.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Die Methode wird von keinem Anbietern angeboten und muss daher selbst implementiert werden.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha QR-Code
@@ -186,6 +341,30 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             CAPTCHAs in einem QR-Code steckt, ist es für Bots schwerer an diese heranzukommen und zu
             lösen. Auch können Personen mit Sehbehinderungen ihr QR Code Scanning-to-Speech Programm
             ihrer Wahl nutzen um möglichst einfach die Aufgabe des CAPTCHAs zu erhalten.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderungen können ihr eigenes Scan to Speech Programm verwenden.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Sehr sicher, da die Aufgabe sich im QR-Code befindet.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Benötigt ein zusätzliches Gerät mit Scan to Speech oder ähnlicher Anwendung.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nicht für Mobilnutzer geeignet, da ein weiteres Mobilgerät mit 
+                        einer Anwendung wie 'Scan to Speech' oder einer ähnlichen Funktion benötigt wird.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Die Methode wird von keinem Anbietern angeboten und muss daher selbst implementiert werden.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha Text
@@ -205,6 +384,24 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             wodurch die Frage für Nutzer*innen leicht erkennbar bleiben kann. Durch das Text Format ist
             es auch möglich Hilfsmittel wie Screenreader zu verwenden um Nutzer*innen mit Sehbehinderung
             beim Verstehen und Lösen des CAPTCHAs zu unterstützen.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode mithilfe 
+                        eines Screenreaders (oder ähnlicher Hilfsmittel) lösen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Leicht selbst implementierbar.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Kann für Personen mit Dyslexie schwer zu lösen sein.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha Mathe
@@ -221,6 +418,34 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             einfache Mathe Aufgabe zu lösen. Aufgaben können dabei so Simple sein wie '9 + 11 = ?'.
             Auch können Mathe Methoden im Bild Format ähnlich wie bei der Gimpy Methode, als Audio oder
             im Text Format umgesetzt werden.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode mithilfe 
+                        eines Screenreaders (oder ähnlicher Hilfsmittel) lösen, wenn im entsprechenden Format implementiert.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Einfach für Nutzer*innen zu lösen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Kann auf verschiedene weisen implementiert werden um den Anforderung 
+                        der Nutzer*innen gerecht zu werden.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Leicht selbst implementierbar.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Mathe Aufgaben können von Bots einfach gelöst werden.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Wird kaum oder nicht länger von Anbietern angeboten.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha - 10 - Audio-Mathe
@@ -245,6 +470,26 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             Inhalt der Audio Datei verstanden und verarbeitet werden muss, um das CAPTCHA zu lösen. Zu
             dem ist die Mathe Aufgabe im Audio Format schwerer zu erkennen, für Bots, als im Text
             Format.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Mathe Aufgaben können von Bots einfach gelöst werden.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Wird kaum oder nicht länger von Anbietern angeboten.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Sicherer als die Mathe Methode, da Bots den Kontext mit verstehen müssen.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha Bongo
@@ -289,6 +534,32 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             weitere Bilder angezeigt. Nun muss entschieden werden, welche der Bilder zu einer bestimmten
             Gruppe gehören. Leider konnten kein aktuelles CAPTCHA gefunden werden, welches diese Methode
             noch nutzt. So berichten lediglich noch Archiv Einträge von der Existenz von Bongo CAPTCHAs.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Sicherer als Bilderkennungstests, da zum Lösen der Aufgabe
+                        die Unterschiede beider Gruppen erkannt werden müssen. Am Ende müssen zusätzlich
+                        noch alle Bilder mit den passenden Merkmalen ausgewählt werden.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Je nach Aufgabe kann die Methode schwer zu lösen sein für Nutzer*innen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende 
+                        Bilder und damit verbunden notwendigen Speicherplatz.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Wird nicht länger von Anbietern angeboten.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha Dokument
@@ -317,6 +588,34 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             Ausgabe implementiert um Menschen mit Sehbehinderung das lösen ebenfalls zu ermöglichen. Ein
             ähnlicher Ansatz ohne Ersatzkonsonanten und dem erkennen von Sätzen mit auffälliger Semantik
             wurde auch in anderen Papern konzipiert, welcher Benutzerfreundlicher sein kann.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer müssen sich keine langen Zeichenfolgen merken.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung und nicht genügend Sprachkenntnissen 
+                        könnten Probleme beim erkennen der Sätze haben.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Für jede Sprache werden eigene Audio-Dateien benötigt.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Audio 
+                        Dateien und damit verbunden notwendigen Speicherplatz.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Die Methode wird von keinem Anbietern angeboten und muss daher selbst implementiert werden.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha Video Gimpy
@@ -338,6 +637,30 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             einen (bewegten) Text innerhalb eines Videos zu erkennen wurde diese Methode innerhalb
             dieser Arbeit nach der Gimpy Methode benannt. Wie bei der Gimpy Methode muss der Text
             erkannt und eingegeben werden um das CAPTCHA zu lösen.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da es für Bots schwerer ist 
+                        die Zeichen aus einem Video herauszufiltern.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Schwer und stressig für Nutzer*innen zu lösen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Videos und damit verbunden notwendigen Speicherplatz.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Wird nicht länger von Anbietern angeboten.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha Orientierung
@@ -373,6 +696,30 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             diese Methode können sich dabei untereinander unterscheiden, aber das Grundprinzip bleibt
             gleich: Ein*e Nutzer*in muss die Visuellen Informationen und die Aufgabe verstehen um das
             CAPTCHA zu lösen.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe 
+                        zusätzlich zum Inhalt des Bilds verstanden werden muss.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer 
+                        mit Sehbehinderung lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Wenn Ausrichtungen der Objekte nicht klar erkennbar sind, 
+                        kann es leicht zur Verwirrung der Nutzer*innen kommen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende 
+                        Bilder und damit verbunden notwendigen Speicherplatz.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha - 15 - Karten
@@ -391,6 +738,31 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             Ein*e Nutzer*in bekommt eine fiktive 3-D Stadtkarte
             angezeigt mit einem eingezeichneten Pfad. An einem Ende befindet sich ein Auto-Symbol und
             Aufgabe ist es nun das andere Ende des Pfades zu Markieren.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe 
+                        zusätzlich zum Inhalt des Bilds verstanden werden muss.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Pfade die an stellen nur wenige Pixel breit sind können leicht 
+                        für Verwirrung bei Nutzer*innen sorgen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren ist aufwendiger im Vergleich zu anderen Methoden.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Wird nur von AWS angeboten.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha Puzzleteil
@@ -416,6 +788,27 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             ein Teil zur Auswahl. Ein Bot wird bei dieser Methode über das Nutzerverhalten erkannt. Ein
             Ansatz für diese Methode ist auch als anstatt frei bewegbar nur über einen Slider bewegt
             werden kann.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe 
+                        zusätzlich zum Inhalt des Bilds verstanden werden muss.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer können genervt werden, wenn sie die offene Stelle übersehen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren ist aufwendiger im Vergleich zu anderen Methoden.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha Paar
@@ -447,6 +840,28 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             Elemente per Drag & Drop bewegt werden. Ein*e Nutzer*in hat dabei mehrere Objekte zur
             Auswahl und einen weiteren Festen. Die Aufgabe ist es, den passenden auswählbaren Gegenstand
             auf den festen zu bewegen.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe 
+                        zusätzlich zum Inhalt des Bilds verstanden werden muss.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren ist einfach im Vergleich zu anderen Methoden.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Bilder und damit verbunden 
+                        notwendigen Speicherplatz.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha Nutzerverhalten
@@ -479,6 +894,35 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             funktioniert ähnlich, nur das es für den Nutzer komplett unsichtbar ist. Es wertet auf einer
             Skala von 0 bis 1 aus ob der Nutzer oder die Nutzerin ein Bot ist, und überlässt dem
             Anbieter oder der Anbieterin der Webseite was er oder sie mit der Information macht.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nutzer*innen müssen nur eine Checkbox anklicken, und 
+                        ist somit relativ gut Unabhängig von den Behinderungen eines Nutzers oder 
+                        einer Nutzerin lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Der reCAPTCHA Ansatz ist kostenlos zu implementieren 
+                        bis zu 10.000 Aufrufen pro Monat.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Kann je nach Implementierung gegen die DSGVO verstoßen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Benötigt einen zusätzlichen kostenpflichtigen Dienst, um sicher DSGVO konform zu sein.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Durchleuchtet den Browserverlauf der Nutzer*innen.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren ist sehr aufwendig und schwierig.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha Kryptografie
@@ -497,6 +941,26 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             lösen. Die Aufgabe kann dann bei Verdacht auf einen Bot erschwert werden. Das Konzept dieser
             Methode ist es Angriffe aufgrund der benötigten Rechenleistung zu teuer zu machen, als dass
             sie sich lohnen würden.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin immer lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Die Methode wird von mehreren Anbietern angeboten.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Die meisten Ansätze sind relativ teuer.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Den Ansatz selber zu implementieren ist sehr aufwendig.</p>
+                </li>
+            </ul>
         `
     },
     { // captcha - 20 - Honeypot
@@ -520,6 +984,26 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             generiert. Wird nun dieses Unsichtbare CAPTCHA dennoch ausgefüllt, so kann man davon
             ausgehen, dass es sich um einen Bot auf der Seite handelt. Das Unsichtbare CAPTCHA kann
             dabei auch zusammen mit einem sichtbaren CAPTCHA implementiert werden.
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin immer lösbar.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Leicht selbst zu implementieren.</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Bots die das unsichtbare CAPTCHA ignorieren kommen einfach durch ohne weitere CAPTCHAs.</p>
+                </li>
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Die Methode wird von keinem Anbietern angeboten und muss daher selbst implementiert werden.</p>
+                </li>
+            </ul>
         `
     }
 ];
@@ -543,10 +1027,12 @@ function displayHTML(tempCurrent) {
     const captchaDiv = document.getElementById('captcha');
     const descriptionP = document.getElementById('description');
     const proDiv = document.getElementById('proTab');
+    const contraDiv = document.getElementById('contraTab');
     nameDiv.textContent = captchaHTML[currentHTML].name;
     captchaDiv.innerHTML = captchaHTML[currentHTML].html;
     descriptionP.textContent = captchaHTML[currentHTML].description;
     proDiv.innerHTML = captchaHTML[currentHTML].pro;
+    contraDiv.innerHTML = captchaHTML[currentHTML].contra;
     if (captchaHTML[currentHTML].name == 'Kryptografie') { //aktiviert Kryptographie CAPTCHA
         var progress = document.querySelector('.progressbar .progress');
 
