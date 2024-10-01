@@ -96,7 +96,8 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Die Methode ist veraltet, und kann von vielen Bots gelöst werden.</p>
+                    <p class="tabcontent-text">Die Methode ist veraltet und kann mit einer Erfolgsrate 
+                        von 99,8% von Bots gelöst werden.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
@@ -126,8 +127,8 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             dabei mit verschiedensten Geräuschen und Effekten verzehrt um es Bots schwerer zu machen das
             Gesprochene zu erkennen. Um das CAPTCHA zu lösen muss der gesprochene Text verstanden und in
             ein Feld eingetippt werden. Studien haben bereits gezeigt, dass diese Methode nicht gut in
-            seiner bisherigen Form funktioniert. So lag die Erfolgsquote von Nutzer*innen mit
-            Sehbehinderung bei reCAPTCHAs Audio Methode bei 46%.
+            seiner bisherigen Form funktioniert. So lag die Erfolgsquote von Nutzer*innen mit 
+            Sehbehinderung bei CAPTCHAs dieser Methode bei 31-48%.
         `,
         pro: `
             <ul class="tabcontent-ul">
@@ -145,9 +146,8 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Hörbehinderung lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Oft sind die Ansätze so implementiert, dass die Gesprochenen 
-                        Wörter in Englisch sind. Was es für nicht Englisch Sprecher besonders schwer macht die 
-                        Wörter zu erkennen.</p>
+                    <p class="tabcontent-text">Oft sind die Ansätze so implementiert, dass die gesprochenen Wörter auf Englisch 
+                        sind, was es für nicht-englischsprachige Personen besonders schwer macht, die Wörter zu erkennen.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Meist schwer zu verstehen. Beim Ansatz der Gesprochenen Zeichen 
