@@ -1,6 +1,6 @@
 const captchaHTML = [ /// img Alts richtig beschriften!
     { // captcha 0 Start Page
-        name: 'Hier könnte ihr CAPTCHA STEHEN',
+        name: 'Effektive CAPTCHAs für Sehbehinderte : Eine Sammlung für Entwickler',
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Hier könnte ihr CAPTCHA STEHEN</p>
@@ -25,16 +25,17 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `,
         description: `
-            Bei dieser Methode bekommt ein*e Nutzer*in eine
-            Sammlung von Bildern vorgesetzt. Ziel ist es nun alle Bilder mit einem bestimmten Merkmal zu
-            markieren. Alternativ gibt es auch Ansätze bei denen ein Bild in mehrere Teile aufgeteilt
-            wird. In dem Fall besteht die Aufgabe darin, alle Teile die ein bestimmtes Merkmal teilen
-            auszuwählen. Der Ansatz des Bilderkennungstests ist die am weitesten verbreitete Methode mit
-            vielen Optionen an Anbietern. hCaptcha bietet bei seiner Version die Möglichkeit einen
-            Accessibility-Cookie zu setzen, um Barrierearme Versionen von Bilderkennungstests zu
-            erhalten oder das CAPTCHA komplett zu umgehen, je nach Implementierung. Google gibt zudem an, die
-            Lösungen von reCAPTCHAs Bilderkennungstests zu nutzen um seine eigenen Dienste wie Google
-            Maps zu verbessern oder Texte aus Büchern zu digitalisieren.
+            Bei dieser Methode wird einem Nutzer oder einer Nutzerin eine Sammlung von Bildern vorgesetzt. Ziel ist es, alle Bilder 
+            mit einem bestimmten Merkmal zu markieren. Alternativ gibt es auch Ansätze, bei denen ein Bild in mehrere Teile aufgeteilt 
+            wird. In diesem Fall besteht die Aufgabe darin, alle Teile auszuwählen, die ein bestimmtes Merkmal teilen. Der Ansatz des 
+            Bilderkennungstests ist die am weitesten verbreitete Methode mit vielen Optionen an Anbietern. Er wird von 
+            <a href="https://developers.google.com/recaptcha/docs/display?hl=de" target="_blank">reCAPTCHA v2</a> verwendet, in Fällen, in denen der 
+            erste Teil des CAPTCHAs nicht erfolgreich bestanden wurde. Google gibt zudem an, die Lösungen von reCAPTCHA zu nutzen, um 
+            seine eigenen Dienste wie Google Maps zu verbessern oder Texte aus Büchern zu digitalisieren. 
+            <a href="https://www.hcaptcha.com" target="_blank">hCaptcha</a> verwendet unter anderem Bilderkennungstests. Zusätzlich wird die Möglichkeit 
+            angeboten, einen Accessibility-Cookie zu setzen, um barrierearme Versionen von hCaptcha zu erhalten oder das CAPTCHA komplett zu umgehen, je nach Implementierung. 
+            Manche von <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-captcha-and-challenge.html" target="_blank">AWS WAF CAPTCHAs</a> 
+            verwendeten visuellen CAPTCHAs nutzen ebenfalls die Methode des Bilderkennungstests.
         `,
         pro: `
             <ul class="tabcontent-ul">
@@ -1030,7 +1031,7 @@ function displayHTML(tempCurrent) {
     const contraDiv = document.getElementById('contraTab');
     nameDiv.textContent = captchaHTML[currentHTML].name;
     captchaDiv.innerHTML = captchaHTML[currentHTML].html;
-    descriptionP.textContent = captchaHTML[currentHTML].description;
+    descriptionP.innerHTML = captchaHTML[currentHTML].description;
     proDiv.innerHTML = captchaHTML[currentHTML].pro;
     contraDiv.innerHTML = captchaHTML[currentHTML].contra;
     if (captchaHTML[currentHTML].name == 'Kryptografie') { //aktiviert Kryptographie CAPTCHA
