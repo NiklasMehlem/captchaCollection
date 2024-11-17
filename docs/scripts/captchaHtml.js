@@ -43,25 +43,24 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <p class="tabcontent-text">Die Methode wird von vielen Anbietern angeboten.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Manche Anbieter bieten extra Optionen in ihren Ansätzen um
-                        diese visuelle Methode für Personen mit Sehbehinderung lösbar zumachen, oder
-                        alternativ auch zu überspringen.</p>
+                    <p class="tabcontent-text">Manche Anbieter bieten zusätzliche Optionen in ihren Ansätzen an, 
+                    um diese visuelle Methode für Personen mit Sehbehinderung lösbar zu machen oder alternativ 
+                    auch zu überspringen.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                    <p class="tabcontent-text">Ohne die Implementierung von Ausnahmen ist die Methode nicht oder nur schwer von Personen mit Sehbehinderung lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Ansätze, bei denen Merkmale auf Teilen eines großen Bildes
-                        erkannt werden müssen, sind nicht nutzerfreundlich. Leicht kommt es dazu, dass nur
-                        wenige Pixel des Merkmals sich auf einem Teil befinden und zur Verwirrung des
-                        Nutzers oder der Nutzerin führen.</p>
+                    <p class="tabcontent-text">Ansätze, bei denen Merkmale auf Teilen eines großen Bildes erkannt 
+                    werden müssen, sind nicht nutzerfreundlich. Es kann leicht dazu kommen, dass nur wenige Pixel 
+                    des Merkmals sich auf einem Teil befinden, was zur Verwirrung des Nutzers oder der Nutzerin führt.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Bilder und damit verbunden notwendigen Speicherplatz.</p>
+                    <p class="tabcontent-text">Den Ansatz selbst zu implementieren, benötigt entsprechende Bilder und damit verbunden den notwendigen Speicherplatz.</p>
                 </li>
             </ul>
         `
@@ -97,10 +96,10 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                         von 99,8% von Bots gelöst werden.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                    <p class="tabcontent-text">Ohne die Implementierung von Ausnahmen ist die Methode nicht oder nur schwer von Personen mit Sehbehinderung lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Bilder und damit verbunden notwendigen Speicherplatz.</p>
+                    <p class="tabcontent-text">Den Ansatz selbst zu implementieren, benötigt entsprechende Bilder und damit verbunden den notwendigen Speicherplatz.</p>
                 </li>
             </ul>
         `
@@ -142,11 +141,11 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Hörbehinderung lösbar.</p>
+                    <p class="tabcontent-text">Ohne die Implementierung von Ausnahmen ist die Methode nicht oder nur schwer von Personen mit Hörbehinderung lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Oft sind die Ansätze so implementiert, dass die gesprochenen Wörter auf Englisch 
-                        sind, was es für nicht-englischsprachige Personen besonders schwer macht, die Wörter zu erkennen.</p>
+                    <p class="tabcontent-text">Oft sind die Ansätze so implementiert, dass die gesprochenen Wörter 
+                    auf Englisch sind, was es für nicht-englischsprachige Personen besonders schwierig macht, die Wörter zu erkennen.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Meist schwer zu verstehen. Beim Ansatz der Gesprochenen Zeichen 
@@ -186,20 +185,20 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Geräusche sind unabhängig von Sprache und können so von 
-                        Nutzer*innen unabhängig ihrer Sprachkenntnisse verstanden werden.</p>
+                    <p class="tabcontent-text">Geräusche sind unabhängig von Sprache und können von Nutzer*innen 
+                    unabhängig von ihren Sprachkenntnissen verstanden werden.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Leicht selbst implementierbar. Zudem gibt es im Internetseiten 
-                        die Geräusche kostenlos und frei verfügbar anbieten. Es ist weiterhin leichter frei 
-                        verfügbare Audio Dateien mit Geräuschen zu finden, als welche mit Sprache.</p>
+                    <p class="tabcontent-text">Leicht selbst implementierbar. Zudem gibt es im Internet Seiten, 
+                    die Geräusche kostenlos und frei verfügbar anbieten. Es ist weiterhin leichter, frei 
+                    verfügbare Audio-Dateien mit Geräuschen zu finden, als solche mit Sprache.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Hörbehinderung lösbar.</p>
+                    <p class="tabcontent-text">Ohne die Implementierung von Ausnahmen ist die Methode nicht oder nur schwer von Personen mit Hörbehinderung lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Audio-Dateien und damit 
@@ -236,13 +235,13 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Geräusche sind unabhängig von Sprache und können so von 
-                        Nutzer*innen unabhängig ihrer Sprachkenntnisse verstanden werden.</p>
+                    <p class="tabcontent-text">Geräusche sind unabhängig von Sprache und können so von Nutzer*innen 
+                    unabhängig von ihren Sprachkenntnissen verstanden werden.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Leicht selbst implementierbar. Zudem gibt es im Internetseiten 
-                        die Geräusche kostenlos und frei verfügbar anbieten. Es ist weiterhin leichter frei 
-                        verfügbare Audio Dateien mit Geräuschen zu finden, als welche mit Sprache.</p>
+                    <p class="tabcontent-text">Leicht selbst implementierbar. Zudem gibt es im Internet Seiten, 
+                    die Geräusche kostenlos und frei verfügbar anbieten. Es ist weiterhin leichter, frei 
+                    verfügbare Audio-Dateien mit Geräuschen zu finden als solche mit Sprache.</p>
                 </li>
             </ul>
         `,
@@ -253,7 +252,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                         Bilder und Audio-Dateien und damit verbunden notwendigen Speicherplatz.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Die Methode wird von keinem Anbietern angeboten und muss daher selbst implementiert werden.</p>
+                    <p class="tabcontent-text">Die Methode wird von keinem Anbieter angeboten und muss daher selbst implementiert werden.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Da lediglich der Inhalt eines Bilds erkannt werden muss, ist diese Methode leichter von Bots lösbar.</p>
@@ -290,8 +289,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Es muss sich deutlich weniger gemerkt werden im Vergleich zur 
-                        Gesprochene Zeichen / Wörter Methode.</p>
+                    <p class="tabcontent-text">Es muss sich deutlich weniger gemerkt werden im Vergleich zur gesprochenen Zeichen-/Wörter-Methode.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Leicht selbst implementierbar. Zudem gibt es im Internetseiten 
@@ -303,15 +301,15 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung und nicht genügend Sprachkenntnissen 
-                        könnten Probleme beim erkennen der Sprüche haben.</p>
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung und unzureichenden Sprachkenntnissen 
+                    könnten Probleme beim Erkennen der Sprüche haben.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Bilder 
-                        und Audio-Dateien und damit verbunden notwendigen Speicherplatz.</p>
+                    <p class="tabcontent-text">Der Ansatz, ihn selbst zu implementieren, erfordert entsprechende 
+                    Bilder und Audiodateien sowie den dafür notwendigen Speicherplatz.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Die Methode wird von keinem Anbietern angeboten und muss daher selbst implementiert werden.</p>
+                    <p class="tabcontent-text">Die Methode wird von keinem Anbieter angeboten und muss daher selbst implementiert werden.</p>
                 </li>
             </ul>
         `
@@ -340,24 +338,24 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderungen können ihr eigenes Scan to Speech Programm verwenden.</p>
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderungen können ihr eigenes 'Scan to Speech'-Programm verwenden.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Sehr sicher, da die Aufgabe sich im QR-Code befindet.</p>
+                    <p class="tabcontent-text">Die Sicherheit ist sehr hoch, da die Aufgabe im QR-Code enthalten ist.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Benötigt ein zusätzliches Gerät mit Scan to Speech oder ähnlicher Anwendung.</p>
+                    <p class="tabcontent-text">Es wird ein zusätzliches Gerät benötigt, das mit einer 'Scan to Speech'- oder ähnlichen Anwendung ausgestattet ist.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Nicht für Mobilnutzer geeignet, da ein weiteres Mobilgerät mit 
-                        einer Anwendung wie 'Scan to Speech' oder einer ähnlichen Funktion benötigt wird.</p>
+                    <p class="tabcontent-text">Diese Lösung ist nicht für Mobilnutzer geeignet, da ein zusätzliches 
+                    Mobilgerät mit einer Anwendung wie 'Scan to Speech' oder einer ähnlichen Funktion erforderlich ist.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Die Methode wird von keinem Anbietern angeboten und muss daher selbst implementiert werden.</p>
+                    <p class="tabcontent-text">Die Methode wird von keinem Anbieter angeboten und muss daher selbst implementiert werden.</p>
                 </li>
             </ul>
         `
@@ -383,18 +381,17 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode mithilfe 
-                        eines Screenreaders (oder ähnlicher Hilfsmittel) lösen.</p>
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode mithilfe eines Screenreaders oder ähnlicher Hilfsmittel lösen.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Leicht selbst implementierbar.</p>
+                    <p class="tabcontent-text">Die Methode ist leicht selbst implementierbar.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Kann für Personen mit Dyslexie schwer zu lösen sein.</p>
+                    <p class="tabcontent-text">Für Personen mit Dyslexie kann die Lösung der Methode schwierig sein.</p>
                 </li>
             </ul>
         `
@@ -418,24 +415,23 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode mithilfe 
-                        eines Screenreaders (oder ähnlicher Hilfsmittel) lösen, wenn im entsprechenden Format implementiert.</p>
+                    eines Screenreaders oder ähnlicher Hilfsmittel lösen, sofern sie im entsprechenden Format implementiert ist.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Einfach für Nutzer*innen zu lösen.</p>
+                    <p class="tabcontent-text">Einfach für die Nutzer*innen zu lösen.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Kann auf verschiedene weisen implementiert werden um den Anforderung 
-                        der Nutzer*innen gerecht zu werden.</p>
+                    <p class="tabcontent-text">Kann auf verschiedene Weise implementiert werden, um den Anforderungen der Nutzer*innen gerecht zu werden.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Leicht selbst implementierbar.</p>
+                    <p class="tabcontent-text">Die Methode ist leicht selbst implementierbar.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Mathe Aufgaben können von Bots einfach gelöst werden.</p>
+                    <p class="tabcontent-text">Mathematikaufgaben können von Bots einfach gelöst werden.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Wird kaum oder nicht länger von Anbietern angeboten.</p>
@@ -471,17 +467,17 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <p class="tabcontent-text">Mathe Aufgaben können von Bots einfach gelöst werden.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Wird kaum oder nicht länger von Anbietern angeboten.</p>
+                    <p class="tabcontent-text">Die Methode ist sicherer als die Mathe-Methode, da Bots den Kontext zusätzlich verstehen müssen.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
+                    <p class="tabcontent-text">Aufgaben können aufgrund ihrer Länge verwirrend und schwer verständlich sein.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Sicherer als die Mathe Methode, da Bots den Kontext mit verstehen müssen.</p>
+                    <p class="tabcontent-text">Die Methode wird von keinem Anbieter angeboten und muss daher selbst implementiert werden.</p>
                 </li>
             </ul>
         `
@@ -531,26 +527,25 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Sicherer als Bilderkennungstests, da zum Lösen der Aufgabe
-                        die Unterschiede beider Gruppen erkannt werden müssen. Am Ende müssen zusätzlich
-                        noch alle Bilder mit den passenden Merkmalen ausgewählt werden.</p>
+                    <p class="tabcontent-text">Die Methode ist sicherer als Bilderkennungstests, da zum 
+                    Lösen der Aufgabe die Unterschiede zwischen beiden Gruppen erkannt werden müssen. 
+                    Am Ende müssen zusätzlich alle Bilder mit den passenden Merkmalen ausgewählt werden.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                    <p class="tabcontent-text">Ohne die Implementierung von Ausnahmen ist die Aufgabe für sehbehinderte Personen nicht oder nur schwer lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Je nach Aufgabe kann die Methode schwer zu lösen sein für Nutzer*innen.</p>
+                    <p class="tabcontent-text">Je nach Aufgabe kann die Methode für Nutzer*innen schwer zu lösen sein.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende 
-                        Bilder und damit verbunden notwendigen Speicherplatz.</p>
+                    <p class="tabcontent-text">Den Ansatz selbst zu implementieren, erfordert entsprechende Bilder und somit den notwendigen Speicherplatz.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Wird nicht länger von Anbietern angeboten.</p>
+                    <p class="tabcontent-text">Wird nicht mehr von Anbietern angeboten.</p>
                 </li>
             </ul>
         `
@@ -595,18 +590,16 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung und nicht genügend Sprachkenntnissen 
-                        könnten Probleme beim erkennen der Sätze haben.</p>
+                    <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung und nicht ausreichenden Sprachkenntnissen könnten Schwierigkeiten beim Erkennen der Sätze haben.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Für jede Sprache werden eigene Audio-Dateien benötigt.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Audio 
-                        Dateien und damit verbunden notwendigen Speicherplatz.</p>
+                    <p class="tabcontent-text">Die Umsetzung des Ansatzes erfordert entsprechende Audio-Dateien und den damit verbundenen notwendigen Speicherplatz.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Die Methode wird von keinem Anbietern angeboten und muss daher selbst implementiert werden.</p>
+                    <p class="tabcontent-text">Die Methode wird von keinem Anbieter angeboten und muss daher selbst implementiert werden.</p>
                 </li>
             </ul>
         `
@@ -633,8 +626,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da es für Bots schwerer ist 
-                        die Zeichen aus einem Video herauszufiltern.</p>
+                    <p class="tabcontent-text">Die Video-CAPTCHAs sind sicherer als Gimpy-CAPTCHAs, da es für Bots schwieriger ist, die Zeichen aus einem Video herauszufiltern.</p>
                 </li>
             </ul>
         `,
@@ -644,13 +636,13 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Schwer und stressig für Nutzer*innen zu lösen.</p>
+                    <p class="tabcontent-text">Die Lösung der CAPTCHA-Methode kann von Nutzer*innen als schwierig und stressig empfunden werden.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Videos und damit verbunden notwendigen Speicherplatz.</p>
+                    <p class="tabcontent-text">Die Selbstimplementierung des Ansatzes erfordert entsprechende Videos sowie den dazu notwendigen Speicherplatz.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Wird nicht länger von Anbietern angeboten.</p>
+                    <p class="tabcontent-text">Wird nicht mehr von Anbietern angeboten.</p>
                 </li>
             </ul>
         `
@@ -694,24 +686,20 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe 
-                        zusätzlich zum Inhalt des Bilds verstanden werden muss.</p>
+                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe zusätzlich zum Inhalt des Bildes verstanden werden muss.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer 
-                        mit Sehbehinderung lösbar.</p>
+                    <p class="tabcontent-text">Ohne die Implementierung von Ausnahmen ist die Methode nicht oder nur schwer von Personen mit Sehbehinderung lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Wenn Ausrichtungen der Objekte nicht klar erkennbar sind, 
-                        kann es leicht zur Verwirrung der Nutzer*innen kommen.</p>
+                    <p class="tabcontent-text">Wenn die Ausrichtungen der Objekte nicht klar erkennbar sind, kann es leicht zur Verwirrung der Nutzer*innen kommen.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende 
-                        Bilder und damit verbunden notwendigen Speicherplatz.</p>
+                    <p class="tabcontent-text">Den Ansatz selbst zu implementieren, benötigt entsprechende Bilder und damit verbunden den notwendigen Speicherplatz.</p>
                 </li>
             </ul>
         `
@@ -739,25 +727,23 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe 
-                        zusätzlich zum Inhalt des Bilds verstanden werden muss.</p>
+                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe zusätzlich zum Inhalt des Bildes verstanden werden muss.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                    <p class="tabcontent-text">Ohne die Implementierung von Ausnahmen ist die Methode nicht oder nur schwer von Personen mit Sehbehinderung lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Pfade die an stellen nur wenige Pixel breit sind können leicht 
-                        für Verwirrung bei Nutzer*innen sorgen.</p>
+                    <p class="tabcontent-text">Pfade, die an Stellen nur wenige Pixel breit sind, können leicht für Verwirrung bei Nutzer*innen sorgen.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren ist aufwendiger im Vergleich zu anderen Methoden.</p>
+                    <p class="tabcontent-text">Der Ansatz, ihn selbst zu implementieren, ist aufwendiger im Vergleich zu anderen Methoden.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Wird nur von AWS angeboten.</p>
+                    <p class="tabcontent-text">Wird ausschließlich von AWS angeboten.</p>
                 </li>
             </ul>
         `
@@ -791,21 +777,20 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe 
-                        zusätzlich zum Inhalt des Bilds verstanden werden muss.</p>
+                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe zusätzlich zum Inhalt des Bildes verstanden werden muss.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                    <p class="tabcontent-text">Ohne die Implementierung von Ausnahmen ist die Methode nicht oder nur schwer von Personen mit Sehbehinderung lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Nutzer können genervt werden, wenn sie die offene Stelle übersehen.</p>
+                    <p class="tabcontent-text">Nutzer*innen können genervt werden, wenn sie die offene Stelle übersehen.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren ist aufwendiger im Vergleich zu anderen Methoden.</p>
+                    <p class="tabcontent-text">Der Ansatz, ihn selbst zu implementieren, ist aufwendiger im Vergleich zu anderen Methoden.</p>
                 </li>
             </ul>
         `
@@ -843,22 +828,20 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe 
-                        zusätzlich zum Inhalt des Bilds verstanden werden muss.</p>
+                    <p class="tabcontent-text">Sicherer als Gimpy CAPTCHAs, da der Kontext der Aufgabe zusätzlich zum Inhalt des Bildes verstanden werden muss.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren ist einfach im Vergleich zu anderen Methoden.</p>
+                    <p class="tabcontent-text">Den Ansatz selbst zu implementieren, ist einfacher im Vergleich zu anderen Methoden.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Ohne Implementierung von Ausnahmen, nicht oder nur schwer mit Sehbehinderung lösbar.</p>
+                    <p class="tabcontent-text">Ohne die Implementierung von Ausnahmen ist die Methode nicht oder nur schwer von Personen mit Sehbehinderung lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren benötigt entsprechende Bilder und damit verbunden 
-                        notwendigen Speicherplatz.</p>
+                    <p class="tabcontent-text">Den Ansatz selbst zu implementieren, benötigt entsprechende Bilder und damit verbunden den notwendigen Speicherplatz.</p>
                 </li>
             </ul>
         `
@@ -899,29 +882,27 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Nutzer*innen müssen nur eine Checkbox anklicken, und 
-                        ist somit relativ gut Unabhängig von den Behinderungen eines Nutzers oder 
-                        einer Nutzerin lösbar.</p>
+                    <p class="tabcontent-text">Nutzer*innen müssen lediglich eine Checkbox anklicken, 
+                    was relativ unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin lösbar ist.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Der reCAPTCHA Ansatz ist kostenlos zu implementieren 
-                        bis zu 10.000 Aufrufen pro Monat.</p>
+                    <p class="tabcontent-text">Der reCAPTCHA-Ansatz ist bis zu 10.000 Aufrufen pro Monat kostenlos zu implementieren.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Kann je nach Implementierung gegen die DSGVO verstoßen.</p>
+                    <p class="tabcontent-text">Je nach Implementierung kann es zu einem Verstoß gegen die DSGVO kommen.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Benötigt einen zusätzlichen kostenpflichtigen Dienst, um sicher DSGVO konform zu sein.</p>
+                    <p class="tabcontent-text">Es wird ein zusätzlicher kostenpflichtiger Dienst benötigt, um sicher DSGVO-konform zu sein.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Durchleuchtet den Browserverlauf der Nutzer*innen.</p>
+                    <p class="tabcontent-text">Der Browserverlauf der Nutzer*innen wird durchleuchtet.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren ist sehr aufwendig und schwierig.</p>
+                    <p class="tabcontent-text">Die selbstständige Implementierung des Ansatzes ist sehr aufwendig und schwierig.</p>
                 </li>
             </ul>
         `
@@ -948,7 +929,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin immer lösbar.</p>
+                    <p class="tabcontent-text">Unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin ist der Ansatz immer lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Die Methode wird von mehreren Anbietern angeboten.</p>
@@ -961,7 +942,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <p class="tabcontent-text">Die meisten Ansätze sind relativ teuer.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Den Ansatz selber zu implementieren ist sehr aufwendig.</p>
+                    <p class="tabcontent-text">Die selbstständige Implementierung des Ansatzes ist sehr aufwendig.</p>
                 </li>
             </ul>
         `
@@ -991,20 +972,20 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin immer lösbar.</p>
+                    <p class="tabcontent-text">Unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin ist die Lösung immer möglich.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Leicht selbst zu implementieren.</p>
+                    <p class="tabcontent-text">Die Methode ist leicht selbst implementierbar.</p>
                 </li>
             </ul>
         `,
         contra: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Bots die das unsichtbare CAPTCHA ignorieren kommen einfach durch ohne weitere CAPTCHAs.</p>
+                    <p class="tabcontent-text">Bots, die das unsichtbare CAPTCHA ignorieren, werden ohne weitere CAPTCHAs nicht aufgehalten.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Die Methode wird von keinem Anbietern angeboten und muss daher selbst implementiert werden.</p>
+                    <p class="tabcontent-text">Die Methode wird von keinem Anbieter angeboten und muss daher selbst implementiert werden.</p>
                 </li>
             </ul>
         `
