@@ -38,6 +38,7 @@ h3 {
 
 a {
     font-size: var(--small);
+    color: var(--mi-lila);
     text-decoration: none;
 }
 
