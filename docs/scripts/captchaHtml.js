@@ -25,7 +25,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `,
         description: `
-            Bei dieser Methode wird einem Nutzer oder einer Nutzerin eine Sammlung von Bildern vorgesetzt. Ziel ist es, alle Bilder 
+            Bei dieser Methode wird Nutzer*innen eine Sammlung von Bildern vorgesetzt. Ziel ist es, alle Bilder 
             mit einem bestimmten Merkmal zu markieren. Alternativ gibt es auch Ansätze, bei denen ein Bild in mehrere Teile aufgeteilt 
             wird. In diesem Fall besteht die Aufgabe darin, alle Teile auszuwählen, die ein bestimmtes Merkmal teilen. Der Ansatz des 
             Bilderkennungstests ist die am weitesten verbreitete Methode mit vielen Optionen an Anbietern. Er wird von 
@@ -57,7 +57,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Ansätze, bei denen Merkmale auf Teilen eines großen Bildes erkannt 
                     werden müssen, sind nicht nutzerfreundlich. Es kann leicht dazu kommen, dass nur wenige Pixel 
-                    des Merkmals sich auf einem Teil befinden, was zur Verwirrung des Nutzers oder der Nutzerin führt.</p>
+                    des Merkmals sich auf einem Teil befinden, was zur Verwirrung der Nutzer*innen führt. </p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Den Ansatz selbst zu implementieren, benötigt entsprechende Bilder und damit verbunden den notwendigen Speicherplatz.</p>
@@ -174,9 +174,10 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `,
         description: `
-            Ein weiterer Ansatz besteht darin, für ein Audio CAPTCHA Geräusche zu verwenden. Zum Beispiel wird 
-            Vogelzwitschern abgespielt, und der Nutzer oder die Nutzerin muss nun erkennen, zu welchem Tier dieses 
-            Geräusch gehört. Die Audio-Version von <a href="https://www.arkoselabs.com/arkose-matchkey/" target="_blank">Arkose Labs</a> nutzt diese Methode, indem sie Aufgaben stellt wie: 
+            Ein weiterer Ansatz besteht darin, für ein Audio CAPTCHA Geräusche zu verwenden. Zum Beispiel 
+            wird Vogelzwitschern abgespielt, und die Nutzer*innen müssen nun erkennen, zu welchem Tier dieses 
+            Geräusch gehört. Die Audio-Version von 
+            <a href="https://www.arkoselabs.com/arkose-matchkey/" target="_blank">Arkose Labs</a> nutzt diese Methode, indem sie Aufgaben stellt wie: 
             'Welche Option ist das Geräusch einer Katze?', und dann drei Geräusche hintereinander abspielt.
         `,
         pro: `
@@ -227,7 +228,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             Kritisiert wird im zugehörigen Paper, dass die visuellen und auditiven Ansätze von CAPTCHAs getrennt voneinander 
             entwickelt werden, wodurch eine qualitative Diskrepanz zwischen den beiden implementierten Ansätzen entsteht. 
             In diesem konkreten Ansatz werden Bilder von alltäglichen Gegenständen gezeigt, zusammen mit dem dazugehörigen 
-            Geräusch. Der Nutzer oder die Nutzerin muss nun den Gegenstand wiedererkennen und die Antwort eingeben.
+            Geräusch. Die Nutzer*innen müssen nun den Gegenstand wiedererkennen und die Antwort eingeben.
         `,
         pro: `
             <ul class="tabcontent-ul">
@@ -370,8 +371,8 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `,
         description: `
-            Nicht zu verwechseln mit der Gimpy-Methode. Bei dieser Methode erhält ein Nutzer oder eine Nutzerin 
-            eine Frage im Textformat, zum Beispiel: 'Wenn morgen Samstag ist, welcher Tag ist heute?'. Diese Frage 
+            Nicht zu verwechseln mit der Gimpy-Methode. Bei dieser Methode erhalten Nutzer*innen eine Frage im 
+            Textformat, zum Beispiel: 'Wenn morgen Samstag ist, welcher Tag ist heute?'. Diese Frage 
             muss nun per Texteingabe beantwortet werden. Für Bots liegt das Problem darin, die Logik der Frage zu 
             erkennen, wodurch die Frage für Nutzer*innen leicht erkennbar bleiben kann. Durch das Textformat ist 
             es auch möglich, Hilfsmittel wie Screenreader zu verwenden, um Nutzer*innen mit Sehbehinderung beim 
@@ -459,7 +460,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             Die meisten gefundenen Mathe-CAPTCHAs verwenden in der Regel Textformat. Durch die Kombination 
             beider Ansätze ist es möglich, eine Audiodatei für die Nutzer*innen abzuspielen, die nicht mehr 
             verzerrt werden muss. Da der Inhalt der Audiodatei verstanden und verarbeitet werden muss, um das 
-            CAPTCHA zu lösen. Zudem ist die Mathe-Aufgabe im Audioformat schwerer zu erkennen für Bots als im Textformat.
+            CAPTCHA zu lösen. Zudem ist die Mathe-Aufgabe im Audioformat für Bots schwerer zu erkennen, als im Textformat.
         `,
         pro: `
             <ul class="tabcontent-ul">
@@ -519,7 +520,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `,
         description: `
-            Bei der Bongo-Methode wird einem Nutzer oder einer Nutzerin zwei Gruppen von Bildern gezeigt, 
+            Bei der Bongo-Methode werden Nutzer*innen zwei Gruppen von Bildern gezeigt, 
             die sich in einem Merkmal voneinander unterscheiden. 
             Danach werden weitere Bilder angezeigt. Nun muss entschieden werden, welche der Bilder zu einer 
             bestimmten Gruppe gehören.
@@ -573,9 +574,9 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             gemacht. Dies geschieht, indem die Konsonanten der Wörter mit einem Ersatzkonsonanten ersetzt 
             werden, einem Konsonanten, der anstelle des angestrebten Ziellautes genutzt wird. 
             In dem konkreten Ansatz von Yamaguchi et al. wurde die Methode mit verbaler Ausgabe 
-            implementiert, um Menschen mit Sehbehinderung das Lösen ebenfalls zu ermöglichen. Ein ähnlicher 
-            Ansatz ohne Ersatzkonsonanten und mit dem Erkennen von Sätzen mit auffälliger Semantik wurde auch 
-            in anderen Arbeiten konzipiert, der benutzerfreundlicher sein kann.
+            implementiert, um Menschen mit Sehbehinderung das Lösen ebenfalls zu ermöglichen. 
+            Ein benutzerfreundlicher Ansatz ohne Ersatzkonsonanten und mit dem Erkennen von Sätzen 
+            mit auffälliger Semantik wurde auch in anderen Arbeiten konzipiert.
         `,
         pro: `
             <ul class="tabcontent-ul">
@@ -583,7 +584,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Nutzer müssen sich keine langen Zeichenfolgen merken.</p>
+                    <p class="tabcontent-text">Nutzer*innen müssen sich keine langen Zeichenfolgen merken.</p>
                 </li>
             </ul>
         `,
@@ -677,8 +678,8 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         description: `
             Die Aufgabe dieser Methode besteht darin, einen Gegenstand oder einen Blickwinkel so 
             auszurichten, dass das geforderte Ergebnis erzielt wird. Die Ansätze für diese Methode 
-            können sich dabei untereinander unterscheiden, aber das Grundprinzip bleibt gleich: Ein 
-            Nutzer oder eine Nutzerin muss die visuellen Informationen und die Aufgabe verstehen, um 
+            können sich dabei untereinander unterscheiden, aber das Grundprinzip bleibt gleich: 
+            Nutzer*innen müssen die visuellen Informationen und die Aufgabe verstehen, um 
             das CAPTCHA zu lösen. Der Ansatz von <a href="https://www.arkoselabs.com/arkose-matchkey/" target="_blank">Arkose Labs</a> zeigt zwei Bilder. Die Aufgabe 
             besteht darin, den Gegenstand im zweiten Bild so auszurichten, dass er genau wie der 
             Gegenstand aus dem ersten Bild positioniert ist.
@@ -719,8 +720,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         description: `
             Dies ist eine von 
             <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-captcha-and-challenge.html" target="_blank">AWS WAF CAPTCHAs</a> 
-            verwendete visuelle Methode. Eine Nutzerin bekommt 
-            eine fiktive 3D-Stadtkarte angezeigt, auf der ein eingezeichneter Pfad dargestellt ist. An 
+            verwendete visuelle Methode. Nutzer*innen bekommen eine fiktive 3D-Stadtkarte angezeigt, auf der ein eingezeichneter Pfad dargestellt ist. An 
             einem Ende befindet sich ein Auto-Symbol, und die Aufgabe besteht darin, das andere Ende des 
             Pfades zu markieren.
         `,
@@ -821,8 +821,8 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         `,
         description: `
             Diese Methode ähnelt dem Puzzle-Teil, da auch hier Elemente per Drag & Drop bewegt werden. 
-            Ein Nutzer oder eine Nutzerin hat dabei mehrere Objekte zur Auswahl und ein weiteres festes 
-            Objekt. Die Aufgabe besteht darin, den passenden auswählbaren Gegenstand auf das feste Objekt 
+            Nutzer*innen haben dabei mehrere Objekte zur Auswahl und ein weiteres festes Objekt. 
+            Die Aufgabe besteht darin, den passenden auswählbaren Gegenstand auf das feste Objekt 
             zu bewegen.
         `,
         pro: `
@@ -859,31 +859,31 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         `,
         description: `
             Bei dieser Methode wertet das CAPTCHA das Verhalten der Nutzer*innen aus. 
-            Ein Ansatz besteht darin, das Verhalten des Nutzers oder der Nutzerin direkt auf der 
-            Seite zu beobachten. Die andere Möglichkeit wäre, mit Cookies zu arbeiten und den Verlauf 
+            Ein Ansatz besteht darin, das Verhalten der Nutzer*innen direkt auf der Seite zu beobachten. 
+            Die andere Möglichkeit wäre, mit Cookies zu arbeiten und den Verlauf 
             des Nutzers oder der Nutzerin zu untersuchen. Es ist auch möglich, beide Ansätze miteinander 
             zu kombinieren, um eine bessere Genauigkeit zu erzielen. Gerade letzterer Ansatz könnte je 
             nach Implementierung nicht mit der DSGVO vereinbar sein. Auch wenn der Ansatz korrekt 
             implementiert wird, greift man weiter in die Privatsphäre seiner Nutzer*innen ein, was 
             entsprechend abgewogen werden sollte. <a href="https://developers.google.com/recaptcha/docs/display?hl=de" target="_blank">reCAPTCHA v2</a> verwendet dabei beide Ansätze. 
-            Es analysiert das Nutzerverhalten auf der Seite, nutzt Cookies und überprüft den Verlauf 
-            des Nutzers oder der Nutzerin. Die gesammelten Daten stammen 
+            Es analysiert das Nutzerverhalten auf der Seite, nutzt Cookies und überprüft den Verlauf der Nutzer*innen. 
+            Die gesammelten Daten stammen 
             dabei von anderen Seiten, die ebenfalls Google-Dienste verwenden. Sollte weiterhin 
-            unklar sein, ob der Nutzer oder die Nutzerin legitim ist, so bietet reCAPTCHA weitere CAPTCHAs zum Lösen an.
+            unklar sein, ob die Nutzer*innen legitim sind, so bietet reCAPTCHA weitere CAPTCHAs zum Lösen an.
             <br>
             <a href="https://www.ccm19.de" target="_blank">CCM19</a> (Cookie Consent Manager)  ist ein Dienst, der ergänzend zu reCAPTCHA v2 
-            implementiert wird. So soll der Nutzer oder die Nutzerin die Möglichkeit erhalten, dem 
+            implementiert wird. So sollen die Nutzer*innen die Möglichkeit erhalten, dem 
             Verwenden von Cookies zuzustimmen, bevor reCAPTCHA geladen wird. Dadurch kann reCAPTCHA 
-            DSGVO-konform genutzt werden. <a href="https://developers.google.com/recaptcha?hl=de" target="_blank">reCAPTCHA v3</a> funktioniert ähnlich, nur dass es für 
-            den Nutzer komplett unsichtbar ist. Es wertet auf einer Skala von 0 bis 1 aus, ob der Nutzer 
-            oder die Nutzerin ein Bot ist und überlässt dem Anbieter oder der Anbieterin der Webseite, 
+            DSGVO-konform genutzt werden. <a href="https://developers.google.com/recaptcha?hl=de" target="_blank">reCAPTCHA v3</a> funktioniert 
+            ähnlich, nur dass es für die Nutzer*innen komplett unsichtbar ist. Es wertet auf einer Skala 
+            von 0 bis 1 aus, ob ein*e Nutzer*in ein Bot ist und überlässt den Anbieter*innen der Webseite, 
             was er oder sie mit der Information macht.
         `,
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Nutzer*innen müssen lediglich eine Checkbox anklicken, 
-                    was relativ unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin lösbar ist.</p>
+                    was relativ unabhängig von den Behinderungen der Nutzer*innen lösbar ist.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Der reCAPTCHA-Ansatz ist bis zu 10.000 Aufrufen pro Monat kostenlos zu implementieren.</p>
@@ -918,8 +918,8 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `,
         description: `
-            Bei dieser Methode ist gemeint, dass die Maschine des Nutzers oder der Nutzerin ein 
-            kryptografisches Rätsel lösen muss, um das CAPTCHA zu bewältigen. Die Aufgabe kann 
+            Bei dieser Methode ist gemeint, dass die Maschine der Nutzer*innen ein kryptografisches 
+            Rätsel lösen muss, um das CAPTCHA zu bewältigen. Die Aufgabe kann 
             dann bei Verdacht auf einen Bot erschwert werden. Das Konzept dieser Methode besteht 
             darin, Angriffe aufgrund der benötigten Rechenleistung so teuer zu machen, dass sie 
             sich nicht lohnen würden. <a href="https://friendlycaptcha.com/de/" target="_blank">Friendly Captcha</a> 
@@ -929,7 +929,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin ist der Ansatz immer lösbar.</p>
+                    <p class="tabcontent-text">Unabhängig von den Behinderungen der Nutzer*innen ist der Ansatz immer lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Die Methode wird von mehreren Anbietern angeboten.</p>
@@ -972,7 +972,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin ist die Lösung immer möglich.</p>
+                    <p class="tabcontent-text">Unabhängig von den Behinderungen der Nutzer*innen ist die Lösung immer möglich.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Die Methode ist leicht selbst implementierbar.</p>
