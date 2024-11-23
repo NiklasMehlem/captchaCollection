@@ -1,3 +1,5 @@
+/* Alle Style Variablen die auf der Seite verwendet werden, für ein einheitliches Layout. */
+
 @font-face {
     font-family: 'roboto-slab';
     font-style: normal;
@@ -24,6 +26,7 @@
     --mi-blau: #2F59DA;
     --mi-lila: #9829C8;
 
+    /* flexible Werte um die Seite möglichst flüssig und verschiedenste Seitenbreiten anzupassen. */
     --xxs: 0.25em;
     --xs: 0.5em;
     --small: 1em;
@@ -39,7 +42,8 @@
     --4x-huge: 64em;
     --5x-huge: 144em;
 
-    /*
+    /* Kleinst mögliche Werte der Variablen zur Übersicht und als Referenz 
+        (Minimaler Wert ist font-size: 16px; Dieser Wert wird bei einer Seitenbreite von 1024px oder weniger erreicht):
     --xxs: 4px;
     --xs: 8px;
     --small: 16px;

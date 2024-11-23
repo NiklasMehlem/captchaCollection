@@ -1,3 +1,5 @@
+/* Hier befinden sich sowohl alle funktionen die für das Interagieren mit den CAPTCHAs und der Seite benötigt werden. */
+
 const orientierungPictures = [
     "./images/automobile-2823855_640.webp", // orientierung 0
     "./images/car-4716031_640.webp", // orientierung 1
@@ -11,33 +13,36 @@ var currentOrientierung = 0;
 var counter_value = 0
 var selectedElements = [];
 
+/* Schaltet das Seiten Menü an oder aus */
 function toggleMenu() {
     var sideMenu = document.querySelector('#menu');
     sideMenu.classList.toggle('hidden');
 }
 
+/* Code für das auswählen der Tabs und das anzeigen ihres Inhalts */
 function openTab(tabName) {
     const eventTab = document.getElementById(tabName)
 
-    // Hide all tab content
+    /* Entfernt den Inhalt des aktuellen Tabs */
     var tabcontent = document.getElementsByClassName("tabcontent");
     for (var i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
-    // Remove 'active' class from all tab links
+    /* Der vorherige Tab wird nicht mehr als ausgewählt angezeigt */
     var tablinks = document.getElementsByClassName("tablink");
     for (var i = 0; i < tablinks.length; i++) {
         tablinks[i].classList.remove("active");
     }
 
-    // Show the selected tab content
+    /* Zeigt den Inhalt des gewählten Tabs */
     eventTab.style.display = "block";
 
-    // Add 'active' class to the clicked tab link
+    /* Der aktuelle Tab wird als ausgewählt angezeigt */
     event.currentTarget.classList.add("active");
 }
 
+/* Sorgt dafür das ein Objekt ausgewählt werden kann */
 function selectCaptcha() {
     event.currentTarget.classList.toggle('selected');
     if (event.currentTarget.classList.contains('selected')) {
@@ -48,24 +53,28 @@ function selectCaptcha() {
     }
 }
 
+/* Zeigt beim Honeypot-CAPTCHA die versteckte Aufgabe an */
 function toggleHiddenInput() {
     var sideMenu = document.querySelector('#hidden-answerInput');
     sideMenu.classList.toggle('revealed');
 }
 
-function displayCorrectHTML() { //// Code in Html machen?
+/* Zeigt ein Element um zu bestätigen, dass die richtige Eingabe getätigt wurde. */
+function displayCorrectHTML() { // Code könnte vl in HTML geschrieben werden als optimierung
     const newParagraph = document.createElement('p');
     newParagraph.classList.add("captcha-correct")
     newParagraph.textContent = 'Richtig!';
-    const captchaDiv = document.getElementById('captcha');  // Replace the content of the div with the new paragraph
+    const captchaDiv = document.getElementById('captcha');
     captchaDiv.innerHTML = '';
     captchaDiv.appendChild(newParagraph);
 }
 
+/* Pop-up um zu zeigen, dass eine falsche Eingabe getätigt wurde. */
 function displayFalse() {
     alert('Das war leider nicht richtig.');
 }
 
+/* funktionen die für Drag und Drop interaktionen benötigt werden */
 function dragStart(event) {
     event.dataTransfer.setData("text", event.target.id);
 }
@@ -74,6 +83,7 @@ function allowDrop(event) {
     event.preventDefault();
 }
 
+/* Ermöglicht zwischen den verschiedenen Orientierungne bei der Orientierungs-Methode durchzurotieren */
 function displayPreviousOrientierung() {
     currentOrientierung--
     displayOrientierung(currentOrientierung);

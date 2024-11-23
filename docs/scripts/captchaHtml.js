@@ -1,10 +1,43 @@
-const captchaHTML = [ /// img Alts richtig beschriften!
+/* Hier befindet sich der Inhalt der CAPTCHA Sammlung, hierzu gehören die Layouts der CAPTCHAs und die dazugehörigen Texte.;
+    Desweiteren befindet sich hier der Code um sich durch die Einträge der Sammlung zu navigieren. */
+
+const captchaHTML = [
     { // captcha 0 Start Page
-        name: 'Effektive CAPTCHAs für Sehbehinderte : Eine Sammlung für Entwickler',
+        name: 'Effektive CAPTCHAs für Sehbehinderte',
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Hier könnte ihr CAPTCHA STEHEN</p>
             </div>
+        `,
+        description: `
+            In diesem Projekt wird eine nutzbare
+            CAPTCHA-Sammlung erstellt, die Entwicklern einen besseren Überblick über die vorhandenen
+            CAPTCHA-Alternativen mit Fokus auf Nutzerfreundlichkeit für Sehbehinderte geben soll. Durch
+            die interaktive Sammlung sollen die verschiedenen Ansätze besser vermittelt werden, als es
+            im einfachen Text- und Bildformat möglich wäre. So können Entwickler durch das eigene
+            Erlebnis und die bereitgestellten Informationen fundierte Entscheidungen über den Einsatz
+            einer CAPTCHA-Methode treffen.
+            Ziel der Arbeit ist es nicht, eigene CAPTCHAs zu konzipieren oder zu entwickeln. Dennoch
+            kommen neu konzipierte CAPTCHAs aus anderen Arbeiten in der Sammlung vor. Diese haben sich
+            bereits mit dem Thema auseinandergesetzt und werden ebenfalls aufgeführt, um als Inspiration
+            oder Ansatz zu dienen.
+            <br>
+            <br>
+            Hier gehts zum <a href="https://github.com/NiklasMehlem/captchaCollection" target="_blank">Repository</a>
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Vorteile werden hier aufgelistet</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nachteile werden hier aufgelistet</p>
+                </li>
+            </ul>
         `
     },
     { // captcha 1 Bilderkennungstests
@@ -12,15 +45,15 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Wählen Sie alle Bilder mit Blumen aus!</p>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/animal-3669244_640.webp" alt="Image 1"></div>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/animals-2178758_640.webp" alt="Image 2"></div>
-                <div class="grid-item" onclick="selectCaptcha()" id="imgTR"><img src="./images/bouquet-142876_640.webp" alt="Image 3"></div>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/cat-1455468_640.webp" alt="Image 4"></div>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/cat-1647775_640.webp" alt="Image 5"></div>
-                <div class="grid-item" onclick="selectCaptcha()" id="imgMR"><img src="./images/orange-flowers-8087066_640.webp" alt="Image 6"></div>
-                <div class="grid-item" onclick="selectCaptcha()" id="imgBL"><img src="./images/flowers-5820050_640.webp" alt="Image 7"></div>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/dogs-7956516_640.webp" alt="Image 8"></div>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/dogs-8613175_640.webp" alt="Image 9"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/animal-3669244_640.webp" alt="Bild 1"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/animals-2178758_640.webp" alt="Bild 2"></div>
+                <div class="grid-item" onclick="selectCaptcha()" id="imgTR"><img src="./images/bouquet-142876_640.webp" alt="Bild 3"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/cat-1455468_640.webp" alt="Bild 4"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/cat-1647775_640.webp" alt="Bild 5"></div>
+                <div class="grid-item" onclick="selectCaptcha()" id="imgMR"><img src="./images/orange-flowers-8087066_640.webp" alt="Bild 6"></div>
+                <div class="grid-item" onclick="selectCaptcha()" id="imgBL"><img src="./images/flowers-5820050_640.webp" alt="Bild 7"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/dogs-7956516_640.webp" alt="Bild 8"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/dogs-8613175_640.webp" alt="Bild 9"></div>
                 <button id="captcha-confirm-button"onclick="checkBilderkennungstests()">Bestätigen</button>
             </div>
         `,
@@ -70,7 +103,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Bitte geben sie den Text aus dem Bild unten ein!</p>
-                <img id="textCaptchaImg" src="./images/gimpyCaptchaImg.webp" alt="TextCAPTCHAImage">
+                <img id="textCaptchaImg" src="./images/gimpyCaptchaImg.webp" alt="Text CAPTCHA Bild">
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkGimpy()">Bestätigen</button>
             </div>
@@ -213,7 +246,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Bitte geben sie unten ein, um welches Tier es sich hier handelt!</p>
-                <div class="grid-item-solid"><img src="./images/birds-6525352_640.webp" alt="refrenceImg">
+                <div class="grid-item-solid"><img src="./images/birds-6525352_640.webp" alt="Pix Audio Bild">
                 </div>
                 <audio controls id="pixAudioCaptchaAudio">
                     <source src="./sounds/bird-voices-7716.mp3" type="audio/mp3">
@@ -266,7 +299,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Bitte geben sie die Anfangsbuchstaben aller Wörter des Spruches unten ein!</p>
-                <img id="textCaptchaImg" src="./images/acronymCaptchaImg.webp" alt="TextCAPTCHAImage">
+                <img id="textCaptchaImg" src="./images/acronymCaptchaImg.webp" alt="Akronym Bild">
                 <audio controls id="audioCaptchaAudio">
                     <source src="./sounds/merry-christmas-38071.mp3" type="audio/mp3">
                     Your browser does not support the audio element.
@@ -491,30 +524,30 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     gehören!
                 </p>
                 <div class="inner-grid-container">
-                    <div class="inner-grid-item"><img src="./images/cat-1455468_640.webp" alt="Image 4">
+                    <div class="inner-grid-item"><img src="./images/cat-1455468_640.webp" alt="Bild 1">
                     </div>
-                    <div class="inner-grid-item"><img src="./images/cat-1647775_640.webp" alt="Image 5">
+                    <div class="inner-grid-item"><img src="./images/cat-1647775_640.webp" alt="Bild 2">
                     </div>
-                    <div class="inner-grid-item"><img src="./images/animal-3669244_640.webp" alt="Image 1">
+                    <div class="inner-grid-item"><img src="./images/animal-3669244_640.webp" alt="Bild 3">
                     </div>
                 </div>
                 <div class="inner-grid-container grid-container-right">
-                    <div class="inner-grid-item"><img src="./images/animals-2178758_640.webp" alt="Image 2">
+                    <div class="inner-grid-item"><img src="./images/animals-2178758_640.webp" alt="Bild 4">
                     </div>
-                    <div class="inner-grid-item"><img src="./images/dogs-7956516_640.webp" alt="Image 8">
+                    <div class="inner-grid-item"><img src="./images/dogs-7956516_640.webp" alt="Bild 5">
                     </div>
-                    <div class="inner-grid-item"><img src="./images/dogs-8613175_640.webp" alt="Image 9">
+                    <div class="inner-grid-item"><img src="./images/dogs-8613175_640.webp" alt="Bild 6">
                     </div>
                 </div>
                 <div class="inner-2-collum-grid-container">
                     <div class="grid-item grid-container-end" onclick="selectCaptcha()"><img
-                            src="./images/raccoons-8282171_640.webp" alt="Image 3"></div>
+                            src="./images/raccoons-8282171_640.webp" alt="Bild 7"></div>
                     <div class="grid-item grid-container-start" onclick="selectCaptcha()" id="imgTR"><img
-                            src="./images/dog-5357794_640.webp" alt="Image 3"></div>
+                            src="./images/dog-5357794_640.webp" alt="Bild 8"></div>
                     <div class="grid-item grid-container-end" onclick="selectCaptcha()" id="imgBL"><img
-                            src="./images/dogs-2936442_640.webp" alt="Image 3"></div>
+                            src="./images/dogs-2936442_640.webp" alt="Bild 9"></div>
                     <div class="grid-item grid-container-start" onclick="selectCaptcha()"><img
-                            src="./images/cat-5940147_640.webp" alt="Image 3"></div>
+                            src="./images/cat-5940147_640.webp" alt="Bild 10"></div>
                 </div>
                 <button id='captcha-confirm-button' onclick="checkBongo()">Bestätigen</button>
             </div>
@@ -655,7 +688,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <p id="captcha-container-header">Wählen Sie das Bild auf der rechten Seite aus, dessen
                     Objekt die gleiche Orientierung wie das Objekt im linken Bild hat!
                 </p>
-                <div class="grid-item-solid"><img src="./images/dog-5357794_640.webp" alt="refrenceImg">
+                <div class="grid-item-solid"><img src="./images/dog-5357794_640.webp" alt="Referenz Bild">
                 </div>
                 <div class="grid-container grid-container-right">
                     <svg class="inner-grid-button grid-container-center"
@@ -664,7 +697,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                         <polyline points="24,8 0,32 24,56" />
                     </svg>
                     <div class="grid-item-solid"><img id="orientierungImg"
-                            src="./images/automobile-2823855_640.webp" alt="orientierungImg">
+                            src="./images/automobile-2823855_640.webp" alt="Orientierungs Bild">
                     </div>
                     <svg class="inner-grid-button grid-container-center"
                         onclick="displayNextOrientierung()" xmlns="http://www.w3.org/2000/svg"
@@ -757,7 +790,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     class="grid-container-center grid-container-middle"><img src="./images/puzzlePiece.webp"
                         alt="Puzzle Piece" id="puzzle-piece">
                 </div>
-                <img id="kartenCaptchaImg" src="./images/puzzleImg.webp" alt="Karten Captcha Bild"
+                <img id="kartenCaptchaImg" src="./images/puzzleImg.webp" alt="Puzzleteil Captcha Bild"
                     usemap="#image-map">
                 <map name="image-map">
                     <area shape="circle" coords="47,232,24" ondrop="checkPuzzle(event)"
@@ -994,19 +1027,29 @@ const captchaHTML = [ /// img Alts richtig beschriften!
 
 var currentHTML = 0;
 
+/* funktion um eine CAPTCHA-Demo anzuzeigen.*/
 function displayHTML(tempCurrent) {
+    
+    /* Wenn tempCurrent der Name einer Methode ist, wird diese herausgesucht und angezeigt. 
+        Dies ermöglicht es problemlos die Sammlung zu skalieren und umzusortieren ohne große Probleme */
     if (tempCurrent != null) {
         var currentName = tempCurrent;
-        for (currentHTML = 1; currentHTML < captchaHTML.length; currentHTML++) {
+        for (currentHTML = 0; currentHTML < captchaHTML.length; currentHTML++) {
             if (currentName === captchaHTML[currentHTML].name) break;
         }
     }
 
-    if (currentHTML < 1) currentHTML = captchaHTML.length - 1;
-    else if (currentHTML >= captchaHTML.length) currentHTML = 1;
+    /* Überprüft ob der currentHTML Wert inerhalb des gültigen berreichs liegt. 
+        Sorgt ebenfalls dafür, dass vom letzten Eintrag auf den ersten Eintrag in der Sammlung gesprungen werden kann und anders herum. */
+    if (currentHTML < 0) currentHTML = captchaHTML.length - 1;
+    else if (currentHTML >= captchaHTML.length) currentHTML = 0;
+
+    /* Setzt alle Werte zurück, um Bugs zu verhindern */
     selectedElements = 0;
     currentOrientierung = 0;
     counter_value = 0;
+
+    /* Weißt allen Elementen die Informationen der CAPTCHA-Demo zu */
     const nameDiv = document.getElementById('captcha-name-text');
     const captchaDiv = document.getElementById('captcha');
     const descriptionP = document.getElementById('description');
@@ -1017,7 +1060,9 @@ function displayHTML(tempCurrent) {
     descriptionP.innerHTML = captchaHTML[currentHTML].description;
     proDiv.innerHTML = captchaHTML[currentHTML].pro;
     contraDiv.innerHTML = captchaHTML[currentHTML].contra;
-    if (captchaHTML[currentHTML].name == 'Kryptografie') { //aktiviert Kryptographie CAPTCHA
+
+    /* aktiviert das Kryptographie CAPTCHA */
+    if (captchaHTML[currentHTML].name == 'Kryptografie') {
         var progress = document.querySelector('.progressbar .progress');
 
         function counterInit(fValue, lValue) {
@@ -1026,7 +1071,9 @@ function displayHTML(tempCurrent) {
             if (counter_value >= fValue && counter_value <= lValue) {
                 progress.style.width = counter_value + '%';
                 setTimeout(function () { counterInit(fValue, lValue); }, 50);
-            } else if (document.getElementById('captcha-name-text').textContent == 'Kryptografie') {
+            } 
+            /* Überprüft ob das CAPTCHA noch das Kryptografie-CAPTCHA ist um nicht eine andere Methode zu lösen */
+            else if (document.getElementById('captcha-name-text').textContent == 'Kryptografie') {
                 displayCorrectHTML();
             }
         }
@@ -1034,11 +1081,13 @@ function displayHTML(tempCurrent) {
     }
 }
 
+/* geht zum vorherigen Eintrag in der Sammlung */
 function displayPreviousHTML() {
     currentHTML--
     displayHTML();
 }
 
+/* geht zum nächsten Eintrag in der Sammlung */
 function displayNextHTML() {
     currentHTML++
     displayHTML();

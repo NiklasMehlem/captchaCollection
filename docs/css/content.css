@@ -1,5 +1,8 @@
+/* Verschiedenste Styles für auf der Seite verwendeten Elemente. (z.B. Überschriften, Tabs, Pfeile etc.) */
+
 @import url(./var.css);
 
+/* Content ist der Hauptbereich der Seite und beinhaltet alles was nicht zum Seitenmenü gehört */
 #content {
     min-width: var(--xxx-huge);
     flex: 1;
@@ -9,6 +12,7 @@
     margin-bottom: var(--xl);
 }
 
+/* top und middle sind 'Zeilen' inherlab des content containers */
 #content-top,
 #content-middle {
     display: flex;
@@ -23,6 +27,7 @@
     margin-bottom: var(--medium);
 }
 
+/* Style für den Name der CAPTCHA Methode */
 #captcha-name {
     text-align: center;
 }
@@ -32,6 +37,8 @@
     margin-bottom: 0;
 }
 
+/* Unsichtbares Element damit alle Spalten über alle Zeilen im content container korrekt zueinander platziert werden. 
+    Ohne filler kommt es früher oder später zu Zeilenumbrüchen inden verschiedenen Zeilen bei den verschiedenen Flex-containern. */
 .captcher-text-filler {
     height: 0;
 }
@@ -41,20 +48,17 @@
     row-gap: var(--medium);
 }
 
+/* Container für die CAPTCHAs und zugehörigen Elemente wie die Navigationspfeile */
 #captcha-box {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
 
+/* Container für die CAPTCHA-Demo */
 #captcha {
     margin-bottom: var(--small);
     box-shadow: 0 var(--xxs) var(--xs) 0 var(--mi-hellgrau), 0 var(--xxs) var(--small) 0 var(--mi-grau);
-    /*
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    */
 }
 
 #captcha-name,
@@ -62,6 +66,7 @@
     width: var(--xxx-huge);
 }
 
+/* Container für die Navigationspfeile */
 #captcha-bottom {
     display: flex;
     justify-content: space-between;
@@ -69,6 +74,7 @@
     margin-top: 0;
 }
 
+/* Style für die Navigationspfeile */
 .captcha-button {
     width: var(--xxl);
     height: var(--xxl);
@@ -85,6 +91,9 @@
     width: clamp(var(--xxx-huge), 25vw, var(--4x-huge));
 }
 
+/* Änder das Layout sobald die Breite der Sammlung zu gering wird. 
+    Alle Elemente werden nun untereinander aufgereit und nutzen nun den größten Teil der Seitenbreite aus. 
+    So bleiben Texte leserlich, und das CAPTCHA erkennbar.*/
 @media screen and (max-width: 144em) {
 
     #captcha-text,
@@ -93,10 +102,12 @@
     }
 }
 
+/* Container für die Tabs */
 #tab-container {
     display: flex;
 }
 
+/* Style für die Tabs */
 .tablink {
     flex: 1;
     min-width: fit-content;
@@ -114,6 +125,14 @@
     user-select: none;
 }
 
+/* Style für den aktuellen Tab */
+.active {
+    color: var(--mi-pink);
+    cursor: default;
+    border-bottom: var(--xxs) solid var(--mi-gruen);
+}
+
+/* tabcontent sind alles Styles für die verschiedenen Texte und Listen von Beschreibung, Vorteilen und Nachteilen */
 .tabcontent {
     display: none;
     margin-bottom: var(--small);
@@ -130,10 +149,4 @@
 
 .tabcontent-text {
     margin-top: 0;
-}
-
-.active {
-    color: var(--mi-pink);
-    cursor: default;
-    border-bottom: var(--xxs) solid var(--mi-gruen);
 }

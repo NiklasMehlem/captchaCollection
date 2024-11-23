@@ -1,5 +1,8 @@
+/* Verschiedene Grids für das Layout von CAPTCHA Demos und oder ihrer Elemente */
+
 @import url(./var.css);
 
+/* Standard grid für CAPTCHA Demos */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -7,6 +10,7 @@
     max-width: var(--xxx-huge);
 }
 
+/* inner-grids sind für das Gruppieren von Elemeten inerhalb einer CAPTCHA Demo gedacht */
 .inner-grid-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -22,6 +26,7 @@
     grid-gap: 0px;
 }
 
+/* Element für den Aufgaben Text des CAPTCHAs */
 #captcha-container-header {
     grid-column: span 3;
     padding: var(--small);
@@ -32,6 +37,7 @@
     user-select: none;
 }
 
+/* Style für auswählbare Elemente inerhalb des CAPTCHAs */
 .grid-item {
     width: var(--huge);
     height: var(--huge);
@@ -43,6 +49,7 @@
     transition: transform 0.3s ease;
 }
 
+/* Style für normale Elemente inerhalb des CAPTCHAs */
 .grid-item-solid {
     width: var(--huge);
     height: var(--huge);
@@ -85,6 +92,7 @@
     content: justify;
 }
 
+/* Alle folgenden styles sind Bausteine um die oben gennanten Elemente zu erweitern, um das gewünschte Layout zu erziehlen. */
 .grid-container-middle {
     grid-column: 2;
 }

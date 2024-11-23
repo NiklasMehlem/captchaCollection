@@ -18,11 +18,12 @@
 
 <body>
     <div id="mainSite">
-        <!--Seitenleiste-->
+        <!--Seitenmenü-->
         <div id="menu">
             <div id="menu-title">
-                <h2 id="menu-title-text">CAPTCHAs</h2>
+                <h2 id="menu-title-text" onclick="displayHTML('Effektive CAPTCHAs für Sehbehinderte')">CAPTCHAs</h2>
             </div>
+            <!--Inhalt des Seitenmenüs-->
             <div id="menu-list">
                 <ul>
                     <li>
@@ -135,6 +136,7 @@
             </div>
         </div>
 
+        <!--Element um das Seitenmenü an und aus zuschalten-->
         <svg id="menu-button" onclick="toggleMenu()" viewBox="0 0 45 35" version="1.1"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="menu-button">
@@ -144,23 +146,28 @@
             </g>
         </svg>
 
-        <!--Inhalt der Seite-->
+        <!--Haupt-Inhalt der Seite-->
         <div id="content">
 
+            <!--Obere 'Zeile' des Seiteninhalts-->
             <div id="content-top">
+                <!--Name der CAPTCHA Methode-->
                 <div id="captcha-name">
                     <h1 id="captcha-name-text">Effektive CAPTCHAs für Sehbehinderte</h1>
                 </div>
                 <div class="captcher-text-filler"></div>
             </div>
 
+            <!--Mittlere 'Zeile' des Seiteninhalts-->
             <div id="content-middle">
                 <div id="captcha-box">
+                    <!--CAPTCHA Demo-->
                     <div id="captcha">
                         <div class="grid-container">
                             <p id="captcha-container-header">CAPTCHA Demos werden hier angezeigt</p>
                         </div>
                     </div>
+                    <!--Elemente um zwischen den Einträgen der Sammlung durchzurotieren-->
                     <div id="captcha-bottom">
                         <svg class="captcha-button" onclick="displayPreviousHTML()" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 64">
@@ -173,12 +180,15 @@
                     </div>
                 </div>
 
+                <!--Tabs um die Informationen zur CAPTCHA-Methode anzuzeigen-->
                 <div id="captcha-text">
                     <div id="tab-container">
                         <p class="tablink active" onclick="openTab('descTab')">Beschreibung</p>
                         <p class="tablink" onclick="openTab('proTab')">Vorteile</p>
                         <p class="tablink" onclick="openTab('contraTab')">Nachteile</p>
                     </div>
+                    <!--Inhalte der verschiedenen Tabs-->
+                    <!--Beschreibung-->
                     <div id="descTab" class="tabcontent" style="display: block">
                         <p id="description" class="tabcontent-text">In diesem Projekt wird eine nutzbare
                             CAPTCHA-Sammlung erstellt, die Entwicklern einen besseren Überblick über die vorhandenen
@@ -190,8 +200,13 @@
                             Ziel der Arbeit ist es nicht, eigene CAPTCHAs zu konzipieren oder zu entwickeln. Dennoch
                             kommen neu konzipierte CAPTCHAs aus anderen Arbeiten in der Sammlung vor. Diese haben sich
                             bereits mit dem Thema auseinandergesetzt und werden ebenfalls aufgeführt, um als Inspiration
-                            oder Ansatz zu dienen.</p>
+                            oder Ansatz zu dienen.
+                            <br>
+                            <br>
+                            Hier gehts zum <a href="https://github.com/NiklasMehlem/captchaCollection" target="_blank">Repository</a>
+                            </p>
                     </div>
+                    <!--Vorteile-->
                     <div id="proTab" class="tabcontent">
                         <ul class="tabcontent-ul">
                             <li class="tabcontent-li">
@@ -199,7 +214,7 @@
                             </li>
                         </ul>
                     </div>
-
+                    <!--Nachteile-->
                     <div id="contraTab" class="tabcontent">
                         <ul class="tabcontent-ul">
                             <li class="tabcontent-li">
