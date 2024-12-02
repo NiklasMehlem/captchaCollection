@@ -1,3 +1,5 @@
+/* Hier werden die Antworten der Nutzer*innen auf die verschiedenen CAPTCHA Aufgaben ausgewertet. */
+
 function checkBilderkennungstests() {
     const imgTR = document.getElementById('imgTR');
     const imgMR = document.getElementById('imgMR');

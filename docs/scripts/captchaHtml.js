@@ -1,10 +1,43 @@
-const captchaHTML = [ /// img Alts richtig beschriften!
+/* Hier befindet sich der Inhalt der CAPTCHA Sammlung, hierzu gehören die Layouts der CAPTCHAs und die dazugehörigen Texte.;
+    Desweiteren befindet sich hier der Code um sich durch die Einträge der Sammlung zu navigieren. */
+
+const captchaHTML = [
     { // captcha 0 Start Page
-        name: 'Effektive CAPTCHAs für Sehbehinderte : Eine Sammlung für Entwickler',
+        name: 'Effektive CAPTCHAs für Sehbehinderte',
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Hier könnte ihr CAPTCHA STEHEN</p>
             </div>
+        `,
+        description: `
+            In diesem Projekt wird eine nutzbare
+            CAPTCHA-Sammlung erstellt, die Entwicklern einen besseren Überblick über die vorhandenen
+            CAPTCHA-Alternativen mit Fokus auf Nutzerfreundlichkeit für Sehbehinderte geben soll. Durch
+            die interaktive Sammlung sollen die verschiedenen Ansätze besser vermittelt werden, als es
+            im einfachen Text- und Bildformat möglich wäre. So können Entwickler durch das eigene
+            Erlebnis und die bereitgestellten Informationen fundierte Entscheidungen über den Einsatz
+            einer CAPTCHA-Methode treffen.
+            Ziel der Arbeit ist es nicht, eigene CAPTCHAs zu konzipieren oder zu entwickeln. Dennoch
+            kommen neu konzipierte CAPTCHAs aus anderen Arbeiten in der Sammlung vor. Diese haben sich
+            bereits mit dem Thema auseinandergesetzt und werden ebenfalls aufgeführt, um als Inspiration
+            oder Ansatz zu dienen.
+            <br>
+            <br>
+            Hier gehts zum <a href="https://github.com/NiklasMehlem/captchaCollection" target="_blank">Repository</a>
+        `,
+        pro: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Vorteile werden hier aufgelistet</p>
+                </li>
+            </ul>
+        `,
+        contra: `
+            <ul class="tabcontent-ul">
+                <li class="tabcontent-li">
+                    <p class="tabcontent-text">Nachteile werden hier aufgelistet</p>
+                </li>
+            </ul>
         `
     },
     { // captcha 1 Bilderkennungstests
@@ -12,20 +45,20 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Wählen Sie alle Bilder mit Blumen aus!</p>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/animal-3669244_640.webp" alt="Image 1"></div>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/animals-2178758_640.webp" alt="Image 2"></div>
-                <div class="grid-item" onclick="selectCaptcha()" id="imgTR"><img src="./images/bouquet-142876_640.webp" alt="Image 3"></div>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/cat-1455468_640.webp" alt="Image 4"></div>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/cat-1647775_640.webp" alt="Image 5"></div>
-                <div class="grid-item" onclick="selectCaptcha()" id="imgMR"><img src="./images/orange-flowers-8087066_640.webp" alt="Image 6"></div>
-                <div class="grid-item" onclick="selectCaptcha()" id="imgBL"><img src="./images/flowers-5820050_640.webp" alt="Image 7"></div>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/dogs-7956516_640.webp" alt="Image 8"></div>
-                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/dogs-8613175_640.webp" alt="Image 9"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/animal-3669244_640.webp" alt="Bild 1"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/animals-2178758_640.webp" alt="Bild 2"></div>
+                <div class="grid-item" onclick="selectCaptcha()" id="imgTR"><img src="./images/bouquet-142876_640.webp" alt="Bild 3"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/cat-1455468_640.webp" alt="Bild 4"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/cat-1647775_640.webp" alt="Bild 5"></div>
+                <div class="grid-item" onclick="selectCaptcha()" id="imgMR"><img src="./images/orange-flowers-8087066_640.webp" alt="Bild 6"></div>
+                <div class="grid-item" onclick="selectCaptcha()" id="imgBL"><img src="./images/flowers-5820050_640.webp" alt="Bild 7"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/dogs-7956516_640.webp" alt="Bild 8"></div>
+                <div class="grid-item" onclick="selectCaptcha()"><img src="./images/dogs-8613175_640.webp" alt="Bild 9"></div>
                 <button id="captcha-confirm-button"onclick="checkBilderkennungstests()">Bestätigen</button>
             </div>
         `,
         description: `
-            Bei dieser Methode wird einem Nutzer oder einer Nutzerin eine Sammlung von Bildern vorgesetzt. Ziel ist es, alle Bilder 
+            Bei dieser Methode wird Nutzer*innen eine Sammlung von Bildern vorgesetzt. Ziel ist es, alle Bilder 
             mit einem bestimmten Merkmal zu markieren. Alternativ gibt es auch Ansätze, bei denen ein Bild in mehrere Teile aufgeteilt 
             wird. In diesem Fall besteht die Aufgabe darin, alle Teile auszuwählen, die ein bestimmtes Merkmal teilen. Der Ansatz des 
             Bilderkennungstests ist die am weitesten verbreitete Methode mit vielen Optionen an Anbietern. Er wird von 
@@ -57,7 +90,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Ansätze, bei denen Merkmale auf Teilen eines großen Bildes erkannt 
                     werden müssen, sind nicht nutzerfreundlich. Es kann leicht dazu kommen, dass nur wenige Pixel 
-                    des Merkmals sich auf einem Teil befinden, was zur Verwirrung des Nutzers oder der Nutzerin führt.</p>
+                    des Merkmals sich auf einem Teil befinden, was zur Verwirrung der Nutzer*innen führt. </p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Den Ansatz selbst zu implementieren, benötigt entsprechende Bilder und damit verbunden den notwendigen Speicherplatz.</p>
@@ -70,7 +103,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Bitte geben sie den Text aus dem Bild unten ein!</p>
-                <img id="textCaptchaImg" src="./images/gimpyCaptchaImg.webp" alt="TextCAPTCHAImage">
+                <img id="textCaptchaImg" src="./images/gimpyCaptchaImg.webp" alt="Text CAPTCHA Bild">
                 <input type="text" id="answerInput" placeholder="Bitte schreiben sie hier ihre Antwort">
                 <button id='captcha-confirm-button' onclick="checkGimpy()">Bestätigen</button>
             </div>
@@ -174,9 +207,10 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `,
         description: `
-            Ein weiterer Ansatz besteht darin, für ein Audio CAPTCHA Geräusche zu verwenden. Zum Beispiel wird 
-            Vogelzwitschern abgespielt, und der Nutzer oder die Nutzerin muss nun erkennen, zu welchem Tier dieses 
-            Geräusch gehört. Die Audio-Version von <a href="https://www.arkoselabs.com/arkose-matchkey/" target="_blank">Arkose Labs</a> nutzt diese Methode, indem sie Aufgaben stellt wie: 
+            Ein weiterer Ansatz besteht darin, für ein Audio CAPTCHA Geräusche zu verwenden. Zum Beispiel 
+            wird Vogelzwitschern abgespielt, und die Nutzer*innen müssen nun erkennen, zu welchem Tier dieses 
+            Geräusch gehört. Die Audio-Version von 
+            <a href="https://www.arkoselabs.com/arkose-matchkey/" target="_blank">Arkose Labs</a> nutzt diese Methode, indem sie Aufgaben stellt wie: 
             'Welche Option ist das Geräusch einer Katze?', und dann drei Geräusche hintereinander abspielt.
         `,
         pro: `
@@ -212,7 +246,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Bitte geben sie unten ein, um welches Tier es sich hier handelt!</p>
-                <div class="grid-item-solid"><img src="./images/birds-6525352_640.webp" alt="refrenceImg">
+                <div class="grid-item-solid"><img src="./images/birds-6525352_640.webp" alt="Pix Audio Bild">
                 </div>
                 <audio controls id="pixAudioCaptchaAudio">
                     <source src="./sounds/bird-voices-7716.mp3" type="audio/mp3">
@@ -227,7 +261,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             Kritisiert wird im zugehörigen Paper, dass die visuellen und auditiven Ansätze von CAPTCHAs getrennt voneinander 
             entwickelt werden, wodurch eine qualitative Diskrepanz zwischen den beiden implementierten Ansätzen entsteht. 
             In diesem konkreten Ansatz werden Bilder von alltäglichen Gegenständen gezeigt, zusammen mit dem dazugehörigen 
-            Geräusch. Der Nutzer oder die Nutzerin muss nun den Gegenstand wiedererkennen und die Antwort eingeben.
+            Geräusch. Die Nutzer*innen müssen nun den Gegenstand wiedererkennen und die Antwort eingeben.
         `,
         pro: `
             <ul class="tabcontent-ul">
@@ -265,7 +299,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         html: `
             <div class="grid-container">
                 <p id="captcha-container-header">Bitte geben sie die Anfangsbuchstaben aller Wörter des Spruches unten ein!</p>
-                <img id="textCaptchaImg" src="./images/acronymCaptchaImg.webp" alt="TextCAPTCHAImage">
+                <img id="textCaptchaImg" src="./images/acronymCaptchaImg.webp" alt="Akronym Bild">
                 <audio controls id="audioCaptchaAudio">
                     <source src="./sounds/merry-christmas-38071.mp3" type="audio/mp3">
                     Your browser does not support the audio element.
@@ -370,8 +404,8 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `,
         description: `
-            Nicht zu verwechseln mit der Gimpy-Methode. Bei dieser Methode erhält ein Nutzer oder eine Nutzerin 
-            eine Frage im Textformat, zum Beispiel: 'Wenn morgen Samstag ist, welcher Tag ist heute?'. Diese Frage 
+            Nicht zu verwechseln mit der Gimpy-Methode. Bei dieser Methode erhalten Nutzer*innen eine Frage im 
+            Textformat, zum Beispiel: 'Wenn morgen Samstag ist, welcher Tag ist heute?'. Diese Frage 
             muss nun per Texteingabe beantwortet werden. Für Bots liegt das Problem darin, die Logik der Frage zu 
             erkennen, wodurch die Frage für Nutzer*innen leicht erkennbar bleiben kann. Durch das Textformat ist 
             es auch möglich, Hilfsmittel wie Screenreader zu verwenden, um Nutzer*innen mit Sehbehinderung beim 
@@ -459,7 +493,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             Die meisten gefundenen Mathe-CAPTCHAs verwenden in der Regel Textformat. Durch die Kombination 
             beider Ansätze ist es möglich, eine Audiodatei für die Nutzer*innen abzuspielen, die nicht mehr 
             verzerrt werden muss. Da der Inhalt der Audiodatei verstanden und verarbeitet werden muss, um das 
-            CAPTCHA zu lösen. Zudem ist die Mathe-Aufgabe im Audioformat schwerer zu erkennen für Bots als im Textformat.
+            CAPTCHA zu lösen. Zudem ist die Mathe-Aufgabe im Audioformat für Bots schwerer zu erkennen, als im Textformat.
         `,
         pro: `
             <ul class="tabcontent-ul">
@@ -490,36 +524,36 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     gehören!
                 </p>
                 <div class="inner-grid-container">
-                    <div class="inner-grid-item"><img src="./images/cat-1455468_640.webp" alt="Image 4">
+                    <div class="inner-grid-item"><img src="./images/cat-1455468_640.webp" alt="Bild 1">
                     </div>
-                    <div class="inner-grid-item"><img src="./images/cat-1647775_640.webp" alt="Image 5">
+                    <div class="inner-grid-item"><img src="./images/cat-1647775_640.webp" alt="Bild 2">
                     </div>
-                    <div class="inner-grid-item"><img src="./images/animal-3669244_640.webp" alt="Image 1">
+                    <div class="inner-grid-item"><img src="./images/animal-3669244_640.webp" alt="Bild 3">
                     </div>
                 </div>
                 <div class="inner-grid-container grid-container-right">
-                    <div class="inner-grid-item"><img src="./images/animals-2178758_640.webp" alt="Image 2">
+                    <div class="inner-grid-item"><img src="./images/animals-2178758_640.webp" alt="Bild 4">
                     </div>
-                    <div class="inner-grid-item"><img src="./images/dogs-7956516_640.webp" alt="Image 8">
+                    <div class="inner-grid-item"><img src="./images/dogs-7956516_640.webp" alt="Bild 5">
                     </div>
-                    <div class="inner-grid-item"><img src="./images/dogs-8613175_640.webp" alt="Image 9">
+                    <div class="inner-grid-item"><img src="./images/dogs-8613175_640.webp" alt="Bild 6">
                     </div>
                 </div>
                 <div class="inner-2-collum-grid-container">
                     <div class="grid-item grid-container-end" onclick="selectCaptcha()"><img
-                            src="./images/raccoons-8282171_640.webp" alt="Image 3"></div>
+                            src="./images/raccoons-8282171_640.webp" alt="Bild 7"></div>
                     <div class="grid-item grid-container-start" onclick="selectCaptcha()" id="imgTR"><img
-                            src="./images/dog-5357794_640.webp" alt="Image 3"></div>
+                            src="./images/dog-5357794_640.webp" alt="Bild 8"></div>
                     <div class="grid-item grid-container-end" onclick="selectCaptcha()" id="imgBL"><img
-                            src="./images/dogs-2936442_640.webp" alt="Image 3"></div>
+                            src="./images/dogs-2936442_640.webp" alt="Bild 9"></div>
                     <div class="grid-item grid-container-start" onclick="selectCaptcha()"><img
-                            src="./images/cat-5940147_640.webp" alt="Image 3"></div>
+                            src="./images/cat-5940147_640.webp" alt="Bild 10"></div>
                 </div>
                 <button id='captcha-confirm-button' onclick="checkBongo()">Bestätigen</button>
             </div>
         `,
         description: `
-            Bei der Bongo-Methode wird einem Nutzer oder einer Nutzerin zwei Gruppen von Bildern gezeigt, 
+            Bei der Bongo-Methode werden Nutzer*innen zwei Gruppen von Bildern gezeigt, 
             die sich in einem Merkmal voneinander unterscheiden. 
             Danach werden weitere Bilder angezeigt. Nun muss entschieden werden, welche der Bilder zu einer 
             bestimmten Gruppe gehören.
@@ -573,9 +607,9 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             gemacht. Dies geschieht, indem die Konsonanten der Wörter mit einem Ersatzkonsonanten ersetzt 
             werden, einem Konsonanten, der anstelle des angestrebten Ziellautes genutzt wird. 
             In dem konkreten Ansatz von Yamaguchi et al. wurde die Methode mit verbaler Ausgabe 
-            implementiert, um Menschen mit Sehbehinderung das Lösen ebenfalls zu ermöglichen. Ein ähnlicher 
-            Ansatz ohne Ersatzkonsonanten und mit dem Erkennen von Sätzen mit auffälliger Semantik wurde auch 
-            in anderen Arbeiten konzipiert, der benutzerfreundlicher sein kann.
+            implementiert, um Menschen mit Sehbehinderung das Lösen ebenfalls zu ermöglichen. 
+            Ein benutzerfreundlicher Ansatz ohne Ersatzkonsonanten und mit dem Erkennen von Sätzen 
+            mit auffälliger Semantik wurde auch in anderen Arbeiten konzipiert.
         `,
         pro: `
             <ul class="tabcontent-ul">
@@ -583,7 +617,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     <p class="tabcontent-text">Nutzer*innen mit Sehbehinderung können diese Methode lösen.</p>
                 </li>
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Nutzer müssen sich keine langen Zeichenfolgen merken.</p>
+                    <p class="tabcontent-text">Nutzer*innen müssen sich keine langen Zeichenfolgen merken.</p>
                 </li>
             </ul>
         `,
@@ -654,7 +688,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                 <p id="captcha-container-header">Wählen Sie das Bild auf der rechten Seite aus, dessen
                     Objekt die gleiche Orientierung wie das Objekt im linken Bild hat!
                 </p>
-                <div class="grid-item-solid"><img src="./images/dog-5357794_640.webp" alt="refrenceImg">
+                <div class="grid-item-solid"><img src="./images/dog-5357794_640.webp" alt="Referenz Bild">
                 </div>
                 <div class="grid-container grid-container-right">
                     <svg class="inner-grid-button grid-container-center"
@@ -663,7 +697,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                         <polyline points="24,8 0,32 24,56" />
                     </svg>
                     <div class="grid-item-solid"><img id="orientierungImg"
-                            src="./images/automobile-2823855_640.webp" alt="orientierungImg">
+                            src="./images/automobile-2823855_640.webp" alt="Orientierungs Bild">
                     </div>
                     <svg class="inner-grid-button grid-container-center"
                         onclick="displayNextOrientierung()" xmlns="http://www.w3.org/2000/svg"
@@ -677,8 +711,8 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         description: `
             Die Aufgabe dieser Methode besteht darin, einen Gegenstand oder einen Blickwinkel so 
             auszurichten, dass das geforderte Ergebnis erzielt wird. Die Ansätze für diese Methode 
-            können sich dabei untereinander unterscheiden, aber das Grundprinzip bleibt gleich: Ein 
-            Nutzer oder eine Nutzerin muss die visuellen Informationen und die Aufgabe verstehen, um 
+            können sich dabei untereinander unterscheiden, aber das Grundprinzip bleibt gleich: 
+            Nutzer*innen müssen die visuellen Informationen und die Aufgabe verstehen, um 
             das CAPTCHA zu lösen. Der Ansatz von <a href="https://www.arkoselabs.com/arkose-matchkey/" target="_blank">Arkose Labs</a> zeigt zwei Bilder. Die Aufgabe 
             besteht darin, den Gegenstand im zweiten Bild so auszurichten, dass er genau wie der 
             Gegenstand aus dem ersten Bild positioniert ist.
@@ -719,8 +753,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         description: `
             Dies ist eine von 
             <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-captcha-and-challenge.html" target="_blank">AWS WAF CAPTCHAs</a> 
-            verwendete visuelle Methode. Eine Nutzerin bekommt 
-            eine fiktive 3D-Stadtkarte angezeigt, auf der ein eingezeichneter Pfad dargestellt ist. An 
+            verwendete visuelle Methode. Nutzer*innen bekommen eine fiktive 3D-Stadtkarte angezeigt, auf der ein eingezeichneter Pfad dargestellt ist. An 
             einem Ende befindet sich ein Auto-Symbol, und die Aufgabe besteht darin, das andere Ende des 
             Pfades zu markieren.
         `,
@@ -757,7 +790,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
                     class="grid-container-center grid-container-middle"><img src="./images/puzzlePiece.webp"
                         alt="Puzzle Piece" id="puzzle-piece">
                 </div>
-                <img id="kartenCaptchaImg" src="./images/puzzleImg.webp" alt="Karten Captcha Bild"
+                <img id="kartenCaptchaImg" src="./images/puzzleImg.webp" alt="Puzzleteil Captcha Bild"
                     usemap="#image-map">
                 <map name="image-map">
                     <area shape="circle" coords="47,232,24" ondrop="checkPuzzle(event)"
@@ -821,8 +854,8 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         `,
         description: `
             Diese Methode ähnelt dem Puzzle-Teil, da auch hier Elemente per Drag & Drop bewegt werden. 
-            Ein Nutzer oder eine Nutzerin hat dabei mehrere Objekte zur Auswahl und ein weiteres festes 
-            Objekt. Die Aufgabe besteht darin, den passenden auswählbaren Gegenstand auf das feste Objekt 
+            Nutzer*innen haben dabei mehrere Objekte zur Auswahl und ein weiteres festes Objekt. 
+            Die Aufgabe besteht darin, den passenden auswählbaren Gegenstand auf das feste Objekt 
             zu bewegen.
         `,
         pro: `
@@ -859,31 +892,31 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         `,
         description: `
             Bei dieser Methode wertet das CAPTCHA das Verhalten der Nutzer*innen aus. 
-            Ein Ansatz besteht darin, das Verhalten des Nutzers oder der Nutzerin direkt auf der 
-            Seite zu beobachten. Die andere Möglichkeit wäre, mit Cookies zu arbeiten und den Verlauf 
+            Ein Ansatz besteht darin, das Verhalten der Nutzer*innen direkt auf der Seite zu beobachten. 
+            Die andere Möglichkeit wäre, mit Cookies zu arbeiten und den Verlauf 
             des Nutzers oder der Nutzerin zu untersuchen. Es ist auch möglich, beide Ansätze miteinander 
             zu kombinieren, um eine bessere Genauigkeit zu erzielen. Gerade letzterer Ansatz könnte je 
             nach Implementierung nicht mit der DSGVO vereinbar sein. Auch wenn der Ansatz korrekt 
             implementiert wird, greift man weiter in die Privatsphäre seiner Nutzer*innen ein, was 
             entsprechend abgewogen werden sollte. <a href="https://developers.google.com/recaptcha/docs/display?hl=de" target="_blank">reCAPTCHA v2</a> verwendet dabei beide Ansätze. 
-            Es analysiert das Nutzerverhalten auf der Seite, nutzt Cookies und überprüft den Verlauf 
-            des Nutzers oder der Nutzerin. Die gesammelten Daten stammen 
+            Es analysiert das Nutzerverhalten auf der Seite, nutzt Cookies und überprüft den Verlauf der Nutzer*innen. 
+            Die gesammelten Daten stammen 
             dabei von anderen Seiten, die ebenfalls Google-Dienste verwenden. Sollte weiterhin 
-            unklar sein, ob der Nutzer oder die Nutzerin legitim ist, so bietet reCAPTCHA weitere CAPTCHAs zum Lösen an.
+            unklar sein, ob die Nutzer*innen legitim sind, so bietet reCAPTCHA weitere CAPTCHAs zum Lösen an.
             <br>
             <a href="https://www.ccm19.de" target="_blank">CCM19</a> (Cookie Consent Manager)  ist ein Dienst, der ergänzend zu reCAPTCHA v2 
-            implementiert wird. So soll der Nutzer oder die Nutzerin die Möglichkeit erhalten, dem 
+            implementiert wird. So sollen die Nutzer*innen die Möglichkeit erhalten, dem 
             Verwenden von Cookies zuzustimmen, bevor reCAPTCHA geladen wird. Dadurch kann reCAPTCHA 
-            DSGVO-konform genutzt werden. <a href="https://developers.google.com/recaptcha?hl=de" target="_blank">reCAPTCHA v3</a> funktioniert ähnlich, nur dass es für 
-            den Nutzer komplett unsichtbar ist. Es wertet auf einer Skala von 0 bis 1 aus, ob der Nutzer 
-            oder die Nutzerin ein Bot ist und überlässt dem Anbieter oder der Anbieterin der Webseite, 
+            DSGVO-konform genutzt werden. <a href="https://developers.google.com/recaptcha?hl=de" target="_blank">reCAPTCHA v3</a> funktioniert 
+            ähnlich, nur dass es für die Nutzer*innen komplett unsichtbar ist. Es wertet auf einer Skala 
+            von 0 bis 1 aus, ob ein*e Nutzer*in ein Bot ist und überlässt den Anbieter*innen der Webseite, 
             was er oder sie mit der Information macht.
         `,
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Nutzer*innen müssen lediglich eine Checkbox anklicken, 
-                    was relativ unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin lösbar ist.</p>
+                    was relativ unabhängig von den Behinderungen der Nutzer*innen lösbar ist.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Der reCAPTCHA-Ansatz ist bis zu 10.000 Aufrufen pro Monat kostenlos zu implementieren.</p>
@@ -918,8 +951,8 @@ const captchaHTML = [ /// img Alts richtig beschriften!
             </div>
         `,
         description: `
-            Bei dieser Methode ist gemeint, dass die Maschine des Nutzers oder der Nutzerin ein 
-            kryptografisches Rätsel lösen muss, um das CAPTCHA zu bewältigen. Die Aufgabe kann 
+            Bei dieser Methode ist gemeint, dass die Maschine der Nutzer*innen ein kryptografisches 
+            Rätsel lösen muss, um das CAPTCHA zu bewältigen. Die Aufgabe kann 
             dann bei Verdacht auf einen Bot erschwert werden. Das Konzept dieser Methode besteht 
             darin, Angriffe aufgrund der benötigten Rechenleistung so teuer zu machen, dass sie 
             sich nicht lohnen würden. <a href="https://friendlycaptcha.com/de/" target="_blank">Friendly Captcha</a> 
@@ -929,7 +962,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin ist der Ansatz immer lösbar.</p>
+                    <p class="tabcontent-text">Unabhängig von den Behinderungen der Nutzer*innen ist der Ansatz immer lösbar.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Die Methode wird von mehreren Anbietern angeboten.</p>
@@ -972,7 +1005,7 @@ const captchaHTML = [ /// img Alts richtig beschriften!
         pro: `
             <ul class="tabcontent-ul">
                 <li class="tabcontent-li">
-                    <p class="tabcontent-text">Unabhängig von den Behinderungen eines Nutzers oder einer Nutzerin ist die Lösung immer möglich.</p>
+                    <p class="tabcontent-text">Unabhängig von den Behinderungen der Nutzer*innen ist die Lösung immer möglich.</p>
                 </li>
                 <li class="tabcontent-li">
                     <p class="tabcontent-text">Die Methode ist leicht selbst implementierbar.</p>
@@ -994,19 +1027,29 @@ const captchaHTML = [ /// img Alts richtig beschriften!
 
 var currentHTML = 0;
 
+/* funktion um eine CAPTCHA-Demo anzuzeigen.*/
 function displayHTML(tempCurrent) {
+    
+    /* Wenn tempCurrent der Name einer Methode ist, wird diese herausgesucht und angezeigt. 
+        Dies ermöglicht es problemlos die Sammlung zu skalieren und umzusortieren ohne große Probleme */
     if (tempCurrent != null) {
         var currentName = tempCurrent;
-        for (currentHTML = 1; currentHTML < captchaHTML.length; currentHTML++) {
+        for (currentHTML = 0; currentHTML < captchaHTML.length; currentHTML++) {
             if (currentName === captchaHTML[currentHTML].name) break;
         }
     }
 
-    if (currentHTML < 1) currentHTML = captchaHTML.length - 1;
-    else if (currentHTML >= captchaHTML.length) currentHTML = 1;
+    /* Überprüft ob der currentHTML Wert inerhalb des gültigen berreichs liegt. 
+        Sorgt ebenfalls dafür, dass vom letzten Eintrag auf den ersten Eintrag in der Sammlung gesprungen werden kann und anders herum. */
+    if (currentHTML < 0) currentHTML = captchaHTML.length - 1;
+    else if (currentHTML >= captchaHTML.length) currentHTML = 0;
+
+    /* Setzt alle Werte zurück, um Bugs zu verhindern */
     selectedElements = 0;
     currentOrientierung = 0;
     counter_value = 0;
+
+    /* Weißt allen Elementen die Informationen der CAPTCHA-Demo zu */
     const nameDiv = document.getElementById('captcha-name-text');
     const captchaDiv = document.getElementById('captcha');
     const descriptionP = document.getElementById('description');
@@ -1017,7 +1060,9 @@ function displayHTML(tempCurrent) {
     descriptionP.innerHTML = captchaHTML[currentHTML].description;
     proDiv.innerHTML = captchaHTML[currentHTML].pro;
     contraDiv.innerHTML = captchaHTML[currentHTML].contra;
-    if (captchaHTML[currentHTML].name == 'Kryptografie') { //aktiviert Kryptographie CAPTCHA
+
+    /* aktiviert das Kryptographie CAPTCHA */
+    if (captchaHTML[currentHTML].name == 'Kryptografie') {
         var progress = document.querySelector('.progressbar .progress');
 
         function counterInit(fValue, lValue) {
@@ -1026,7 +1071,9 @@ function displayHTML(tempCurrent) {
             if (counter_value >= fValue && counter_value <= lValue) {
                 progress.style.width = counter_value + '%';
                 setTimeout(function () { counterInit(fValue, lValue); }, 50);
-            } else if (document.getElementById('captcha-name-text').textContent == 'Kryptografie') {
+            } 
+            /* Überprüft ob das CAPTCHA noch das Kryptografie-CAPTCHA ist um nicht eine andere Methode zu lösen */
+            else if (document.getElementById('captcha-name-text').textContent == 'Kryptografie') {
                 displayCorrectHTML();
             }
         }
@@ -1034,11 +1081,13 @@ function displayHTML(tempCurrent) {
     }
 }
 
+/* geht zum vorherigen Eintrag in der Sammlung */
 function displayPreviousHTML() {
     currentHTML--
     displayHTML();
 }
 
+/* geht zum nächsten Eintrag in der Sammlung */
 function displayNextHTML() {
     currentHTML++
     displayHTML();
