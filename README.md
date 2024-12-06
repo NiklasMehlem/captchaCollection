@@ -1,4 +1,4 @@
-# Effektive CAPTCHAs für Sehbehinderte : Eine Sammlung für Entwickler
+# Effektive CAPTCHAs für Sehbehinderte : Eine Sammlung für Entwickler\*innen
 Praxisprojekt SS 24 im Studiengang Medieninformatik an der TH Köln Campus Gummersbach.
 
 Das Projekt wird von [Prof. Christian Noss](https://www.th-koeln.de/personen/christian.noss/) betreut.
